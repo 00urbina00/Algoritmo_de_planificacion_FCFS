@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1517, 925)
+        MainWindow.resize(1372, 931)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
@@ -53,7 +53,7 @@ class Ui_MainWindow(object):
         self.label = QLabel(self.groupBox_4)
         self.label.setObjectName(u"label")
         self.label.setMinimumSize(QSize(111, 0))
-        self.label.setMaximumSize(QSize(111, 16777215))
+        self.label.setMaximumSize(QSize(160, 16777215))
         font = QFont()
         font.setFamily(u"Times New Roman")
         font.setPointSize(10)
@@ -63,16 +63,16 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.label)
 
-        self.le_lotes = QLineEdit(self.groupBox_4)
-        self.le_lotes.setObjectName(u"le_lotes")
-        self.le_lotes.setMinimumSize(QSize(100, 0))
-        self.le_lotes.setMaximumSize(QSize(100, 16777215))
-        self.le_lotes.setStyleSheet(u"background-color: rgb(220, 220, 220);")
-        self.le_lotes.setFrame(False)
-        self.le_lotes.setAlignment(Qt.AlignCenter)
-        self.le_lotes.setReadOnly(True)
+        self.le_memoria_restante = QLineEdit(self.groupBox_4)
+        self.le_memoria_restante.setObjectName(u"le_memoria_restante")
+        self.le_memoria_restante.setMinimumSize(QSize(50, 0))
+        self.le_memoria_restante.setMaximumSize(QSize(50, 16777215))
+        self.le_memoria_restante.setStyleSheet(u"background-color: rgb(220, 220, 220);")
+        self.le_memoria_restante.setFrame(False)
+        self.le_memoria_restante.setAlignment(Qt.AlignCenter)
+        self.le_memoria_restante.setReadOnly(True)
 
-        self.horizontalLayout_3.addWidget(self.le_lotes)
+        self.horizontalLayout_3.addWidget(self.le_memoria_restante)
 
 
         self.horizontalLayout_4.addLayout(self.horizontalLayout_3)
@@ -84,6 +84,10 @@ class Ui_MainWindow(object):
         self.frame_5.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_13 = QHBoxLayout(self.frame_5)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
+        self.horizontalSpacer_8 = QSpacerItem(10, 20, QSizePolicy.Minimum, QSizePolicy.Minimum)
+
+        self.horizontalLayout_13.addItem(self.horizontalSpacer_8)
+
         self.pb_iniciar = QPushButton(self.frame_5)
         self.pb_iniciar.setObjectName(u"pb_iniciar")
         self.pb_iniciar.setMinimumSize(QSize(100, 23))
@@ -119,6 +123,7 @@ class Ui_MainWindow(object):
         self.label_10 = QLabel(self.frame_5)
         self.label_10.setObjectName(u"label_10")
         self.label_10.setMinimumSize(QSize(111, 0))
+        self.label_10.setMaximumSize(QSize(220, 16777215))
         self.label_10.setFont(font)
         self.label_10.setStyleSheet(u"color: rgb(0, 85, 255);")
         self.label_10.setAlignment(Qt.AlignCenter)
@@ -180,16 +185,16 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5.addWidget(self.label_9)
 
-        self.le_numero_procesos = QLineEdit(self.frame_5)
-        self.le_numero_procesos.setObjectName(u"le_numero_procesos")
-        self.le_numero_procesos.setMinimumSize(QSize(50, 0))
-        self.le_numero_procesos.setMaximumSize(QSize(50, 16777215))
-        self.le_numero_procesos.setStyleSheet(u"background-color: rgb(220, 220, 220);")
-        self.le_numero_procesos.setFrame(False)
-        self.le_numero_procesos.setAlignment(Qt.AlignCenter)
-        self.le_numero_procesos.setReadOnly(True)
+        self.le_procesos_nuevos = QLineEdit(self.frame_5)
+        self.le_procesos_nuevos.setObjectName(u"le_procesos_nuevos")
+        self.le_procesos_nuevos.setMinimumSize(QSize(50, 0))
+        self.le_procesos_nuevos.setMaximumSize(QSize(50, 16777215))
+        self.le_procesos_nuevos.setStyleSheet(u"background-color: rgb(220, 220, 220);")
+        self.le_procesos_nuevos.setFrame(False)
+        self.le_procesos_nuevos.setAlignment(Qt.AlignCenter)
+        self.le_procesos_nuevos.setReadOnly(True)
 
-        self.horizontalLayout_5.addWidget(self.le_numero_procesos)
+        self.horizontalLayout_5.addWidget(self.le_procesos_nuevos)
 
 
         self.horizontalLayout_13.addLayout(self.horizontalLayout_5)
@@ -222,18 +227,18 @@ class Ui_MainWindow(object):
 "color: rgb(0, 85, 255);")
         self.gridLayout_6 = QGridLayout(self.groupBox)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
-        self.pte_lote_actual = QPlainTextEdit(self.groupBox)
-        self.pte_lote_actual.setObjectName(u"pte_lote_actual")
-        self.pte_lote_actual.setMinimumSize(QSize(378, 0))
-        self.pte_lote_actual.setMaximumSize(QSize(1677777, 16777215))
+        self.pte_listos = QPlainTextEdit(self.groupBox)
+        self.pte_listos.setObjectName(u"pte_listos")
+        self.pte_listos.setMinimumSize(QSize(378, 0))
+        self.pte_listos.setMaximumSize(QSize(1677777, 16777215))
         font1 = QFont()
         font1.setFamily(u"Courier New")
         font1.setPointSize(9)
-        self.pte_lote_actual.setFont(font1)
-        self.pte_lote_actual.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+        self.pte_listos.setFont(font1)
+        self.pte_listos.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
 
-        self.gridLayout_6.addWidget(self.pte_lote_actual, 0, 0, 1, 1)
+        self.gridLayout_6.addWidget(self.pte_listos, 0, 0, 1, 1)
 
 
         self.horizontalLayout.addWidget(self.groupBox)
@@ -281,11 +286,30 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addLayout(self.horizontalLayout, 0, 0, 1, 1)
 
-        self.btn_limpiar = QPushButton(self.frame_4)
+        self.groupBox_9 = QGroupBox(self.frame_4)
+        self.groupBox_9.setObjectName(u"groupBox_9")
+        self.groupBox_9.setMinimumSize(QSize(0, 150))
+        self.groupBox_9.setFont(font)
+        self.groupBox_9.setStyleSheet(u"background-color: rgb(200, 200, 200);\n"
+"color: rgb(0, 85, 255);")
+        self.gridLayout_12 = QGridLayout(self.groupBox_9)
+        self.gridLayout_12.setObjectName(u"gridLayout_12")
+        self.pte_bloqueados = QPlainTextEdit(self.groupBox_9)
+        self.pte_bloqueados.setObjectName(u"pte_bloqueados")
+        self.pte_bloqueados.setFont(font1)
+        self.pte_bloqueados.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"color: rgb(0, 0, 0);")
+
+        self.gridLayout_12.addWidget(self.pte_bloqueados, 0, 0, 1, 1)
+
+        self.btn_limpiar = QPushButton(self.groupBox_9)
         self.btn_limpiar.setObjectName(u"btn_limpiar")
         self.btn_limpiar.setStyleSheet(u"color: rgb(0, 0, 255);")
 
-        self.gridLayout_2.addWidget(self.btn_limpiar, 1, 0, 1, 1)
+        self.gridLayout_12.addWidget(self.btn_limpiar, 1, 0, 1, 1)
+
+
+        self.gridLayout_2.addWidget(self.groupBox_9, 2, 0, 1, 1)
 
 
         self.verticalLayout.addWidget(self.frame_4)
@@ -593,7 +617,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1517, 21))
+        self.menubar.setGeometry(QRect(0, 0, 1372, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -607,19 +631,20 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Simulador de procesos", None))
         self.groupBox_4.setTitle("")
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Lotes Pendientes: ", None))
-        self.le_lotes.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Memoria disponible:", None))
+        self.le_memoria_restante.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
         self.pb_iniciar.setText(QCoreApplication.translate("MainWindow", u"Iniciar", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Procesos iniciales: ", None))
         self.pb_agregar_procesos.setText(QCoreApplication.translate("MainWindow", u"Agregar", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"N\u00famero de procesos en cola: ", None))
-        self.le_numero_procesos.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
-        self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Lote Actual", None))
-        self.pte_lote_actual.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ID  | TME | TT", None))
-        self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"En Ejecuci\u00f3n", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Procesos en espera:", None))
+        self.le_procesos_nuevos.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Listo", None))
+        self.pte_listos.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ID  | TME | TT", None))
+        self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Ejecuci\u00f3n", None))
         self.pte_ejecucion.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Informacion (Nombre, Operacion, TME, ID) | TT | TR", None))
         self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"Terminados", None))
         self.pte_terminados.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ID | Operacion y datos | Resultado", None))
+        self.groupBox_9.setTitle(QCoreApplication.translate("MainWindow", u"Bloqueados", None))
         self.btn_limpiar.setText(QCoreApplication.translate("MainWindow", u"Limpiar consolas", None))
         self.groupBox_5.setTitle("")
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Tiempo Global:", None))
