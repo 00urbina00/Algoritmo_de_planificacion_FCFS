@@ -142,13 +142,28 @@ class Proceso:
         return self._tiempo_restante
 
     def calcula_tiempo_retorno(self):
-        self.tiempo_retorno = self.tiempo_finalizacion - self.tiempo_llegada
+        if self.tiempo_finalizacion is not None and self.tiempo_llegada is not None:
+            self.tiempo_retorno = self.tiempo_finalizacion - self.tiempo_llegada
+        else:
+            self.tiempo_retorno = 0
 
     def calcula_tiempo_respuesta(self, tiempo_atendido):
-        self.tiempo_respuesta = tiempo_atendido - self.tiempo_llegada
+        if self.tiempo_llegada is not None:
+            self.tiempo_respuesta = tiempo_atendido - self.tiempo_llegada
+        else:
+            self.tiempo_respuesta = 0
 
     def calcula_tiempo_servicio(self):
-        self.tiempo_servicio = self._tiempo_transcurrido
+        if self._tiempo_transcurrido is not None:
+            self.tiempo_servicio = self._tiempo_transcurrido
+        else:
+            self.tiempo_servicio = 0
 
     def calcula_tiempo_espera(self):
-        self.tiempo_espera = self.tiempo_retorno - self.tiempo_transcurrido
+        if self.tiempo_retorno is not None and self._tiempo_transcurrido is not None:
+            self.tiempo_espera = max(0, self.tiempo_retorno - self._tiempo_transcurrido)
+        else:
+            self.tiempo_espera = 0
+            
+    def incrementa_tiempo_servicio(self):
+        self.tiempo_servicio += 1

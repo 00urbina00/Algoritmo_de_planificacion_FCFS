@@ -115,6 +115,8 @@ class Memoria:
 
     def hay_bloqueados(self):
         return len(self._cola_de_bloqueados) > 0
+    def hay_ejecucion(self):
+        return bool(self.cola_de_ejecucion)
 
     def entra_proceso_ejecucion(self):
         """
@@ -149,3 +151,8 @@ class Memoria:
             else:
                 self.saca_de_bloqueado()
                 self.agrega_a_listo(proceso)
+
+    def release(self):
+        self.cola_de_listos.clear()
+        self.cola_de_ejecucion.clear()
+        self.cola_de_bloqueados.clear()

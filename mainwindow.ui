@@ -199,6 +199,12 @@
                       <height>25</height>
                      </size>
                     </property>
+                    <property name="font">
+                     <font>
+                      <family>Times New Roman</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
                     <property name="styleSheet">
                      <string notr="true">
 QPushButton {
@@ -227,6 +233,44 @@ QPushButton:pressed {
                     </property>
                     <property name="checkable">
                      <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pb_re_iniciar">
+                    <property name="minimumSize">
+                     <size>
+                      <width>70</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Times New Roman</family>
+                      <pointsize>9</pointsize>
+                      <weight>50</weight>
+                      <italic>false</italic>
+                      <bold>false</bold>
+                      <underline>true</underline>
+                      <strikeout>false</strikeout>
+                      <kerning>true</kerning>
+                     </font>
+                    </property>
+                    <property name="acceptDrops">
+                     <bool>false</bool>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">
+QPushButton {
+   
+	background-color: rgb(220, 220, 220);
+	
+	color: rgb(255, 85, 0);
+}
+</string>
+                    </property>
+                    <property name="text">
+                     <string>Re-Iniciar</string>
                     </property>
                    </widget>
                   </item>
@@ -320,6 +364,12 @@ QPushButton:pressed {
                       <width>0</width>
                       <height>25</height>
                      </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Times New Roman</family>
+                      <pointsize>10</pointsize>
+                     </font>
                     </property>
                     <property name="styleSheet">
                      <string notr="true">
@@ -519,6 +569,12 @@ color: rgb(0, 85, 255);</string>
 color: rgb(0, 0, 0);
 background-color: rgb(0, 0, 0);
 color: rgb(0, 253, 51);</string>
+                   </property>
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                   <property name="plainText">
+                    <string/>
                    </property>
                    <property name="placeholderText">
                     <string/>
@@ -902,6 +958,12 @@ color: rgb(0, 253, 51);</string>
                       <width>0</width>
                       <height>25</height>
                      </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Times New Roman</family>
+                      <pointsize>9</pointsize>
+                     </font>
                     </property>
                     <property name="styleSheet">
                      <string notr="true">

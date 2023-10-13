@@ -95,6 +95,7 @@ class Ui_MainWindow(object):
         self.pb_iniciar = QPushButton(self.frame_5)
         self.pb_iniciar.setObjectName(u"pb_iniciar")
         self.pb_iniciar.setMinimumSize(QSize(100, 25))
+        self.pb_iniciar.setFont(font)
         self.pb_iniciar.setStyleSheet(u"\n"
 "QPushButton {\n"
 "   \n"
@@ -119,6 +120,31 @@ class Ui_MainWindow(object):
         self.pb_iniciar.setCheckable(False)
 
         self.horizontalLayout_13.addWidget(self.pb_iniciar)
+
+        self.pb_re_iniciar = QPushButton(self.frame_5)
+        self.pb_re_iniciar.setObjectName(u"pb_re_iniciar")
+        self.pb_re_iniciar.setMinimumSize(QSize(70, 25))
+        font2 = QFont()
+        font2.setFamily(u"Times New Roman")
+        font2.setPointSize(9)
+        font2.setBold(False)
+        font2.setItalic(False)
+        font2.setUnderline(True)
+        font2.setWeight(50)
+        font2.setStrikeOut(False)
+        font2.setKerning(True)
+        self.pb_re_iniciar.setFont(font2)
+        self.pb_re_iniciar.setAcceptDrops(False)
+        self.pb_re_iniciar.setStyleSheet(u"\n"
+"QPushButton {\n"
+"   \n"
+"	background-color: rgb(220, 220, 220);\n"
+"	\n"
+"	color: rgb(255, 85, 0);\n"
+"}\n"
+"")
+
+        self.horizontalLayout_13.addWidget(self.pb_re_iniciar)
 
         self.horizontalSpacer = QSpacerItem(200, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -152,6 +178,7 @@ class Ui_MainWindow(object):
         self.pb_agregar_procesos = QPushButton(self.frame_5)
         self.pb_agregar_procesos.setObjectName(u"pb_agregar_procesos")
         self.pb_agregar_procesos.setMinimumSize(QSize(0, 25))
+        self.pb_agregar_procesos.setFont(font)
         self.pb_agregar_procesos.setStyleSheet(u"\n"
 "QPushButton {\n"
 "   \n"
@@ -239,14 +266,15 @@ class Ui_MainWindow(object):
         self.pte_listos.setObjectName(u"pte_listos")
         self.pte_listos.setMinimumSize(QSize(378, 0))
         self.pte_listos.setMaximumSize(QSize(1677777, 16777215))
-        font2 = QFont()
-        font2.setFamily(u"Consolas")
-        font2.setPointSize(10)
-        self.pte_listos.setFont(font2)
+        font3 = QFont()
+        font3.setFamily(u"Consolas")
+        font3.setPointSize(10)
+        self.pte_listos.setFont(font3)
         self.pte_listos.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);\n"
 "background-color: rgb(0, 0, 0);\n"
 "color: rgb(0, 253, 51);")
+        self.pte_listos.setReadOnly(True)
 
         self.gridLayout_6.addWidget(self.pte_listos, 0, 0, 1, 1)
 
@@ -264,7 +292,7 @@ class Ui_MainWindow(object):
         self.gridLayout_7.setObjectName(u"gridLayout_7")
         self.pte_ejecucion = QPlainTextEdit(self.groupBox_2)
         self.pte_ejecucion.setObjectName(u"pte_ejecucion")
-        self.pte_ejecucion.setFont(font2)
+        self.pte_ejecucion.setFont(font3)
         self.pte_ejecucion.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);\n"
 "background-color: rgb(0, 0, 0);\n"
@@ -286,7 +314,7 @@ class Ui_MainWindow(object):
         self.gridLayout_8.setObjectName(u"gridLayout_8")
         self.pte_terminados = QPlainTextEdit(self.groupBox_3)
         self.pte_terminados.setObjectName(u"pte_terminados")
-        self.pte_terminados.setFont(font2)
+        self.pte_terminados.setFont(font3)
         self.pte_terminados.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);\n"
 "background-color: rgb(0, 0, 0);\n"
@@ -311,7 +339,7 @@ class Ui_MainWindow(object):
         self.gridLayout_12.setContentsMargins(-1, 0, -1, -1)
         self.pte_bloqueados = QPlainTextEdit(self.groupBox_9)
         self.pte_bloqueados.setObjectName(u"pte_bloqueados")
-        self.pte_bloqueados.setFont(font2)
+        self.pte_bloqueados.setFont(font3)
         self.pte_bloqueados.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);\n"
 "\n"
@@ -405,6 +433,10 @@ class Ui_MainWindow(object):
         self.pb_capturar_procesos = QPushButton(self.frame_6)
         self.pb_capturar_procesos.setObjectName(u"pb_capturar_procesos")
         self.pb_capturar_procesos.setMinimumSize(QSize(0, 25))
+        font4 = QFont()
+        font4.setFamily(u"Times New Roman")
+        font4.setPointSize(9)
+        self.pb_capturar_procesos.setFont(font4)
         self.pb_capturar_procesos.setStyleSheet(u"\n"
 "QPushButton {\n"
 "   \n"
@@ -462,9 +494,9 @@ class Ui_MainWindow(object):
         self.gridLayout_10.setObjectName(u"gridLayout_10")
         self.groupBox_8 = QGroupBox(self.groupBox_6)
         self.groupBox_8.setObjectName(u"groupBox_8")
-        font3 = QFont()
-        font3.setFamily(u"Times New Roman")
-        self.groupBox_8.setFont(font3)
+        font5 = QFont()
+        font5.setFamily(u"Times New Roman")
+        self.groupBox_8.setFont(font5)
         self.groupBox_8.setStyleSheet(u"background-color: rgb(200, 200, 200);")
         self.gridLayout_11 = QGridLayout(self.groupBox_8)
         self.gridLayout_11.setObjectName(u"gridLayout_11")
@@ -509,7 +541,7 @@ class Ui_MainWindow(object):
 
         self.groupBox_7 = QGroupBox(self.groupBox_6)
         self.groupBox_7.setObjectName(u"groupBox_7")
-        self.groupBox_7.setFont(font3)
+        self.groupBox_7.setFont(font5)
         self.groupBox_7.setStyleSheet(u"background-color: rgb(200, 200, 200);")
         self.horizontalLayout_12 = QHBoxLayout(self.groupBox_7)
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
@@ -651,11 +683,13 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"Memoria disponible:", None))
         self.le_memoria_restante.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
         self.pb_iniciar.setText(QCoreApplication.translate("MainWindow", u"Iniciar", None))
+        self.pb_re_iniciar.setText(QCoreApplication.translate("MainWindow", u"Re-Iniciar", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Procesos iniciales: ", None))
         self.pb_agregar_procesos.setText(QCoreApplication.translate("MainWindow", u"Agregar", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Procesos nuevos", None))
         self.le_procesos_nuevos.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Listo", None))
+        self.pte_listos.setPlainText("")
         self.pte_listos.setPlaceholderText("")
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Ejecuci\u00f3n", None))
         self.pte_ejecucion.setPlaceholderText("")
