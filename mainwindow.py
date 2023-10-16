@@ -8,7 +8,7 @@ from PySide2.QtCore import QTimer
 from PySide2.QtGui import QFontMetrics
 from PySide2.QtWidgets import QMainWindow, QPushButton, QLineEdit, QPlainTextEdit, QSpinBox, QFrame, QLabel
 
-from espacio_memoria import Memoria
+from memoria import Memoria
 from proceso import *
 from ui_mainwindow import Ui_MainWindow
 
