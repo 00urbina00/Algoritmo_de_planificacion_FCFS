@@ -712,7 +712,7 @@ class MainWindow(QMainWindow):
         }
 
         # Encabezados de la tabla
-        headers = ["Estado", "ID", "OpeA", "Ope", "OpeB", "Res", "TME", "TLl", "TFin", "TRet", "TE", "TS"]
+        headers = ["Estado", "ID", "OpeA", "Ope", "OpeB", "Res", "TME", "TR", "TLl", "TFin", "TRet", "TE", "TS"]
 
         # Obtener el ancho actual del QPlainTextEdit
         ancho_text_edit = self.pte_bloqueados.width()
@@ -741,6 +741,9 @@ class MainWindow(QMainWindow):
                 te = "N/A" if proceso.tiempo_espera is None else proceso.tiempo_espera
                 ts = "N/A" if proceso.tiempo_servicio is None else proceso.tiempo_servicio
 
+                # Calcular el Tiempo Restante (TR) como TME - tiempo_transcurrido
+                tr = "N/A" if proceso.tiempo is None else proceso.tiempo - proceso.tiempo_transcurrido
+
                 # Formatea todos los datos, incluyendo los nuevos valores
                 texto_formateado += f"{nombre_cola:^{int(ancho_columna / ancho_letra)}} | " \
                                     f"{proceso.id:^{int(ancho_columna / ancho_letra)}} | " \
@@ -749,6 +752,7 @@ class MainWindow(QMainWindow):
                                     f"{proceso.operando_b:^{int(ancho_columna / ancho_letra)}} | " \
                                     f"{resultado:^{int(ancho_columna / ancho_letra)}} | " \
                                     f"{tme:^{int(ancho_columna / ancho_letra)}} | " \
+                                    f"{tr:^{int(ancho_columna / ancho_letra)}} | " \
                                     f"{tllegada:^{int(ancho_columna / ancho_letra)}} | " \
                                     f"{tfin:^{int(ancho_columna / ancho_letra)}} | " \
                                     f"{tret:^{int(ancho_columna / ancho_letra)}} | " \
