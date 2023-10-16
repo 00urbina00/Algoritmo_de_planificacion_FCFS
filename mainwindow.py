@@ -66,7 +66,7 @@ class MainWindow(QMainWindow):
         self.texto_ejecucion = "Sin procesos en ejecucion."
         self.texto_terminados = "No hay procesos terminados."
         self.texto_bloqueados = "No hay procesos bloqueados."
-
+        self.texto_quantum = "5"
         # ----------------------------------------------------------------|
         # - Contadores
         # ----------------------------------------------------------------|
@@ -123,6 +123,8 @@ class MainWindow(QMainWindow):
         self.le_tiempo_global = self.findChild(QLineEdit, "le_tiempo_global")
         # Spinbox numero de procesos
         self.sb_num_procesos = self.findChild(QSpinBox, "sb_num_procesos")
+        # Spinbx quantum inicial
+        self.sb_quantum = self.findChild(QSpinBox, "sb_quantum")
         # Frame captura de datos
         self.frame_captura = self.findChild(QFrame, "frame_7")
         self.habilitar_campos()
@@ -148,6 +150,7 @@ class MainWindow(QMainWindow):
         self.btn_reiniciar.setStyleSheet("QPushButton:disabled { color: gray; border:none;}")
         self.releaseMemory()
         self.id_proceso = 0
+        self.tiempo_global = 0
         self.actualiza_texto_contadores()
         self.iniciliza_textos()
     
@@ -208,6 +211,8 @@ class MainWindow(QMainWindow):
         self.pte_ejecucion.setPlainText(self.texto_ejecucion)
         self.pte_terminados.setPlainText(self.texto_terminados)
         self.pte_bloqueados.setPlainText(self.texto_bloqueados)
+        
+        self.texto_quantum = str(self.sb_quantum.value())
 
         self.le_memoria.setText(self.texto_memoria_restante)  # Lotes pendientes
         self.le_procesos_nuevos.setText(self.texto_nuevos)  # Procesos pendientes
@@ -245,6 +250,7 @@ class MainWindow(QMainWindow):
             if self.hilo:
                 self.hilo.join()
             self.en_ejecucion = True
+            self.sb_quantum.setEnabled(False)
             self.hilo = threading.Thread(target=self.correr_interfaz)
             self.hilo.start()
 
@@ -299,6 +305,7 @@ class MainWindow(QMainWindow):
         self.terminar_hilo()
         self.btn_reiniciar.setStyleSheet("QPushButton:enabled { color: red; }")
         self.btn_reiniciar.setEnabled(True)  # Deshabilitar el boton
+        self.sb_quantum.setEnabled(True)    # Habilitar el spinbox
         # Se terminaron todos los procesos!
 
     def administrar_pausa(self):
@@ -370,6 +377,7 @@ class MainWindow(QMainWindow):
                 self.iniciliza_textos()
 
     def ejecucion_del_proceso(self, proceso):
+        contador = int(self.texto_quantum) # Es el tiempo al que debe llegar un proceso para salir de ejecucion
         while proceso.tiempo_restante > 0 and not self.bandera_detener:  # O(16) tiempo maximo
             self.mostrar_textos()
             with self.pause_condition:  # Consumo de tiempo de CPU
@@ -377,7 +385,6 @@ class MainWindow(QMainWindow):
             if self.bandera_i:
                 if self.memoria.hay_ejecucion():
                     self.administrar_interrupcion(proceso)
-                    print("Interrupcion")
                     break
                 else:
                     self.bandera_i = False
@@ -399,15 +406,20 @@ class MainWindow(QMainWindow):
                     self.mostrar_textos()
 
                 # Ejecución del proceso de manera normal
-
+                self.actualiza_texto_contadores()
+                if self.memoria.cola_de_ejecucion and contador > 0:  # Solo ejecuta procesos en ejecucion
+                    self.tiempo_de_ejecucion(proceso)
+                    contador -= 1
+                elif self.memoria.cola_de_ejecucion:    # Si hay procesos en ejecucion y el proceso actual ya termino su quantum
+                    self.memoria.saca_de_ejecucion()    # Se saca de ejecucion
+                    self.memoria.agrega_a_listo(proceso)    # Se agrega a listos
+                    break
+                else:   # En caso de no haber procesos en ejecucion se deteiene el ciclo
+                    break
+                
                 # simular_segundo_transcurrido_pruebas()
                 time.sleep(1)
                 self.tiempo_global += 1  # El tiempo global corre siempre
-                self.actualiza_texto_contadores()
-                if self.memoria.cola_de_ejecucion:  # Solo ejecuta procesos en ejecucion
-                    self.tiempo_de_ejecucion(proceso)
-                else:   # En caso de no haber procesos en ejecucion se deteiene el ciclo
-                    break
 
         if proceso is not None and proceso.terminado and not proceso.error:
             self.proceso_completado(proceso)
@@ -647,7 +659,7 @@ class MainWindow(QMainWindow):
         # Crea una cadena de texto para almacenar el formato
         texto_formateado = ""
         # Encabezados de la tabla
-        headers = ["ID", "OpeA", "Ope", "OpeB", "Res", "TME", "TLl", "TFin", "TRet", "TE", "TS"]
+        headers = ["ID", "OpeA", "Ope", "OpeB", "Res", "TME", "TLl", "TFin", "TRet", "TRes", "TE", "TS"]
 
         ancho_text_edit = self.pte_bloqueados.width()  # Obtener el ancho actual del QPlainTextEdit
         fuente = self.pte_bloqueados.font()
@@ -684,6 +696,7 @@ class MainWindow(QMainWindow):
 
             tfin = proceso.tiempo_finalizacion
             tret = proceso.tiempo_retorno
+            tres = proceso.tiempo_respuesta
             te = proceso.tiempo_espera
             ts = proceso.tiempo_servicio
 
@@ -697,6 +710,7 @@ class MainWindow(QMainWindow):
                                 f"{tllegada:^{int(ancho_columna / ancho_letra)}} | " \
                                 f"{tfin:^{int(ancho_columna / ancho_letra)}} | " \
                                 f"{tret:^{int(ancho_columna / ancho_letra)}} | " \
+                                f"{tres:^{int(ancho_columna / ancho_letra)}} | " \
                                 f"{te:^{int(ancho_columna / ancho_letra)}} | " \
                                 f"{ts:^{int(ancho_columna / ancho_letra)}}\n"
 
@@ -712,21 +726,21 @@ class MainWindow(QMainWindow):
         }
 
         # Encabezados de la tabla
-        headers = ["Estado", "ID", "OpeA", "Ope", "OpeB", "Res", "TME", "TR", "TLl", "TFin", "TRet", "TE", "TS"]
+        headers = ["Estado", "ID", "OpeA", "Ope", "OpeB", "Res", "TME", "TR", "TLl", "TFin", "TRet", "TRes", "TE", "TS"]
 
         # Obtener el ancho actual del QPlainTextEdit
         ancho_text_edit = self.pte_bloqueados.width()
         fuente = self.pte_bloqueados.font()
         metrics = QFontMetrics(fuente)
         ancho_letra = metrics.averageCharWidth()
-        ancho_columna = (ancho_text_edit - 226) / len(headers)
+        ancho_columna = (ancho_text_edit - 275) / len(headers)
 
         # Formatear los encabezados con el ancho calculado
         texto_formateado = " | ".join(f"{header:^{int(ancho_columna / ancho_letra)}}" for header in headers) + "\n"
 
         # Lista para almacenar las líneas de guiones bajos para cada columna
         lineas_guiones = ["_" * int(ancho_columna / ancho_letra) for _ in headers]
-        
+
         # Crear una línea de guiones bajos concatenados
         texto_formateado += " | ".join(lineas_guiones) + "\n"
 
@@ -738,6 +752,7 @@ class MainWindow(QMainWindow):
                 tllegada = "N/A" if proceso.tiempo_llegada is None else proceso.tiempo_llegada
                 tfin = "N/A" if proceso.tiempo_finalizacion is None else proceso.tiempo_finalizacion
                 tret = "N/A" if proceso.tiempo_retorno is None else proceso.tiempo_retorno
+                tres = "N/A" if proceso.tiempo_respuesta is None else proceso.tiempo_respuesta
                 te = "N/A" if proceso.tiempo_espera is None else proceso.tiempo_espera
                 ts = "N/A" if proceso.tiempo_servicio is None else proceso.tiempo_servicio
 
@@ -756,6 +771,7 @@ class MainWindow(QMainWindow):
                                     f"{tllegada:^{int(ancho_columna / ancho_letra)}} | " \
                                     f"{tfin:^{int(ancho_columna / ancho_letra)}} | " \
                                     f"{tret:^{int(ancho_columna / ancho_letra)}} | " \
+                                    f"{tres:^{int(ancho_columna / ancho_letra)}} | " \
                                     f"{te:^{int(ancho_columna / ancho_letra)}} | " \
                                     f"{ts:^{int(ancho_columna / ancho_letra)}}\n"
 

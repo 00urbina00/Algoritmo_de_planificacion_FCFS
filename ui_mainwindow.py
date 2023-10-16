@@ -146,9 +146,39 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_13.addWidget(self.pb_re_iniciar)
 
-        self.horizontalSpacer = QSpacerItem(200, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer = QSpacerItem(100, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_13.addItem(self.horizontalSpacer)
+
+        self.label_12 = QLabel(self.frame_5)
+        self.label_12.setObjectName(u"label_12")
+        self.label_12.setMinimumSize(QSize(70, 0))
+        self.label_12.setMaximumSize(QSize(80, 16777215))
+        self.label_12.setFont(font)
+        self.label_12.setStyleSheet(u"color: rgb(0, 85, 255);")
+        self.label_12.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_13.addWidget(self.label_12)
+
+        self.sb_quantum = QSpinBox(self.frame_5)
+        self.sb_quantum.setObjectName(u"sb_quantum")
+        self.sb_quantum.setMinimumSize(QSize(40, 25))
+        self.sb_quantum.setFont(font1)
+        self.sb_quantum.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.sb_quantum.setWrapping(False)
+        self.sb_quantum.setFrame(True)
+        self.sb_quantum.setAlignment(Qt.AlignCenter)
+        self.sb_quantum.setReadOnly(False)
+        self.sb_quantum.setButtonSymbols(QAbstractSpinBox.UpDownArrows)
+        self.sb_quantum.setMinimum(3)
+        self.sb_quantum.setMaximum(15)
+        self.sb_quantum.setValue(5)
+
+        self.horizontalLayout_13.addWidget(self.sb_quantum)
+
+        self.horizontalSpacer_9 = QSpacerItem(100, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_13.addItem(self.horizontalSpacer_9)
 
         self.label_10 = QLabel(self.frame_5)
         self.label_10.setObjectName(u"label_10")
@@ -684,6 +714,7 @@ class Ui_MainWindow(object):
         self.le_memoria_restante.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
         self.pb_iniciar.setText(QCoreApplication.translate("MainWindow", u"Iniciar", None))
         self.pb_re_iniciar.setText(QCoreApplication.translate("MainWindow", u"Re-Iniciar", None))
+        self.label_12.setText(QCoreApplication.translate("MainWindow", u"Quantum: ", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Procesos iniciales: ", None))
         self.pb_agregar_procesos.setText(QCoreApplication.translate("MainWindow", u"Agregar", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Procesos nuevos", None))
@@ -695,7 +726,7 @@ class Ui_MainWindow(object):
         self.pte_ejecucion.setPlaceholderText("")
         self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"Terminados", None))
         self.pte_terminados.setPlaceholderText("")
-        self.groupBox_9.setTitle(QCoreApplication.translate("MainWindow", u"Bloqueados", None))
+        self.groupBox_9.setTitle(QCoreApplication.translate("MainWindow", u"Informaci\u00f3n", None))
         self.groupBox_5.setTitle("")
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Tiempo Global:", None))
         self.le_tiempo_global.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
