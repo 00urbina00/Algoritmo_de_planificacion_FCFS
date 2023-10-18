@@ -288,28 +288,36 @@ class MainWindow(QMainWindow):
     def correr_fcfs(self):
         self.bandera_detener = False
         self.en_ejecucion = True
-        while self.cola_de_nuevos and not self.bandera_detener:  # Este ciclo recorre la cola de nuevos O(n)
-            self.ingresa_procesos_a_listos()  # Ingresa todos los procesos posibles a listos
+        while self.cola_de_nuevos and not self.bandera_detener: # Este ciclo recorre la cola de nuevos O(n)
+            self.ingresa_procesos_a_listos()    # Ingresa todos los procesos posibles a listos
             while self.memoria.procesos_en_memoria() and not self.bandera_detener:  # Mientras haya procesos en listos:
                 self.iniciliza_textos()
-                self.mostrar_textos()  # Se formatea el texto de los procesos en listo
-                self.ingresa_procesos_a_listos()  # Verifica si hay espacio y, agrega otro proceso a listos
-                proceso = self.memoria.entra_proceso_ejecucion()  # Mete proceso a la cola de ejecucion (solo cabe 1)
+                self.mostrar_textos()   # Se formatea el texto de los procesos en listo
+                self.ingresa_procesos_a_listos()    # Verifica si hay espacio y, agrega otro proceso a listos
+                proceso = self.memoria.entra_proceso_ejecucion()    # Mete proceso a la cola de ejecucion (solo cabe 1)
                 self.mostrar_textos()
                 self.ejecucion_del_proceso(proceso)
         self.iniciliza_textos()
         self.actualiza_texto_contadores()
         self.muestra_datos_de_procesos()
         self.en_ejecucion = False
-        self.bandera_detener = False 
+        self.bandera_detener = False
         self.terminar_hilo()
         self.btn_reiniciar.setStyleSheet("QPushButton:enabled { color: red; }")
-        self.btn_reiniciar.setEnabled(True)  # Deshabilitar el boton
+        self.btn_reiniciar.setEnabled(True) # Deshabilitar el boton
         self.sb_quantum.setEnabled(True)    # Habilitar el spinbox
         # Se terminaron todos los procesos!
+        
+    def calcular_tiempos_listos(self):
+        colas = [self.memoria.cola_de_listos, self.memoria.cola_de_ejecucion]
+        for cola in colas:
+            if cola:
+                for proceso in cola:
+                    proceso.calcula_tiempo_espera(self.tiempo_global)
 
     def administrar_pausa(self):
         if self.bandera_b:
+            self.calcular_tiempos_listos()
             self.muestra_bcp() # Mostrar BCP
         while self.bandera_p or self.bandera_b and not self.bandera_detener:
             self.pause_condition.wait()
@@ -377,7 +385,7 @@ class MainWindow(QMainWindow):
                 self.iniciliza_textos()
 
     def ejecucion_del_proceso(self, proceso):
-        contador = int(self.texto_quantum) # Es el tiempo al que debe llegar un proceso para salir de ejecucion
+        contador = int(self.texto_quantum)  # Es el tiempo al que debe llegar un proceso para salir de ejecucion
         while proceso.tiempo_restante > 0 and not self.bandera_detener:  # O(16) tiempo maximo
             self.mostrar_textos()
             with self.pause_condition:  # Consumo de tiempo de CPU
@@ -419,14 +427,14 @@ class MainWindow(QMainWindow):
                 
                 # simular_segundo_transcurrido_pruebas()
                 time.sleep(1)
-                self.tiempo_global += 1  # El tiempo global corre siempre
+                self.tiempo_global += 1 # El tiempo global corre siempre
 
         if proceso is not None and proceso.terminado and not proceso.error:
             self.proceso_completado(proceso)
             self.mostrar_textos()
 
     # Validaciones de campos de la interfaz
-    def campos_validos(self) -> bool:  # Campo vacio
+    def campos_validos(self) -> bool:   # Campo vacio
         if (self.le_tiempo_max.text() == "" or self.le_operador.text() not in self.operadores
                 or self.le_operando_a.text() == "" or
                 self.le_operando_b.text() == "" or not_num(self.le_operando_a.text()) or

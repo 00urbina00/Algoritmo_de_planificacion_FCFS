@@ -159,11 +159,13 @@ class Proceso:
         else:
             self.tiempo_servicio = 0
 
-    def calcula_tiempo_espera(self):
-        if self.tiempo_retorno is not None and self._tiempo_transcurrido is not None:
+    def calcula_tiempo_espera(self, tiempo_global=None):
+        if self.tiempo_retorno is not None:
             self.tiempo_espera = max(0, self.tiempo_retorno - self._tiempo_transcurrido)
+        elif tiempo_global is not None:
+            self.tiempo_espera = max(0, (tiempo_global - self.tiempo_llegada) - self._tiempo_transcurrido)
         else:
             self.tiempo_espera = 0
-            
+
     def incrementa_tiempo_servicio(self):
         self.tiempo_servicio += 1

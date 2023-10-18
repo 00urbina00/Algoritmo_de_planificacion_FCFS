@@ -3,7 +3,6 @@ from collections import deque
 class Memoria:
     """
     Clase que simula el espacio de memoria para trabajar con procesos.
-    
     Attributes:
         _espacio (int): El límite de espacio de memoria.
         _cola_de_listos (deque): La cola de procesos listos en memoria.
@@ -16,7 +15,7 @@ class Memoria:
         self._cola_de_listos = deque()
         self._cola_de_ejecucion = deque()
         self._cola_de_bloqueados = deque()
-
+    # Propiedades (decoradores) ----------------------------------------------------------------
     @property
     def espacio(self):
         return self._espacio
@@ -37,24 +36,15 @@ class Memoria:
         if len(self._cola_de_listos) > 0 or len(self._cola_de_ejecucion) > 0 or len(self._cola_de_bloqueados) > 0:
             return True
         return False
-
-    def procesos_en_listos(self) -> bool:
-        return len(self._cola_de_listos) > 0
-
-    def hay_espacio(self) -> bool:
-        return bool(self._espacio)
-
+    # Métodos agregacion/eliminacion ------------------------------------------------------------
     def _agrega_a_cola(self, cola, proceso):
         """
         Agrega un proceso a una cola específica.
-
         Args:
             cola (deque): La cola a la que se va a agregar el proceso.
             proceso: El proceso a agregar.
-
         Returns:
             bool: True si se pudo agregar el proceso a la cola, False de lo contrario.
-        
         Raises:
             ValueError: Si se intenta agregar un proceso None a la cola.
         """
@@ -70,10 +60,8 @@ class Memoria:
     def _saca_de_cola(self, cola):
         """
         Saca un proceso de una cola específica.
-
         Args:
             cola (deque): La cola de la que se va a sacar el proceso.
-
         Returns:
             El proceso que se sacó de la cola, o None si la cola está vacía.
         """
@@ -81,18 +69,7 @@ class Memoria:
             self._espacio += 1
             return cola.popleft()
         return None
-
-    def get_proceso_en_ejecucion(self):
-        """
-        Devuelve el proceso que se encuentra en ejecución.
-
-        Returns:
-            El proceso que se encuentra en ejecución, o None si no hay ningún proceso en ejecución.
-        """
-        if self._cola_de_ejecucion:
-            return self._cola_de_ejecucion[0]
-        return None
-
+    
     def agrega_a_listo(self, proceso):
         return self._agrega_a_cola(self._cola_de_listos, proceso)
 
@@ -110,12 +87,33 @@ class Memoria:
 
     def saca_de_bloqueado(self):
         return self._saca_de_cola(self._cola_de_bloqueados)
-
+    
+    def release(self):  # Liberar memoria (spanglish :( )
+        self.cola_de_listos.clear()
+        self.cola_de_ejecucion.clear()
+        self.cola_de_bloqueados.clear()
+    
+    # Metodos logicos ---------------------------------------------------------------------------
+    def hay_espacio(self) -> bool:
+        return bool(self._espacio)
     def hay_bloqueados(self):
         return len(self._cola_de_bloqueados) > 0
     def hay_ejecucion(self):
         return bool(self.cola_de_ejecucion)
+    def hay_listos(self):
+        return bool(self.cola_de_listos)
+    
+    def get_proceso_en_ejecucion(self):
+        """
+        Devuelve el proceso que se encuentra en ejecución.
 
+        Returns:
+            El proceso que se encuentra en ejecución, o None si no hay ningún proceso en ejecución.
+        """
+        if self._cola_de_ejecucion:
+            return self._cola_de_ejecucion[0]
+        return None
+    # Otros -------------------------------------------------------------------------------------
     def entra_proceso_ejecucion(self):
         """
         Intenta mover un proceso de la cola de procesos listos a la cola de procesos en ejecución.
@@ -149,8 +147,3 @@ class Memoria:
             else:
                 self.saca_de_bloqueado()
                 self.agrega_a_listo(proceso)
-
-    def release(self):
-        self.cola_de_listos.clear()
-        self.cola_de_ejecucion.clear()
-        self.cola_de_bloqueados.clear()
