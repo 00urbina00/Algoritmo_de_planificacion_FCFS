@@ -13,13 +13,17 @@ from proceso import *
 from ui_mainwindow import Ui_MainWindow
 
 TAMANIO_MEMORIA = 5
+TIEMPO_MIN = 6
+TIEMPO_MAX = 16
+RANGO_MIN = 0
+RANGO_MAX = 1000
 
 def crea_proceso(numero_programa):  # Aleatorio
     operadores = ['+', '-', '*', '/', '%', "%%"]
     operador = random.choice(operadores)
-    operando_a = random.randint(0, 1000)
-    operando_b = random.randint(0, 1000)
-    tiempo = str(random.randint(6, 16))
+    operando_a = random.randint(RANGO_MIN, RANGO_MAX)
+    operando_b = random.randint(RANGO_MIN, RANGO_MAX)
+    tiempo = str(random.randint(TIEMPO_MIN, TIEMPO_MAX))
     return Proceso(operador, operando_a, operando_b, tiempo, numero_programa)
 
 
@@ -146,12 +150,13 @@ class MainWindow(QMainWindow):
     def reiniciar_programa(self):
         self.btn_reiniciar.setEnabled(False)  # Deshabilitar el boton
         self.btn_reiniciar.setStyleSheet("QPushButton:disabled { color: gray; border:none;}")
-        self.releaseMemory()
+        self.release_memory()
         self.id_proceso = 0
+        self.tiempo_global = 0
         self.actualiza_texto_contadores()
-        self.iniciliza_textos()
+        self.mostrar_textos()
     
-    def releaseMemory(self):
+    def release_memory(self):
         self.cola_de_nuevos.clear()
         self.cola_de_terminados.clear()
         self.memoria.release()
@@ -164,7 +169,7 @@ class MainWindow(QMainWindow):
             if self.bandera_p or self.bandera_b:
                 with self.pause_condition:
                     self.pause_condition.notify()
-            self.releaseMemory()
+            self.release_memory()
             event.accept()  # Permite que la ventana se cierre
             
 
@@ -285,13 +290,12 @@ class MainWindow(QMainWindow):
         while self.cola_de_nuevos and not self.bandera_detener:  # Este ciclo recorre la cola de nuevos O(n)
             self.ingresa_procesos_a_listos()  # Ingresa todos los procesos posibles a listos
             while self.memoria.procesos_en_memoria() and not self.bandera_detener:  # Mientras haya procesos en listos:
-                self.iniciliza_textos()
-                self.mostrar_textos()  # Se formatea el texto de los procesos en listo
+                self.mostrar_textos()
                 self.ingresa_procesos_a_listos()  # Verifica si hay espacio y, agrega otro proceso a listos
                 proceso = self.memoria.entra_proceso_ejecucion()  # Mete proceso a la cola de ejecucion (solo cabe 1)
-                self.mostrar_textos()
+                self.mostrar_textos() # Se formatea el texto de los procesos en listo
                 self.ejecucion_del_proceso(proceso)
-        self.iniciliza_textos()
+        self.mostrar_textos()
         self.actualiza_texto_contadores()
         self.muestra_datos_de_procesos()
         self.en_ejecucion = False
@@ -299,23 +303,29 @@ class MainWindow(QMainWindow):
         self.terminar_hilo()
         self.btn_reiniciar.setStyleSheet("QPushButton:enabled { color: red; }")
         self.btn_reiniciar.setEnabled(True)  # Deshabilitar el boton
-        # Se terminaron todos los procesos!
+        # Se terminaron todos los procesos
+
+    def calcular_tiempos_listos(self):
+        colas = [self.memoria.cola_de_listos, self.memoria.cola_de_ejecucion]
+        for cola in colas:
+            if cola:
+                for proceso in cola:
+                    proceso.calcula_tiempo_espera(self.tiempo_global)
 
     def administrar_pausa(self):
         if self.bandera_b:
+            self.calcular_tiempos_listos()
             self.muestra_bcp() # Mostrar BCP
         while self.bandera_p or self.bandera_b and not self.bandera_detener:
             self.pause_condition.wait()
 
     def administrar_interrupcion(self, proceso):
         # Proceso entra a bloqueados
-        self.bandera_i = False
         proceso.set_bloqueado()
         self.memoria.saca_de_ejecucion()
         self.memoria.agrega_a_bloqueados(proceso)
-        self.muestra_texto_ejecucion()
-        self.muestra_texto_listos()
         self.mostrar_textos()
+        self.bandera_i = False
 
     def administrar_error(self, proceso):
         # Proceso finalizado por error (sale a terminados)
@@ -370,17 +380,15 @@ class MainWindow(QMainWindow):
                 self.iniciliza_textos()
 
     def ejecucion_del_proceso(self, proceso):
-        while proceso.tiempo_restante > 0 and not self.bandera_detener:  # O(16) tiempo maximo
+        while proceso.tiempo_restante > 0 and not self.bandera_detener:  #  tiempo máximo
             self.mostrar_textos()
-            with self.pause_condition:  # Consumo de tiempo de CPU
+            with self.pause_condition:  # Consumo de tiempo de CPU (suspendiendo el hilo)
                 self.administrar_pausa()
-            if self.bandera_i:
-                if self.memoria.hay_ejecucion():
-                    self.administrar_interrupcion(proceso)
-                    print("Interrupcion")
-                    break
-                else:
-                    self.bandera_i = False
+            if self.bandera_i and self.memoria.hay_ejecucion(): # Si hay en ejecución, puede interrumpir
+                self.administrar_interrupcion(proceso)
+                break
+            else:
+                self.bandera_i = False
             if self.bandera_e:
                 self.administrar_error(proceso)
                 break
@@ -388,31 +396,37 @@ class MainWindow(QMainWindow):
                 self.administrar_nuevo()
                 break
             else:
-                if self.memoria.hay_bloqueados():
-                    self.muestra_texto_bloqueados()
-                    # Se puede ejecutar bloqueados y continuar con la ejecucion normal del proceso
-                    # Si hay algún proceso bloqueado
+                # Casos generales (Bloqueado / Ejecución)
+                if self.memoria.hay_bloqueados() and self.memoria.hay_ejecucion():          # Hay ejecución y bloqueados
+                    if self.memoria.hay_bloqueados():       # Hay bloqueados
+                        self.memoria.ciclo_bloqueados()
+                    if self.memoria.hay_ejecucion():        # Hay ejecución
+                        self.tiempo_de_ejecucion(proceso)
+                    self.consume_tiempo_global()            # Simula 1s transcurrido
+                elif not self.memoria.hay_bloqueados() and self.memoria.hay_ejecucion():    # Solo ejecución normal
+                    self.tiempo_de_ejecucion(proceso)       # Ciclo Ejecución
+                    self.consume_tiempo_global()            # Simula 1s transcurrido
+                elif self.memoria.hay_bloqueados() and not self.memoria.hay_ejecucion():    # Solo bloqueados
                     # En cada ciclo de "tiempo" se descontará una unidad de tiempo a cada proceso bloqueado
                     # Si el proceso termina su estado bloqueado sale y entra de nuevo a listo (en clase Memoria)
                     self.memoria.ciclo_bloqueados()
-                    self.muestra_texto_bloqueados()
+                    self.consume_tiempo_global()            # Simula 1s transcurrido
+                else:
                     self.mostrar_textos()
-
-                # Ejecución del proceso de manera normal
-
-                # simular_segundo_transcurrido_pruebas()
-                time.sleep(1)
-                self.tiempo_global += 1  # El tiempo global corre siempre
-                self.actualiza_texto_contadores()
-                if self.memoria.cola_de_ejecucion:  # Solo ejecuta procesos en ejecucion
-                    self.tiempo_de_ejecucion(proceso)
-                else:   # En caso de no haber procesos en ejecucion se deteiene el ciclo
                     break
+                self.mostrar_textos()  # Actualiza consolas
+                if self.memoria.hay_listos() and not self.memoria.hay_ejecucion():
+                    break   # Si puede entrar un proceso a ejecución, le da la oportunidad
 
         if proceso is not None and proceso.terminado and not proceso.error:
             self.proceso_completado(proceso)
             self.mostrar_textos()
 
+    def consume_tiempo_global(self):
+        # tiempo global
+        time.sleep(1)
+        self.tiempo_global += 1
+        self.actualiza_texto_contadores()
     # Validaciones de campos de la interfaz
     def campos_validos(self) -> bool:  # Campo vacio
         if (self.le_tiempo_max.text() == "" or self.le_operador.text() not in self.operadores
@@ -647,7 +661,7 @@ class MainWindow(QMainWindow):
         # Crea una cadena de texto para almacenar el formato
         texto_formateado = ""
         # Encabezados de la tabla
-        headers = ["ID", "OpeA", "Ope", "OpeB", "Res", "TME", "TLl", "TFin", "TRet", "TE", "TS"]
+        headers = ["ID", "OpeA", "Ope", "OpeB", "Res", "TME", "TLl", "TFin", "TRet", "TRes", "TE", "TS"]
 
         ancho_text_edit = self.pte_bloqueados.width()  # Obtener el ancho actual del QPlainTextEdit
         fuente = self.pte_bloqueados.font()
@@ -677,13 +691,14 @@ class MainWindow(QMainWindow):
             if proceso.resultado is None:
                 resultado = "error"
             else:
-                resultado = proceso.resultado
+                resultado = str(proceso.resultado)[:4].ljust(4)
 
             tme = proceso.tiempo
             tllegada = proceso.tiempo_llegada
 
             tfin = proceso.tiempo_finalizacion
             tret = proceso.tiempo_retorno
+            tres = proceso.tiempo_respuesta
             te = proceso.tiempo_espera
             ts = proceso.tiempo_servicio
 
@@ -697,6 +712,7 @@ class MainWindow(QMainWindow):
                                 f"{tllegada:^{int(ancho_columna / ancho_letra)}} | " \
                                 f"{tfin:^{int(ancho_columna / ancho_letra)}} | " \
                                 f"{tret:^{int(ancho_columna / ancho_letra)}} | " \
+                                f"{tres:^{int(ancho_columna / ancho_letra)}} | " \
                                 f"{te:^{int(ancho_columna / ancho_letra)}} | " \
                                 f"{ts:^{int(ancho_columna / ancho_letra)}}\n"
 
@@ -712,37 +728,38 @@ class MainWindow(QMainWindow):
         }
 
         # Encabezados de la tabla
-        headers = ["Estado", "ID", "OpeA", "Ope", "OpeB", "Res", "TME", "TR", "TLl", "TFin", "TRet", "TE", "TS"]
+        headers = ["Estado", "ID", "OpeA", "Ope", "OpeB", "Res", "TME", "TR", "TLl", "TFin", "TRet", "TRes", "TE", "TS"]
 
         # Obtener el ancho actual del QPlainTextEdit
         ancho_text_edit = self.pte_bloqueados.width()
         fuente = self.pte_bloqueados.font()
         metrics = QFontMetrics(fuente)
         ancho_letra = metrics.averageCharWidth()
-        ancho_columna = (ancho_text_edit - 226) / len(headers)
+        ancho_columna = (ancho_text_edit - 275) / len(headers)
 
         # Formatear los encabezados con el ancho calculado
         texto_formateado = " | ".join(f"{header:^{int(ancho_columna / ancho_letra)}}" for header in headers) + "\n"
 
         # Lista para almacenar las líneas de guiones bajos para cada columna
         lineas_guiones = ["_" * int(ancho_columna / ancho_letra) for _ in headers]
-        
+
         # Crear una línea de guiones bajos concatenados
         texto_formateado += " | ".join(lineas_guiones) + "\n"
 
         # Datos de los procesos en cada cola
         for nombre_cola, cola in colas.items():
             for proceso in cola:
-                resultado = "N/A" if proceso.resultado is None else proceso.resultado
+                resultado = "N/A" if proceso.resultado is None else str(proceso.resultado)[:4].ljust(4)
                 tme = "N/A" if proceso.tiempo is None else proceso.tiempo
                 tllegada = "N/A" if proceso.tiempo_llegada is None else proceso.tiempo_llegada
                 tfin = "N/A" if proceso.tiempo_finalizacion is None else proceso.tiempo_finalizacion
                 tret = "N/A" if proceso.tiempo_retorno is None else proceso.tiempo_retorno
+                tres = "N/A" if proceso.tiempo_respuesta is None else proceso.tiempo_respuesta
                 te = "N/A" if proceso.tiempo_espera is None else proceso.tiempo_espera
                 ts = "N/A" if proceso.tiempo_servicio is None else proceso.tiempo_servicio
 
                 # Calcular el Tiempo Restante (TR) como TME - tiempo_transcurrido
-                tr = "N/A" if proceso.tiempo is None else proceso.tiempo - proceso.tiempo_transcurrido
+                tr = "N/A" if proceso.tiempo is None or proceso.tiempo_transcurrido is None else proceso.tiempo - proceso.tiempo_transcurrido
 
                 # Formatea todos los datos, incluyendo los nuevos valores
                 texto_formateado += f"{nombre_cola:^{int(ancho_columna / ancho_letra)}} | " \
@@ -756,6 +773,7 @@ class MainWindow(QMainWindow):
                                     f"{tllegada:^{int(ancho_columna / ancho_letra)}} | " \
                                     f"{tfin:^{int(ancho_columna / ancho_letra)}} | " \
                                     f"{tret:^{int(ancho_columna / ancho_letra)}} | " \
+                                    f"{tres:^{int(ancho_columna / ancho_letra)}} | " \
                                     f"{te:^{int(ancho_columna / ancho_letra)}} | " \
                                     f"{ts:^{int(ancho_columna / ancho_letra)}}\n"
 

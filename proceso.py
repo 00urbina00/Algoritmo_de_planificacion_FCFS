@@ -127,7 +127,7 @@ class Proceso:
         self._terminado = valor
 
     def dame_tiempo_transcurrido_bloqueado(self):
-        return int(8 - self.timer_bloqueado)
+        return int(TIEMPO_BLOQUEO - self.timer_bloqueado)
 
     @property
     def tiempo_transcurrido(self):
@@ -147,9 +147,9 @@ class Proceso:
         else:
             self.tiempo_retorno = 0
 
-    def calcula_tiempo_respuesta(self, tiempo_atendido):
+    def calcula_tiempo_respuesta(self, tiempo_global):
         if self.tiempo_llegada is not None:
-            self.tiempo_respuesta = tiempo_atendido - self.tiempo_llegada
+            self.tiempo_respuesta = tiempo_global - self.tiempo_llegada
         else:
             self.tiempo_respuesta = 0
 
@@ -159,11 +159,13 @@ class Proceso:
         else:
             self.tiempo_servicio = 0
 
-    def calcula_tiempo_espera(self):
-        if self.tiempo_retorno is not None and self._tiempo_transcurrido is not None:
+    def calcula_tiempo_espera(self, tiempo_global=None):
+        if self.tiempo_retorno is not None:
             self.tiempo_espera = max(0, self.tiempo_retorno - self._tiempo_transcurrido)
+        elif tiempo_global is not None:
+            self.tiempo_espera = max(0, (tiempo_global - self.tiempo_llegada) - self._tiempo_transcurrido)
         else:
             self.tiempo_espera = 0
-            
+
     def incrementa_tiempo_servicio(self):
         self.tiempo_servicio += 1
