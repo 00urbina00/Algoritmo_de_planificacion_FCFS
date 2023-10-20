@@ -15,6 +15,7 @@ class Memoria:
         self._cola_de_listos = deque()
         self._cola_de_ejecucion = deque()
         self._cola_de_bloqueados = deque()
+        self._ESPACIO_MAXIMO = tamanio
     # Propiedades (decoradores) ----------------------------------------------------------------
     @property
     def espacio(self):
@@ -49,7 +50,6 @@ class Memoria:
             ValueError: Si se intenta agregar un proceso None a la cola.
         """
         if proceso is None:
-            print("Proceso es Nulo")
             raise ValueError("Cannot add None process to the queue.")
         if self.hay_espacio():
             cola.append(proceso)
@@ -89,19 +89,20 @@ class Memoria:
         return self._saca_de_cola(self._cola_de_bloqueados)
     
     def release(self):  # Liberar memoria (spanglish :( )
-        self.cola_de_listos.clear()
-        self.cola_de_ejecucion.clear()
-        self.cola_de_bloqueados.clear()
+        self._cola_de_listos.clear()
+        self._cola_de_ejecucion.clear()
+        self._cola_de_bloqueados.clear()
+        self._espacio = self._ESPACIO_MAXIMO
     
     # Metodos logicos ---------------------------------------------------------------------------
     def hay_espacio(self) -> bool:
-        return bool(self._espacio)
+        return self._espacio > 0
     def hay_bloqueados(self):
         return len(self._cola_de_bloqueados) > 0
     def hay_ejecucion(self):
-        return bool(self.cola_de_ejecucion)
+        return len(self._cola_de_ejecucion) > 0
     def hay_listos(self):
-        return bool(self.cola_de_listos)
+        return len(self._cola_de_listos) > 0
     
     def get_proceso_en_ejecucion(self):
         """

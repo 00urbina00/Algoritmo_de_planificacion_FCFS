@@ -275,6 +275,7 @@ class Ui_MainWindow(object):
 
         self.frame_4 = QFrame(self.frame)
         self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setMaximumSize(QSize(16777215, 1000))
         self.frame_4.setFrameShape(QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QFrame.Raised)
         self.gridLayout_2 = QGridLayout(self.frame_4)
@@ -286,7 +287,7 @@ class Ui_MainWindow(object):
         self.groupBox = QGroupBox(self.frame_4)
         self.groupBox.setObjectName(u"groupBox")
         self.groupBox.setMinimumSize(QSize(0, 400))
-        self.groupBox.setMaximumSize(QSize(495, 800))
+        self.groupBox.setMaximumSize(QSize(495, 600))
         self.groupBox.setFont(font)
         self.groupBox.setStyleSheet(u"background-color: rgb(200, 200, 200);\n"
 "color: rgb(0, 85, 255);")
@@ -305,6 +306,7 @@ class Ui_MainWindow(object):
 "background-color: rgb(0, 0, 0);\n"
 "color: rgb(0, 253, 51);")
         self.pte_listos.setReadOnly(True)
+        self.pte_listos.setTextInteractionFlags(Qt.NoTextInteraction)
 
         self.gridLayout_6.addWidget(self.pte_listos, 0, 0, 1, 1)
 
@@ -314,7 +316,7 @@ class Ui_MainWindow(object):
         self.groupBox_2 = QGroupBox(self.frame_4)
         self.groupBox_2.setObjectName(u"groupBox_2")
         self.groupBox_2.setMinimumSize(QSize(400, 400))
-        self.groupBox_2.setMaximumSize(QSize(16777215, 800))
+        self.groupBox_2.setMaximumSize(QSize(16777215, 600))
         self.groupBox_2.setFont(font)
         self.groupBox_2.setStyleSheet(u"background-color: rgb(200, 200, 200);\n"
 "color: rgb(85, 170, 0);")
@@ -327,6 +329,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 0);\n"
 "background-color: rgb(0, 0, 0);\n"
 "color: rgb(0, 253, 51);")
+        self.pte_ejecucion.setTextInteractionFlags(Qt.NoTextInteraction)
 
         self.gridLayout_7.addWidget(self.pte_ejecucion, 0, 0, 1, 1)
 
@@ -336,7 +339,7 @@ class Ui_MainWindow(object):
         self.groupBox_3 = QGroupBox(self.frame_4)
         self.groupBox_3.setObjectName(u"groupBox_3")
         self.groupBox_3.setMinimumSize(QSize(500, 400))
-        self.groupBox_3.setMaximumSize(QSize(16777215, 800))
+        self.groupBox_3.setMaximumSize(QSize(16777215, 600))
         self.groupBox_3.setFont(font)
         self.groupBox_3.setStyleSheet(u"background-color: rgb(200, 200, 200);\n"
 "color: rgb(255, 0, 0);")
@@ -349,6 +352,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 0);\n"
 "background-color: rgb(0, 0, 0);\n"
 "color: rgb(0, 253, 51);")
+        self.pte_terminados.setTextInteractionFlags(Qt.NoTextInteraction)
 
         self.gridLayout_8.addWidget(self.pte_terminados, 0, 0, 1, 1)
 
@@ -360,7 +364,7 @@ class Ui_MainWindow(object):
 
         self.groupBox_9 = QGroupBox(self.frame_4)
         self.groupBox_9.setObjectName(u"groupBox_9")
-        self.groupBox_9.setMinimumSize(QSize(0, 150))
+        self.groupBox_9.setMinimumSize(QSize(0, 190))
         self.groupBox_9.setFont(font)
         self.groupBox_9.setStyleSheet(u"background-color: rgb(200, 200, 200);\n"
 "color: rgb(0, 85, 255);")
@@ -375,6 +379,7 @@ class Ui_MainWindow(object):
 "\n"
 "background-color: rgb(0, 0, 0);\n"
 "color: rgb(0, 253, 51);")
+        self.pte_bloqueados.setTextInteractionFlags(Qt.NoTextInteraction)
 
         self.gridLayout_12.addWidget(self.pte_bloqueados, 0, 0, 1, 1)
 

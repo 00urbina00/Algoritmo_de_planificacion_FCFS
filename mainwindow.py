@@ -151,8 +151,7 @@ class MainWindow(QMainWindow):
         self.releaseMemory()
         self.id_proceso = 0
         self.tiempo_global = 0
-        self.actualiza_texto_contadores()
-        self.iniciliza_textos()
+        self.mostrar_textos()
     
     def releaseMemory(self):
         self.cola_de_nuevos.clear()
@@ -169,7 +168,6 @@ class MainWindow(QMainWindow):
                     self.pause_condition.notify()
             self.releaseMemory()
             event.accept()  # Permite que la ventana se cierre
-            
 
     def keyPressEvent(self, event):
         texto_tecla = str(event.text())
@@ -243,7 +241,6 @@ class MainWindow(QMainWindow):
     def terminar_hilo(self):
         if self.en_ejecucion:
             self.en_ejecucion = False
-            # self.hilo.join()  # Espera a que el hilo termine de manera ordenada
 
     def back_end(self):
         if not self.en_ejecucion and self.cola_de_nuevos:
@@ -255,8 +252,8 @@ class MainWindow(QMainWindow):
             self.hilo.start()
 
     def correr_interfaz(self):
-        if self.cola_de_nuevos:
-            self.correr_fcfs()
+        if self.cola_de_nuevos: # Si hay procesos en la cola de nuevos
+            self.correr_rr()  # Correr el algoritmo RR
         else:
             self.en_ejecucion = False
 
@@ -273,7 +270,7 @@ class MainWindow(QMainWindow):
             self.id_proceso += 1
             proceso = crea_proceso(self.id_proceso)
             self.cola_de_nuevos.append(proceso)
-            self.actualiza_texto_contadores()
+            self.mostrar_textos()
             num_procesos -= 1
 
     def ingresa_procesos_a_listos(self):
@@ -282,25 +279,21 @@ class MainWindow(QMainWindow):
             proceso = self.cola_de_nuevos.popleft()
             proceso.tiempo_llegada = self.tiempo_global
             self.memoria.agrega_a_listo(proceso)
-            self.actualiza_texto_contadores()
+            self.mostrar_textos()
         # La cola de listos esta llena - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-    def correr_fcfs(self):
+    def correr_rr(self):
         self.bandera_detener = False
-        self.en_ejecucion = True
         while self.cola_de_nuevos and not self.bandera_detener: # Este ciclo recorre la cola de nuevos O(n)
             self.ingresa_procesos_a_listos()    # Ingresa todos los procesos posibles a listos
             while self.memoria.procesos_en_memoria() and not self.bandera_detener:  # Mientras haya procesos en listos:
-                self.iniciliza_textos()
                 self.mostrar_textos()   # Se formatea el texto de los procesos en listo
                 self.ingresa_procesos_a_listos()    # Verifica si hay espacio y, agrega otro proceso a listos
                 proceso = self.memoria.entra_proceso_ejecucion()    # Mete proceso a la cola de ejecucion (solo cabe 1)
                 self.mostrar_textos()
                 self.ejecucion_del_proceso(proceso)
-        self.iniciliza_textos()
-        self.actualiza_texto_contadores()
+        self.mostrar_textos()
         self.muestra_datos_de_procesos()
-        self.en_ejecucion = False
         self.bandera_detener = False
         self.terminar_hilo()
         self.btn_reiniciar.setStyleSheet("QPushButton:enabled { color: red; }")
@@ -309,7 +302,7 @@ class MainWindow(QMainWindow):
         # Se terminaron todos los procesos!
         
     def calcular_tiempos_listos(self):
-        colas = [self.memoria.cola_de_listos, self.memoria.cola_de_ejecucion]
+        colas = [self.memoria.cola_de_listos, self.memoria.cola_de_ejecucion, self.memoria.cola_de_bloqueados]
         for cola in colas:
             if cola:
                 for proceso in cola:
@@ -383,6 +376,7 @@ class MainWindow(QMainWindow):
                 funcion_muestra()
             else:
                 self.iniciliza_textos()
+        self.actualiza_texto_contadores()
 
     def ejecucion_del_proceso(self, proceso):
         contador = int(self.texto_quantum)  # Es el tiempo al que debe llegar un proceso para salir de ejecucion
@@ -403,36 +397,44 @@ class MainWindow(QMainWindow):
                 self.administrar_nuevo()
                 break
             else:
-                if self.memoria.hay_bloqueados():
-                    self.muestra_texto_bloqueados()
-                    # Se puede ejecutar bloqueados y continuar con la ejecucion normal del proceso
-                    # Si hay algún proceso bloqueado
+                # Casos generales (Bloqueado / Ejecución)
+                if self.memoria.hay_bloqueados() and (self.memoria.hay_ejecucion() and contador > 0): # Hay ejecución y bloqueados
+                    if self.memoria.hay_bloqueados():       # Hay bloqueados
+                        self.memoria.ciclo_bloqueados()
+                    if self.memoria.hay_ejecucion():        # Hay ejecución
+                        self.tiempo_de_ejecucion(proceso)
+                        contador -= 1
+                    self.consume_tiempo_global()            # Simula 1s transcurrido
+                elif not self.memoria.hay_bloqueados() and (self.memoria.hay_ejecucion() and contador > 0): # Solo ejecución normal
+                    self.tiempo_de_ejecucion(proceso)       # Ciclo Ejecución
+                    contador -= 1
+                    self.consume_tiempo_global()            # Simula 1s transcurrido
+                elif self.memoria.hay_bloqueados() and not self.memoria.hay_ejecucion():    # Solo bloqueados
                     # En cada ciclo de "tiempo" se descontará una unidad de tiempo a cada proceso bloqueado
                     # Si el proceso termina su estado bloqueado sale y entra de nuevo a listo (en clase Memoria)
                     self.memoria.ciclo_bloqueados()
-                    self.muestra_texto_bloqueados()
-                    self.mostrar_textos()
-
-                # Ejecución del proceso de manera normal
-                self.actualiza_texto_contadores()
-                if self.memoria.cola_de_ejecucion and contador > 0:  # Solo ejecuta procesos en ejecucion
-                    self.tiempo_de_ejecucion(proceso)
-                    contador -= 1
-                elif self.memoria.cola_de_ejecucion:    # Si hay procesos en ejecucion y el proceso actual ya termino su quantum
+                    self.consume_tiempo_global()            # Simula 1s transcurrido
+                elif self.memoria.hay_ejecucion() and contador <= 0:    # Si el proceso actual ya termino su quantum
                     self.memoria.saca_de_ejecucion()    # Se saca de ejecucion
                     self.memoria.agrega_a_listo(proceso)    # Se agrega a listos
                     break
-                else:   # En caso de no haber procesos en ejecucion se deteiene el ciclo
+                else:
                     break
+                self.mostrar_textos()  # Actualiza consolas
                 
-                # simular_segundo_transcurrido_pruebas()
-                time.sleep(1)
-                self.tiempo_global += 1 # El tiempo global corre siempre
+                if self.memoria.hay_listos() and not self.memoria.hay_ejecucion():
+                    break   # Si puede entrar un proceso a ejecución, le da la oportunidad
 
         if proceso is not None and proceso.terminado and not proceso.error:
             self.proceso_completado(proceso)
             self.mostrar_textos()
 
+    def consume_tiempo_global(self):
+        # tiempo global
+        time.sleep(1)
+        self.tiempo_global += 1
+        self.actualiza_texto_contadores()
+        
     # Validaciones de campos de la interfaz
     def campos_validos(self) -> bool:   # Campo vacio
         if (self.le_tiempo_max.text() == "" or self.le_operador.text() not in self.operadores
