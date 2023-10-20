@@ -13,13 +13,17 @@ from proceso import *
 from ui_mainwindow import Ui_MainWindow
 
 TAMANIO_MEMORIA = 5
+TIEMPO_MIN = 6
+TIEMPO_MAX = 16
+RANGO_MIN = 0
+RANGO_MAX = 1000
 
 def crea_proceso(numero_programa):  # Aleatorio
     operadores = ['+', '-', '*', '/', '%', "%%"]
     operador = random.choice(operadores)
-    operando_a = random.randint(0, 1000)
-    operando_b = random.randint(0, 1000)
-    tiempo = str(random.randint(6, 16))
+    operando_a = random.randint(RANGO_MIN, RANGO_MAX)
+    operando_b = random.randint(RANGO_MIN, RANGO_MAX)
+    tiempo = str(random.randint(TIEMPO_MIN, TIEMPO_MAX))
     return Proceso(operador, operando_a, operando_b, tiempo, numero_programa)
 
 
