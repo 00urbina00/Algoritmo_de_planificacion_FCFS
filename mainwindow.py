@@ -71,6 +71,7 @@ class MainWindow(QMainWindow):
         self.texto_terminados = "No hay procesos terminados."
         self.texto_bloqueados = "No hay procesos bloqueados."
         self.texto_quantum = "5"
+        self.tiempo_quantum_restante = 0
         # ----------------------------------------------------------------|
         # - Contadores
         # ----------------------------------------------------------------|
@@ -88,6 +89,7 @@ class MainWindow(QMainWindow):
         self.bandera_proceso_automatico = True
         self.bandera_detener = False  # Bandera para truncar el programa
         self.tiempo_de_cpu = 0
+        self.bandera_proceso = False
         # - Banderas - pulsaciones
         # ----------------------------------------------------------------|
         self.bandera_i = False
@@ -339,6 +341,7 @@ class MainWindow(QMainWindow):
         self.memoria.saca_de_ejecucion()
         self.cola_de_terminados.append(proceso)
         self.bandera_e = False
+        self.bandera_proceso = False    # El proceso ya terminó su ejecución
         self.mostrar_textos()
 
     def administrar_nuevo(self):
@@ -383,7 +386,11 @@ class MainWindow(QMainWindow):
         self.actualiza_texto_contadores()
 
     def ejecucion_del_proceso(self, proceso):
-        contador = int(self.texto_quantum)  # Es el tiempo al que debe llegar un proceso para salir de ejecucion
+        if not self.bandera_proceso:    # Inicializa el quantum para la primera vez que se ejecuta un proceso
+            self.tiempo_quantum_restante = int(self.texto_quantum)  # Inicializa el quantum
+            self.bandera_proceso = True # El proceso ya inició su ejecución
+        contador_quantum = self.tiempo_quantum_restante  # Es el tiempo que le queda al proceso en ejecución (ciclo act)
+
         while proceso.tiempo_restante > 0 and not self.bandera_detener:  # O(16) tiempo maximo
             self.mostrar_textos()
             with self.pause_condition:  # Consumo de tiempo de CPU
@@ -402,25 +409,28 @@ class MainWindow(QMainWindow):
                 break
             else:
                 # Casos generales (Bloqueado / Ejecución)
-                if self.memoria.hay_bloqueados() and (self.memoria.hay_ejecucion() and contador > 0): # Hay ejecución y bloqueados
+                if self.memoria.hay_bloqueados() and (self.memoria.hay_ejecucion() and contador_quantum > 0): # Hay ejecución y bloqueados
                     if self.memoria.hay_bloqueados():       # Hay bloqueados
                         self.memoria.ciclo_bloqueados()
                     if self.memoria.hay_ejecucion():        # Hay ejecución
                         self.tiempo_de_ejecucion(proceso)
-                        contador -= 1
+                        contador_quantum -= 1
+                        self.tiempo_quantum_restante -= 1
                     self.consume_tiempo_global()            # Simula 1s transcurrido
-                elif not self.memoria.hay_bloqueados() and (self.memoria.hay_ejecucion() and contador > 0): # Solo ejecución normal
+                elif not self.memoria.hay_bloqueados() and (self.memoria.hay_ejecucion() and contador_quantum > 0): # Solo ejecución normal
                     self.tiempo_de_ejecucion(proceso)       # Ciclo Ejecución
-                    contador -= 1
+                    contador_quantum -= 1
+                    self.tiempo_quantum_restante -= 1
                     self.consume_tiempo_global()            # Simula 1s transcurrido
                 elif self.memoria.hay_bloqueados() and not self.memoria.hay_ejecucion():    # Solo bloqueados
                     # En cada ciclo de "tiempo" se descontará una unidad de tiempo a cada proceso bloqueado
                     # Si el proceso termina su estado bloqueado sale y entra de nuevo a listo (en clase Memoria)
                     self.memoria.ciclo_bloqueados()
                     self.consume_tiempo_global()            # Simula 1s transcurrido
-                elif self.memoria.hay_ejecucion() and contador <= 0:    # Si el proceso actual ya termino su quantum
+                elif self.memoria.hay_ejecucion() and contador_quantum <= 0:    # Si el proceso actual ya termino su quantum
                     self.memoria.saca_de_ejecucion()    # Se saca de ejecucion
                     self.memoria.agrega_a_listo(proceso)    # Se agrega a listos
+                    self.bandera_proceso = False    # El proceso ya terminó su quantum de ejecución
                     break
                 else:
                     break
@@ -430,6 +440,7 @@ class MainWindow(QMainWindow):
                     break   # Si puede entrar un proceso a ejecución, le da la oportunidad
 
         if proceso is not None and proceso.terminado and not proceso.error:
+            self.bandera_proceso = False    # El proceso ya terminó su ejecución
             self.proceso_completado(proceso)
             self.mostrar_textos()
 
