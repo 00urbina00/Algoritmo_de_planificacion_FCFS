@@ -2,7 +2,7 @@ TIEMPO_BLOQUEO = 8
 
 
 class Proceso:
-    def __init__(self, operador, operando_a, operando_b, tiempo, numero_proceso) -> None:
+    def __init__(self, operador, operando_a, operando_b, tiempo, numero_proceso, tamanio=6) -> None:
         # Datos del proceso
         # ----------------------------------------
         self._id = numero_proceso
@@ -10,6 +10,7 @@ class Proceso:
         self._operacion_realizar = operador
         self._operando_a = operando_a
         self._operando_b = operando_b
+        self._tamanio = tamanio
         self._resultado = 0.0
         # ----------------------------------------
         # Tiempos
@@ -65,6 +66,10 @@ class Proceso:
     @property
     def operacion(self) -> str:
         return self._operacion_realizar
+
+    @property
+    def tamanio(self):
+        return self._tamanio
 
     @operacion.setter
     def operacion(self, operacion):

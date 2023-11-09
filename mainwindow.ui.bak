@@ -1232,14 +1232,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_25">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content29">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_35">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>96</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -1284,14 +1312,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_15">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content19">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_25">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -1335,24 +1391,36 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="1">
-                    <widget class="QProgressBar" name="progressBar_44">
+                   <item row="0" column="0">
+                    <widget class="QFrame" name="content4">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
                      <property name="styleSheet">
-                      <string notr="true">QProgressBar {
-
- }
-
- QProgressBar::chunk {
-                
-	background-color: rgb(0, 85, 255);
-}</string>
+                      <string notr="true">background-color: rgb(0, 85, 255);</string>
                      </property>
-                     <property name="value">
-                      <number>100</number>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_11"/>
                     </widget>
                    </item>
                   </layout>
@@ -1398,14 +1466,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_16">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content20">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_26">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -1450,14 +1546,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_6">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content10">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_16">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>96</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -1502,14 +1626,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_37">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content41">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_47">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -1554,14 +1706,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_26">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content30">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_36">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -1606,14 +1786,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_8">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content12">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_18">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -1658,14 +1866,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_18">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content22">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_28">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -1710,14 +1946,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_38">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content42">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_48">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -1762,14 +2026,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_32">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content36">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_42">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -1813,15 +2105,43 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="1" column="1">
-                    <widget class="QProgressBar" name="progressBar_35">
-                     <property name="value">
-                      <number>0</number>
+                   <item row="0" column="0">
+                    <widget class="QFrame" name="content39">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_45">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -1865,13 +2185,50 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_1">
-                     <property name="value">
-                      <number>0</number>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_12">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeType">
+                      <enum>QSizePolicy::Expanding</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>96</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QFrame" name="content5">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
                    </item>
@@ -1918,14 +2275,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_28">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content32">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_38">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>96</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -1970,14 +2355,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_12">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content16">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_22">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>96</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -2022,14 +2435,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_19">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content23">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_29">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -2074,14 +2515,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_11">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content15">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_21">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -2126,14 +2595,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_23">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content27">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_33">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>96</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -2178,14 +2675,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_27">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content31">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_37">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -2229,15 +2754,43 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="1">
-                    <widget class="QProgressBar" name="progressBar_21">
-                     <property name="value">
-                      <number>0</number>
+                   <item row="0" column="0">
+                    <widget class="QFrame" name="content25">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_31">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -2282,14 +2835,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_30">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content34">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_40">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -2334,14 +2915,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_2">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content6">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_11">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -2386,14 +2995,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_39">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content43">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_49">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>96</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -2435,22 +3072,33 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QProgressBar" name="progressBar_43">
+                    <widget class="QFrame" name="content3">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>200</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
                      <property name="styleSheet">
-                      <string notr="true">QProgressBar {
-
- }
-
- QProgressBar::chunk {
-                
-	background-color: rgb(0, 85, 255);
-}</string>
+                      <string notr="true">background-color: rgb(0, 85, 255);</string>
                      </property>
-                     <property name="value">
-                      <number>100</number>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
                    </item>
@@ -2497,14 +3145,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_4">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content8">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_14">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -2548,23 +3224,28 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="1">
-                    <widget class="QProgressBar" name="progressBar_42">
+                   <item row="0" column="0">
+                    <widget class="QFrame" name="content2">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
                      <property name="styleSheet">
-                      <string notr="true">QProgressBar {
-
- }
-
- QProgressBar::chunk {
-                
-	background-color: rgb(0, 85, 255);
-}</string>
+                      <string notr="true">background-color: rgb(0, 85, 255);</string>
                      </property>
-                     <property name="value">
-                      <number>100</number>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
                    </item>
@@ -2611,14 +3292,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_14">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content18">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_24">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>96</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -2662,15 +3371,43 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="2">
-                    <widget class="QProgressBar" name="progressBar_33">
-                     <property name="value">
-                      <number>0</number>
+                   <item row="0" column="0">
+                    <widget class="QFrame" name="content37">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_43">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -2715,14 +3452,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_24">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content28">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_34">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -2767,14 +3532,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_10">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content14">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_20">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -2818,15 +3611,43 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="2">
-                    <widget class="QProgressBar" name="progressBar_34">
-                     <property name="value">
-                      <number>0</number>
+                   <item row="0" column="0">
+                    <widget class="QFrame" name="content38">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_44">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>96</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -2871,14 +3692,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_3">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content7">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_13">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>96</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -2923,14 +3772,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_29">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content33">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_39">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -2975,14 +3852,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_40">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content44">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_50">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -3026,15 +3931,43 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="2">
-                    <widget class="QProgressBar" name="progressBar_20">
-                     <property name="value">
-                      <number>0</number>
+                   <item row="0" column="0">
+                    <widget class="QFrame" name="content24">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_30">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>96</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -3076,22 +4009,33 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QProgressBar" name="progressBar_41">
+                    <widget class="QFrame" name="content1">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
                      <property name="styleSheet">
-                      <string notr="true">QProgressBar {
-
- }
-
- QProgressBar::chunk {
-                
-	background-color: rgb(0, 85, 255);
-}</string>
+                      <string notr="true">background-color: rgb(0, 85, 255);</string>
                      </property>
-                     <property name="value">
-                      <number>100</number>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
                    </item>
@@ -3137,15 +4081,43 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="1" column="0">
-                    <widget class="QProgressBar" name="progressBar_36">
-                     <property name="value">
-                      <number>0</number>
+                   <item row="0" column="0">
+                    <widget class="QFrame" name="content40">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_46">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>96</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -3190,14 +4162,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_7">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content11">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_17">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -3242,14 +4242,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_5">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content9">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_15">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -3294,14 +4322,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_22">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content26">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_32">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -3346,14 +4402,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_31">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content35">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_41">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>96</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -3398,14 +4482,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_9">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content13">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_19">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>96</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -3450,14 +4562,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_17">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content21">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_27">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>96</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -3502,14 +4642,42 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QProgressBar" name="progressBar_13">
-                     <property name="value">
-                      <number>0</number>
+                    <widget class="QFrame" name="content17">
+                     <property name="maximumSize">
+                      <size>
+                       <width>158</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
-                     <property name="textVisible">
-                      <bool>false</bool>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer_23">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>95</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </spacer>
                    </item>
                   </layout>
                  </widget>
