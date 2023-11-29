@@ -2,11 +2,13 @@ import random
 import threading
 import time
 from collections import deque
+from math import ceil
 from unittest.mock import patch
 
-from PySide2.QtCore import QTimer
+from PySide2.QtCore import QTimer, Signal, Slot
 from PySide2.QtGui import QFontMetrics
-from PySide2.QtWidgets import QMainWindow, QPushButton, QLineEdit, QPlainTextEdit, QSpinBox, QFrame, QLabel, QProgressBar
+from PySide2.QtWidgets import QMainWindow, QPushButton, QLineEdit, QPlainTextEdit, QSpinBox, QFrame, QLabel, \
+    QProgressBar
 
 from memoria import Memoria
 from proceso import *
@@ -15,6 +17,7 @@ from ui_mainwindow import Ui_MainWindow
 # MEMORIA
 TAMANIO_UNIDADES = 220
 TAMANIO_MARCO = 5
+TAMANIO_SO = 4
 
 TIEMPO_MIN = 6
 TIEMPO_MAX = 16
@@ -22,6 +25,7 @@ RANGO_MIN = 0
 RANGO_MAX = 1000
 TAM_MIN = 6
 TAM_MAX = 26
+
 
 def crea_proceso(numero_programa):  # Aleatorio
     operadores = ['+', '-', '*', '/', '%', "%%"]
@@ -47,7 +51,17 @@ def simular_segundo_transcurrido_pruebas():
         time.sleep(1)  # Simula un segundo transcurrido
 
 
+def calcula_porcentaje(marco):
+    if marco is None:
+        return 0
+    unidades = marco.get_unidades_llenas()
+    porcentaje = (unidades / TAMANIO_MARCO) * 100
+    return porcentaje
+
+
 class MainWindow(QMainWindow):
+    actualizar_interfaz_signal = Signal(int, float, object)
+
     def __init__(self):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
@@ -55,7 +69,7 @@ class MainWindow(QMainWindow):
 
         # Colas de procesos (5 Estados)
         self.cola_de_nuevos = deque()  # Procesos en espera
-        self.memoria = Memoria(TAMANIO_UNIDADES, TAMANIO_MARCO)  # Maximo de procesos (Listos, Ejecución y Bloqueados)
+        self.memoria = Memoria(TAMANIO_UNIDADES, TAMANIO_MARCO, TAMANIO_SO)  # Maximo de procesos
         self.cola_de_terminados = deque()  # Procesos terminados
 
         # Hilo de ejecucion
@@ -82,6 +96,7 @@ class MainWindow(QMainWindow):
         # - Contadores
         # ----------------------------------------------------------------|
         self.texto_memoria_restante = str(TAMANIO_UNIDADES)
+        self.texto_memoria_uso = "0"
         self.texto_tiempo_global = "0"
 
         self.id_proceso = 0
@@ -131,8 +146,14 @@ class MainWindow(QMainWindow):
         self.le_operando_a = self.findChild(QLineEdit, "le_operando_a")
         self.le_operando_b = self.findChild(QLineEdit, "le_operando_b")
         # Salida
+        self.le_siguiente_id = self.findChild(QLineEdit, "le_siguiente_id")
+        self.le_siguiente_tam = self.findChild(QLineEdit, "le_siguiente_tam")
+        self.le_siguiente_pag = self.findChild(QLineEdit, "le_siguiente_pag")
         self.le_memoria_restante = self.findChild(QLineEdit, "le_memoria_restante")
+        self.le_memoria_uso = self.findChild(QLineEdit, "le_memoria_uso")
+        self.le_marcos_libres = self.findChild(QLineEdit, "le_marcos_libres")
         self.le_procesos_nuevos = self.findChild(QLineEdit, "le_procesos_nuevos")
+        self.le_procesos_terminados = self.findChild(QLineEdit, "le_procesos_terminados")
         self.le_tiempo_global = self.findChild(QLineEdit, "le_tiempo_global")
         # Spinbox numero de procesos
         self.sb_num_procesos = self.findChild(QSpinBox, "sb_num_procesos")
@@ -152,9 +173,15 @@ class MainWindow(QMainWindow):
         # Encontrar las QProgressBar existentes y agregarlas a la lista
         for i in range(1, 45):
             nombre_progress_bar = f"progressBar_{i}"
-            print(nombre_progress_bar)
             progress_bar = self.findChild(QProgressBar, nombre_progress_bar)
             self.barras_de_progreso.append(progress_bar)
+
+        # Inicializar lista de etiquetas asociadas a las barras de progreso
+        self.etiquetas = []
+        for i in range(1, 41):
+            nombre_label = f"lbl_pb{i}"
+            label = self.findChild(QLabel, nombre_label)
+            self.etiquetas.append(label)
         # ----------------------------------------------------------------------------------------|
         # Eventos
         # -------------------------------------------------------------------------|
@@ -166,22 +193,86 @@ class MainWindow(QMainWindow):
         # Limpiar consolas
         # self.btn_limpiar.clicked.connect(self.limpiar)
         self.actualiza_texto_contadores()
+        # Conecta la señal a la ranura
+        self.actualizar_interfaz_signal.connect(self.actualizar_barras)
         # -------------------------------------------------------------------------|
 
     # Funciones
     # -----------------------------------------------------------------------------------
+    def busca_estado_proceso(self, id_proceso):
+        for proceso in self.cola_de_nuevos:
+            if proceso.id == id_proceso:
+                return proceso.get_estado()
+        for proceso in self.memoria.cola_de_listos:
+            if proceso.id == id_proceso:
+                return proceso.get_estado()
+        estado = self.memoria.busca_estado_proceso(id_proceso)
+        if estado is not None:
+            return estado
+
     def actualizar_barras_de_progreso(self):
         # Obtén el espacio de memoria actualizado
-        espacio_de_memoria = self.memoria.espacio_de_memoria  # Debes implementar esta función
-
-        # Ajusta el valor de las barras de progreso para las barras 1-40
+        espacio_de_memoria = self.memoria.espacio_de_memoria
+        indice_memoria = TAMANIO_SO
         for i, barra in enumerate(self.barras_de_progreso[:40]):
-            print("Intentando actualizar barra de progreso")
-            print(i)
-            porcentaje = 0 if espacio_de_memoria[i] is None else sum(
-                1 for elemento in espacio_de_memoria[i] if elemento is not None) / len(espacio_de_memoria[i]) * 100
-            barra.setValue(porcentaje)
+            if indice_memoria < 44:     # Solo se actualizan las primeras 40 barras (41 - 44) son del SO
+                marco = espacio_de_memoria[indice_memoria]
+                porcentaje = calcula_porcentaje(marco)
+                current_thread = threading.current_thread()
+                if barra is not None and isinstance(barra, QProgressBar) and current_thread.name == "MainThread":
+                    if marco is not None:
+                        marco.set_estado(self.busca_estado_proceso(marco.get_id()))
+                        barra.setStyleSheet(self.change_progress_state(marco.get_estado()))
+                        barra.setValue(porcentaje)
+                        titulo = marco.get_id()
+                        etiqueta = self.etiquetas[i]
+                        etiqueta.setText(f"Marco {i+4}: Proceso: {titulo}")
+                    else:
+                        etiqueta = self.etiquetas[i]
+                        etiqueta.setText(f"Marco {i+4}")
+                        barra.setValue(0)
+                else:
+                    self.actualizar_interfaz_signal.emit(i, porcentaje, marco)
+                indice_memoria += 1
 
+    def change_progress_state(self, state):
+        # Configurar la hoja de estilo según el estado
+        if state == "Listo":
+            style_sheet = """
+                QProgressBar {
+                }
+                QProgressBar::chunk {
+                    background-color: #0055ff;  /*  para el estado listo */
+                }
+            """
+        elif state == "Ejecucion":
+            style_sheet = ""
+        elif state == "Bloqueado":
+            style_sheet = """
+                QProgressBar {
+                }
+
+                QProgressBar::chunk {
+                    background-color: #ff0000;  /* Otro color para el estado bloqueado */
+                }
+            """
+        else:
+            # Establecer un estilo predeterminado si el estado no es reconocido
+            style_sheet = ""
+        return style_sheet
+
+    @Slot(int, float)
+    def actualizar_barras(self, indice, porcentaje, marco):
+        # Realiza la actualización de la interfaz aquí
+        # Por ejemplo, actualiza una barra de progreso
+        barra = self.barras_de_progreso[indice]
+        etiqueta = self.etiquetas[indice]
+        if marco is not None:
+            titulo = marco.get_id()
+            etiqueta.setText(f"Proceso: {titulo}")
+        else:
+            etiqueta.setText(f"Marco {indice+4}")
+        barra.setValue(porcentaje)
 
     def reiniciar_programa(self):
         self.btn_reiniciar.setEnabled(False)  # Deshabilitar el boton
@@ -189,13 +280,15 @@ class MainWindow(QMainWindow):
         self.release_memory()
         self.id_proceso = 0
         self.tiempo_global = 0
+        for barra in self.barras_de_progreso[:40]:
+            barra.setValue(0)
         self.mostrar_textos()
-    
+
     def release_memory(self):
         self.cola_de_nuevos.clear()
         self.cola_de_terminados.clear()
         self.memoria.release()
-    
+
     def closeEvent(self, event):  # Detectar si se va a cerrar el programa y protegerlo
         if self.en_ejecucion and not self.bandera_detener:
             self.bandera_detener = True
@@ -252,13 +345,25 @@ class MainWindow(QMainWindow):
         self.pte_ejecucion.setPlainText(self.texto_ejecucion)
         self.pte_terminados.setPlainText(self.texto_terminados)
         self.pte_bloqueados.setPlainText(self.texto_bloqueados)
-        
+
         self.texto_quantum = str(self.sb_quantum.value())
 
-        self.le_memoria_restante.setText(self.texto_memoria_restante + " MB / 220 MB")  # Lotes pendientes
+        if self.cola_de_nuevos:
+            self.le_siguiente_id.setText(str(self.cola_de_nuevos[0].id))
+            self.le_siguiente_tam.setText(str(self.cola_de_nuevos[0].tamanio))
+            self.le_siguiente_pag.setText(str(ceil(self.cola_de_nuevos[0].tamanio / TAMANIO_MARCO)))
+        else:
+            self.le_siguiente_id.setText("0")
+            self.le_siguiente_tam.setText("0")
+            self.le_siguiente_pag.setText("0")
+        self.le_memoria_restante.setText(self.texto_memoria_restante + " MB / " + str(TAMANIO_UNIDADES) + " MB")
+        self.le_memoria_uso.setText(self.texto_memoria_uso + " MB / " + str(TAMANIO_UNIDADES) + " MB")
+        self.le_marcos_libres.setText(str(self.memoria.paginas_disponibles))
         self.le_procesos_nuevos.setText(self.texto_nuevos)  # Procesos pendientes
+        self.le_procesos_terminados.setText(str(len(self.cola_de_terminados)))
 
         self.le_tiempo_global.setText(self.texto_tiempo_global)  # Tiempo global
+
         if self.bandera_limpiar_campos:
             self.le_tiempo_max.clear()
             self.le_operador.clear()
@@ -266,12 +371,13 @@ class MainWindow(QMainWindow):
             self.le_operando_b.clear()
             self.bandera_limpiar_campos = False
 
-        # self.actualizar_memoria()
-        self.actualizar_barras_de_progreso()
+        if self.en_ejecucion:
+            self.actualizar_barras_de_progreso()
 
     def actualiza_texto_contadores(self):
         self.texto_nuevos = str(len(self.cola_de_nuevos))
         self.texto_memoria_restante = str(self.memoria.espacio_disponible)
+        self.texto_memoria_uso = str(self.memoria.get_memoria_en_uso())
         self.texto_tiempo_global = str(self.tiempo_global)
 
     def iniciliza_textos(self):
@@ -298,7 +404,7 @@ class MainWindow(QMainWindow):
             self.hilo.start()
 
     def correr_interfaz(self):
-        if self.cola_de_nuevos: # Si hay procesos en la cola de nuevos
+        if self.cola_de_nuevos:  # Si hay procesos en la cola de nuevos
             self.correr_rr()  # Correr el algoritmo RR
         else:
             self.en_ejecucion = False
@@ -323,35 +429,43 @@ class MainWindow(QMainWindow):
         # Mientras quede espacio en memoria y la cola de nuevos no esté vacía: agregar a listos
         # Calcular el numero de paginas a ingresar
         while self.cola_de_nuevos:
-            proceso = self.cola_de_nuevos.popleft() # Se saca un proceso de la cola de nuevos
+            proceso = self.cola_de_nuevos.popleft()  # Se saca un proceso de la cola de nuevos
             if self.memoria.hay_espacio(proceso.tamanio):
                 proceso.tiempo_llegada = self.tiempo_global
-                self.memoria.agrega_a_listo(proceso)
+                proceso.set_estado("Listo")
+                self.memoria.agrega_a_listo(proceso, True)  # Se asigna memoria al proceso en listos
                 self.mostrar_textos()
             else:
-                self.cola_de_nuevos.appendleft(proceso) # Se regresa el proceso a la cola de nuevos
+                proceso.set_estado("Nuevo")
+                self.cola_de_nuevos.appendleft(proceso)  # Se regresa el proceso a la cola de nuevos
                 break
         # La cola de listos esta llena - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
     def correr_rr(self):
         self.bandera_detener = False
-        while self.cola_de_nuevos and not self.bandera_detener: # Este ciclo recorre la cola de nuevos O(n)
-            self.ingresa_procesos_a_listos()    # Ingresa todos los procesos posibles a listos
+        while self.cola_de_nuevos and not self.bandera_detener:  # Este ciclo recorre la cola de nuevos O(n)
+            self.ingresa_procesos_a_listos()  # Ingresa todos los procesos posibles a listos
             while self.memoria.procesos_en_memoria() and not self.bandera_detener:  # Mientras haya procesos en listos:
-                self.mostrar_textos()   # Se formatea el texto de los procesos en listo
-                self.ingresa_procesos_a_listos()    # Verifica si hay espacio y, agrega otro proceso a listos
-                proceso = self.memoria.entra_proceso_ejecucion()    # Mete proceso a la cola de ejecucion (solo cabe 1)
+                self.mostrar_textos()  # Se formatea el texto de los procesos en listo
+                self.ingresa_procesos_a_listos()  # Verifica si hay espacio y, agrega otro proceso a listos
+                proceso = self.memoria.entra_proceso_ejecucion()  # Mete proceso a la cola de ejecucion (solo cabe 1)
                 self.mostrar_textos()
                 self.ejecucion_del_proceso(proceso)
         self.mostrar_textos()
         self.muestra_datos_de_procesos()
         self.bandera_detener = False
+        # Revisar el hilo actual
+        current_thread = threading.current_thread()
+        thread_name = current_thread.name
         self.terminar_hilo()
+        current_thread = threading.current_thread()
+        thread_name = current_thread.name
         self.btn_reiniciar.setStyleSheet("QPushButton:enabled { color: red; }")
-        self.btn_reiniciar.setEnabled(True) # Deshabilitar el boton
-        self.sb_quantum.setEnabled(True)    # Habilitar el spinbox
+        self.btn_reiniciar.setEnabled(True)  # Deshabilitar el boton
+        self.sb_quantum.setEnabled(True)  # Habilitar el spinbox
+        self.actualizar_barras_de_progreso()
         # Se terminaron todos los procesos!
-        
+
     def calcular_tiempos_listos(self):
         colas = [self.memoria.cola_de_listos, self.memoria.cola_de_ejecucion, self.memoria.cola_de_bloqueados]
         for cola in colas:
@@ -362,7 +476,7 @@ class MainWindow(QMainWindow):
     def administrar_pausa(self):
         if self.bandera_b:
             self.calcular_tiempos_listos()
-            self.muestra_bcp() # Mostrar BCP
+            self.muestra_bcp()  # Mostrar BCP
         elif self.bandera_t:
             pass
             # self.muestra_tabla_de_paginas()
@@ -386,10 +500,10 @@ class MainWindow(QMainWindow):
         proceso.calcula_tiempo_retorno()
         proceso.calcula_tiempo_servicio()
         proceso.calcula_tiempo_espera()
-        self.memoria.saca_de_ejecucion()
+        self.memoria.saca_de_ejecucion(True)
         self.cola_de_terminados.append(proceso)
         self.bandera_e = False
-        self.bandera_proceso = False    # El proceso ya terminó su ejecución
+        self.bandera_proceso = False  # El proceso ya terminó su ejecución
         self.mostrar_textos()
 
     def administrar_nuevo(self):
@@ -398,7 +512,7 @@ class MainWindow(QMainWindow):
         self.cola_de_nuevos.append(proceso)
         self.actualiza_texto_contadores()
         self.bandera_n = False
-    
+
     def proceso_completado(self, proceso):
         proceso.ejecutar()
         proceso.tiempo_finalizacion = self.tiempo_global
@@ -406,7 +520,7 @@ class MainWindow(QMainWindow):
         proceso.calcula_tiempo_servicio()
         proceso.calcula_tiempo_espera()
         self.cola_de_terminados.append(proceso)
-        self.memoria.saca_de_ejecucion()
+        self.memoria.saca_de_ejecucion(True)
 
     def tiempo_de_ejecucion(self, proceso):
         proceso.segundo_transcurrido()
@@ -434,9 +548,9 @@ class MainWindow(QMainWindow):
         self.actualiza_texto_contadores()
 
     def ejecucion_del_proceso(self, proceso):
-        if not self.bandera_proceso:    # Inicializa el quantum para la primera vez que se ejecuta un proceso
+        if not self.bandera_proceso:  # Inicializa el quantum para la primera vez que se ejecuta un proceso
             self.tiempo_quantum_restante = int(self.texto_quantum)  # Inicializa el quantum
-            self.bandera_proceso = True # El proceso ya inició su ejecución
+            self.bandera_proceso = True  # El proceso ya inició su ejecución
         contador_quantum = self.tiempo_quantum_restante  # Es el tiempo que le queda al proceso en ejecución (ciclo act)
 
         while proceso.tiempo_restante > 0 and not self.bandera_detener:  # O(16) tiempo maximo
@@ -457,38 +571,40 @@ class MainWindow(QMainWindow):
                 break
             else:
                 # Casos generales (Bloqueado / Ejecución)
-                if self.memoria.hay_bloqueados() and (self.memoria.hay_ejecucion() and contador_quantum > 0): # Hay ejecución y bloqueados
-                    if self.memoria.hay_bloqueados():       # Hay bloqueados
+                if self.memoria.hay_bloqueados() and (
+                        self.memoria.hay_ejecucion() and contador_quantum > 0):  # Hay ejecución y bloqueados
+                    if self.memoria.hay_bloqueados():  # Hay bloqueados
                         self.memoria.ciclo_bloqueados()
-                    if self.memoria.hay_ejecucion():        # Hay ejecución
+                    if self.memoria.hay_ejecucion():  # Hay ejecución
                         self.tiempo_de_ejecucion(proceso)
                         contador_quantum -= 1
                         self.tiempo_quantum_restante -= 1
-                    self.consume_tiempo_global()            # Simula 1s transcurrido
-                elif not self.memoria.hay_bloqueados() and (self.memoria.hay_ejecucion() and contador_quantum > 0): # Solo ejecución normal
-                    self.tiempo_de_ejecucion(proceso)       # Ciclo Ejecución
+                    self.consume_tiempo_global()  # Simula 1s transcurrido
+                elif not self.memoria.hay_bloqueados() and (
+                        self.memoria.hay_ejecucion() and contador_quantum > 0):  # Solo ejecución normal
+                    self.tiempo_de_ejecucion(proceso)  # Ciclo Ejecución
                     contador_quantum -= 1
                     self.tiempo_quantum_restante -= 1
-                    self.consume_tiempo_global()            # Simula 1s transcurrido
-                elif self.memoria.hay_bloqueados() and not self.memoria.hay_ejecucion():    # Solo bloqueados
+                    self.consume_tiempo_global()  # Simula 1s transcurrido
+                elif self.memoria.hay_bloqueados() and not self.memoria.hay_ejecucion():  # Solo bloqueados
                     # En cada ciclo de "tiempo" se descontará una unidad de tiempo a cada proceso bloqueado
                     # Si el proceso termina su estado bloqueado sale y entra de nuevo a listo (en clase Memoria)
                     self.memoria.ciclo_bloqueados()
-                    self.consume_tiempo_global()            # Simula 1s transcurrido
-                elif self.memoria.hay_ejecucion() and contador_quantum <= 0:    # Si el proceso actual ya termino su quantum
-                    self.memoria.saca_de_ejecucion()    # Se saca de ejecucion
-                    self.memoria.agrega_a_listo(proceso)    # Se agrega a listos
-                    self.bandera_proceso = False    # El proceso ya terminó su quantum de ejecución
+                    self.consume_tiempo_global()  # Simula 1s transcurrido
+                elif self.memoria.hay_ejecucion() and contador_quantum <= 0:
+                    self.memoria.saca_de_ejecucion()  # Saca si el proceso actual ya termino su quantum
+                    self.memoria.agrega_a_listo(proceso)  # Se agrega a listos
+                    self.bandera_proceso = False  # El proceso ya terminó su quantum de ejecución
                     break
                 else:
                     break
                 self.mostrar_textos()  # Actualiza consolas
-                
+
                 if self.memoria.hay_listos() and not self.memoria.hay_ejecucion():
-                    break   # Si puede entrar un proceso a ejecución, le da la oportunidad
+                    break  # Si puede entrar un proceso a ejecución, le da la oportunidad
 
         if proceso is not None and proceso.terminado and not proceso.error:
-            self.bandera_proceso = False    # El proceso ya terminó su ejecución
+            self.bandera_proceso = False  # El proceso ya terminó su ejecución
             self.proceso_completado(proceso)
             self.mostrar_textos()
 
@@ -497,9 +613,9 @@ class MainWindow(QMainWindow):
         time.sleep(1)
         self.tiempo_global += 1
         self.actualiza_texto_contadores()
-        
+
     # Validaciones de campos de la interfaz
-    def campos_validos(self) -> bool:   # Campo vacio
+    def campos_validos(self) -> bool:  # Campo vacio
         if (self.le_tiempo_max.text() == "" or self.le_operador.text() not in self.operadores
                 or self.le_operando_a.text() == "" or
                 self.le_operando_b.text() == "" or not_num(self.le_operando_a.text()) or
@@ -788,7 +904,7 @@ class MainWindow(QMainWindow):
                                 f"{ts:^{int(ancho_columna / ancho_letra)}}\n"
 
         self.texto_bloqueados = texto_formateado
-        
+
     def muestra_bcp(self):
         colas = {
             "Nuevo": self.cola_de_nuevos,

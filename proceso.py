@@ -12,6 +12,9 @@ class Proceso:
         self._operando_b = operando_b
         self._tamanio = tamanio
         self._resultado = 0.0
+        self._indice_inicial = None
+        self._indice_final = None
+        self.estado = 'Nuevo'
         # ----------------------------------------
         # Tiempos
         # ----------------------------------------
@@ -42,6 +45,16 @@ class Proceso:
         }
         # ----------------------------------------
 
+    def get_estado(self):
+        return self.estado
+
+    def set_estado(self, estado):
+        self.estado = estado
+
+    def set_indices(self, indice_inicial, indice_final):
+        self._indice_inicial = indice_inicial
+        self._indice_final = indice_final
+
     def esta_bloqueado(self):
         return self.timer_bloqueado > 0
 
@@ -62,6 +75,10 @@ class Proceso:
         if self._tiempo_restante > 0:
             self._tiempo_restante -= 1
             self._tiempo_transcurrido += 1
+
+    @property
+    def indice_inicial(self):
+        return self._indice_inicial
 
     @property
     def operacion(self) -> str:

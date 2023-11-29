@@ -87,85 +87,17 @@
                 <number>0</number>
                </property>
                <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_3">
-                 <property name="spacing">
-                  <number>0</number>
-                 </property>
-                 <item>
-                  <widget class="QLabel" name="label">
-                   <property name="minimumSize">
-                    <size>
-                     <width>130</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>160</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>Times New Roman</family>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(0, 85, 255);</string>
-                   </property>
-                   <property name="text">
-                    <string>Memoria disponible:</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLineEdit" name="le_memoria_restante">
-                   <property name="minimumSize">
-                    <size>
-                     <width>120</width>
-                     <height>25</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>50</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>Consolas</family>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">background-color: rgb(220, 220, 220);</string>
-                   </property>
-                   <property name="frame">
-                    <bool>false</bool>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                   <property name="readOnly">
-                    <bool>true</bool>
-                   </property>
-                   <property name="placeholderText">
-                    <string>200 MB / 220 MB</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
                 <widget class="QFrame" name="frame_5">
                  <property name="minimumSize">
                   <size>
                    <width>900</width>
                    <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>50</height>
                   </size>
                  </property>
                  <property name="frameShape">
@@ -174,29 +106,47 @@
                  <property name="frameShadow">
                   <enum>QFrame::Raised</enum>
                  </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_13">
+                 <layout class="QHBoxLayout" name="horizontalLayout_21">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
                   <item>
-                   <spacer name="horizontalSpacer_8">
+                   <spacer name="horizontalSpacer_3">
                     <property name="orientation">
                      <enum>Qt::Horizontal</enum>
                     </property>
-                    <property name="sizeType">
-                     <enum>QSizePolicy::Minimum</enum>
-                    </property>
                     <property name="sizeHint" stdset="0">
                      <size>
-                      <width>10</width>
+                      <width>40</width>
                       <height>20</height>
                      </size>
                     </property>
                    </spacer>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="pb_iniciar">
+                   <widget class="QGroupBox" name="groupBox_8">
                     <property name="minimumSize">
                      <size>
-                      <width>100</width>
-                      <height>25</height>
+                      <width>0</width>
+                      <height>48</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>48</height>
                      </size>
                     </property>
                     <property name="font">
@@ -206,61 +156,55 @@
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">
-QPushButton {
-   
-	background-color: rgb(220, 220, 220);
-	
-	color: rgb(0, 85, 255);
-
-}
-
-QPushButton:hover {
-    
-	background-color: rgb(255, 255, 255);
-}
-
-
-QPushButton:pressed {
-   
-	background-color: rgb(190, 190, 190);
-	
-	color: rgb(0, 170, 0);
-}</string>
+                     <string notr="true">color: rgb(0, 0, 255);</string>
                     </property>
-                    <property name="text">
-                     <string>Iniciar</string>
+                    <property name="title">
+                     <string>Inicio</string>
                     </property>
-                    <property name="checkable">
-                     <bool>false</bool>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
                     </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pb_re_iniciar">
-                    <property name="minimumSize">
-                     <size>
-                      <width>70</width>
-                      <height>25</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Times New Roman</family>
-                      <pointsize>9</pointsize>
-                      <weight>50</weight>
-                      <italic>false</italic>
-                      <bold>false</bold>
-                      <underline>true</underline>
-                      <strikeout>false</strikeout>
-                      <kerning>true</kerning>
-                     </font>
-                    </property>
-                    <property name="acceptDrops">
-                     <bool>false</bool>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">
+                    <layout class="QGridLayout" name="gridLayout_57">
+                     <property name="leftMargin">
+                      <number>9</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>3</number>
+                     </property>
+                     <property name="horizontalSpacing">
+                      <number>10</number>
+                     </property>
+                     <property name="verticalSpacing">
+                      <number>0</number>
+                     </property>
+                     <item row="0" column="2">
+                      <widget class="QPushButton" name="pb_re_iniciar">
+                       <property name="minimumSize">
+                        <size>
+                         <width>70</width>
+                         <height>25</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Times New Roman</family>
+                         <pointsize>9</pointsize>
+                         <weight>50</weight>
+                         <italic>false</italic>
+                         <bold>false</bold>
+                         <underline>true</underline>
+                         <strikeout>false</strikeout>
+                         <kerning>true</kerning>
+                        </font>
+                       </property>
+                       <property name="acceptDrops">
+                        <bool>false</bool>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">
 QPushButton {
    
 	background-color: rgb(220, 220, 220);
@@ -268,200 +212,105 @@ QPushButton {
 	color: rgb(255, 85, 0);
 }
 </string>
-                    </property>
-                    <property name="text">
-                     <string>Reiniciar</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer name="horizontalSpacer">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                     <enum>QSizePolicy::Minimum</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>100</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_12">
-                    <property name="minimumSize">
-                     <size>
-                      <width>70</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>80</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Times New Roman</family>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">color: rgb(0, 85, 255);</string>
-                    </property>
-                    <property name="text">
-                     <string>Quantum: </string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QSpinBox" name="sb_quantum">
-                    <property name="minimumSize">
-                     <size>
-                      <width>40</width>
-                      <height>25</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Consolas</family>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">background-color: rgb(255, 255, 255);</string>
-                    </property>
-                    <property name="wrapping">
-                     <bool>false</bool>
-                    </property>
-                    <property name="frame">
-                     <bool>true</bool>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                    <property name="readOnly">
-                     <bool>false</bool>
-                    </property>
-                    <property name="buttonSymbols">
-                     <enum>QAbstractSpinBox::UpDownArrows</enum>
-                    </property>
-                    <property name="minimum">
-                     <number>3</number>
-                    </property>
-                    <property name="maximum">
-                     <number>15</number>
-                    </property>
-                    <property name="value">
-                     <number>5</number>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer name="horizontalSpacer_9">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>100</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_10">
-                    <property name="minimumSize">
-                     <size>
-                      <width>111</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>220</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Times New Roman</family>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">color: rgb(0, 85, 255);</string>
-                    </property>
-                    <property name="text">
-                     <string>Procesos iniciales: </string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QSpinBox" name="sb_num_procesos">
-                    <property name="minimumSize">
-                     <size>
-                      <width>40</width>
-                      <height>25</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Consolas</family>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">background-color: rgb(255, 255, 255);</string>
-                    </property>
-                    <property name="wrapping">
-                     <bool>false</bool>
-                    </property>
-                    <property name="frame">
-                     <bool>true</bool>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                    <property name="readOnly">
-                     <bool>false</bool>
-                    </property>
-                    <property name="buttonSymbols">
-                     <enum>QAbstractSpinBox::UpDownArrows</enum>
-                    </property>
-                    <property name="minimum">
-                     <number>1</number>
-                    </property>
-                    <property name="value">
-                     <number>5</number>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pb_agregar_procesos">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>25</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Times New Roman</family>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">
+                       </property>
+                       <property name="text">
+                        <string>Reiniciar</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="3">
+                      <layout class="QHBoxLayout" name="horizontalLayout_19">
+                       <item>
+                        <widget class="QLabel" name="label_12">
+                         <property name="minimumSize">
+                          <size>
+                           <width>70</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>80</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(0, 85, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Quantum: </string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QSpinBox" name="sb_quantum">
+                         <property name="minimumSize">
+                          <size>
+                           <width>40</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Consolas</family>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 255, 255);</string>
+                         </property>
+                         <property name="wrapping">
+                          <bool>false</bool>
+                         </property>
+                         <property name="frame">
+                          <bool>true</bool>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="readOnly">
+                          <bool>false</bool>
+                         </property>
+                         <property name="buttonSymbols">
+                          <enum>QAbstractSpinBox::UpDownArrows</enum>
+                         </property>
+                         <property name="minimum">
+                          <number>3</number>
+                         </property>
+                         <property name="maximum">
+                          <number>15</number>
+                         </property>
+                         <property name="value">
+                          <number>5</number>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QPushButton" name="pb_iniciar">
+                       <property name="minimumSize">
+                        <size>
+                         <width>100</width>
+                         <height>25</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Times New Roman</family>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">
 QPushButton {
    
 	background-color: rgb(220, 220, 220);
@@ -482,10 +331,132 @@ QPushButton:pressed {
 	
 	color: rgb(0, 170, 0);
 }</string>
-                    </property>
-                    <property name="text">
-                     <string>Agregar</string>
-                    </property>
+                       </property>
+                       <property name="text">
+                        <string>Iniciar</string>
+                       </property>
+                       <property name="checkable">
+                        <bool>false</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="4">
+                      <layout class="QHBoxLayout" name="horizontalLayout_18">
+                       <item>
+                        <widget class="QLabel" name="label_10">
+                         <property name="minimumSize">
+                          <size>
+                           <width>111</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>220</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(0, 85, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Procesos iniciales: </string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QSpinBox" name="sb_num_procesos">
+                         <property name="minimumSize">
+                          <size>
+                           <width>40</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Consolas</family>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 255, 255);</string>
+                         </property>
+                         <property name="wrapping">
+                          <bool>false</bool>
+                         </property>
+                         <property name="frame">
+                          <bool>true</bool>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="readOnly">
+                          <bool>false</bool>
+                         </property>
+                         <property name="buttonSymbols">
+                          <enum>QAbstractSpinBox::UpDownArrows</enum>
+                         </property>
+                         <property name="minimum">
+                          <number>1</number>
+                         </property>
+                         <property name="value">
+                          <number>5</number>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="pb_agregar_procesos">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">
+QPushButton {
+   
+	background-color: rgb(220, 220, 220);
+	
+	color: rgb(0, 85, 255);
+
+}
+
+QPushButton:hover {
+    
+	background-color: rgb(255, 255, 255);
+}
+
+
+QPushButton:pressed {
+   
+	background-color: rgb(190, 190, 190);
+	
+	color: rgb(0, 170, 0);
+}</string>
+                         </property>
+                         <property name="text">
+                          <string>Agregar</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
                    </widget>
                   </item>
                   <item>
@@ -502,73 +473,468 @@ QPushButton:pressed {
                    </spacer>
                   </item>
                   <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_5">
-                    <property name="spacing">
-                     <number>0</number>
+                   <widget class="QGroupBox" name="groupBox_7">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>48</height>
+                     </size>
                     </property>
-                    <item>
-                     <widget class="QLabel" name="label_9">
-                      <property name="minimumSize">
-                       <size>
-                        <width>111</width>
-                        <height>0</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>220</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Times New Roman</family>
-                        <pointsize>10</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">color: rgb(0, 85, 255);</string>
-                      </property>
-                      <property name="text">
-                       <string>Procesos nuevos</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLineEdit" name="le_procesos_nuevos">
-                      <property name="minimumSize">
-                       <size>
-                        <width>50</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>50</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">background-color: rgb(220, 220, 220);</string>
-                      </property>
-                      <property name="frame">
-                       <bool>false</bool>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                      <property name="readOnly">
-                       <bool>true</bool>
-                      </property>
-                      <property name="placeholderText">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>48</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Times New Roman</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(0, 0, 255);</string>
+                    </property>
+                    <property name="title">
+                     <string>Próximo proceso</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_17">
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_13">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_55">
+                         <property name="minimumSize">
+                          <size>
+                           <width>30</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>35</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(0, 85, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>ID:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="le_siguiente_id">
+                         <property name="minimumSize">
+                          <size>
+                           <width>30</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>50</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(220, 220, 220);</string>
+                         </property>
+                         <property name="frame">
+                          <bool>false</bool>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                         <property name="placeholderText">
+                          <string>0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_14">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_56">
+                         <property name="minimumSize">
+                          <size>
+                           <width>45</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>55</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(0, 85, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Tamaño: </string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="le_siguiente_tam">
+                         <property name="minimumSize">
+                          <size>
+                           <width>30</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>50</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(220, 220, 220);</string>
+                         </property>
+                         <property name="frame">
+                          <bool>false</bool>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                         <property name="placeholderText">
+                          <string>0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_16">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_58">
+                         <property name="minimumSize">
+                          <size>
+                           <width>45</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>55</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(0, 85, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Páginas: </string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="le_siguiente_pag">
+                         <property name="minimumSize">
+                          <size>
+                           <width>30</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>50</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(220, 220, 220);</string>
+                         </property>
+                         <property name="frame">
+                          <bool>false</bool>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                         <property name="placeholderText">
+                          <string>0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_2">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>5</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_10">
+                    <property name="minimumSize">
+                     <size>
+                      <width>48</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>48</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Times New Roman</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(0, 0, 255);</string>
+                    </property>
+                    <property name="title">
+                     <string>Procesos fuera del sistema</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_59">
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>9</number>
+                     </property>
+                     <item row="0" column="1">
+                      <layout class="QHBoxLayout" name="horizontalLayout_20">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_11">
+                         <property name="minimumSize">
+                          <size>
+                           <width>125</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>125</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(0, 85, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Procesos terminados: </string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="le_procesos_terminados">
+                         <property name="minimumSize">
+                          <size>
+                           <width>25</width>
+                           <height>11</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>50</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(220, 220, 220);</string>
+                         </property>
+                         <property name="frame">
+                          <bool>false</bool>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                         <property name="placeholderText">
+                          <string>0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item row="0" column="0">
+                      <layout class="QHBoxLayout" name="horizontalLayout_5">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_9">
+                         <property name="minimumSize">
+                          <size>
+                           <width>111</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>220</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(0, 85, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Procesos nuevos: </string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="le_procesos_nuevos">
+                         <property name="minimumSize">
+                          <size>
+                           <width>25</width>
+                           <height>11</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>50</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(220, 220, 220);</string>
+                         </property>
+                         <property name="frame">
+                          <bool>false</bool>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                         <property name="placeholderText">
+                          <string>0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
                   </item>
                  </layout>
                 </widget>
@@ -873,16 +1239,19 @@ color: rgb(0, 253, 51);</string>
                 <height>50</height>
                </size>
               </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>55</height>
+               </size>
+              </property>
               <property name="styleSheet">
                <string notr="true">background-color: rgb(200, 200, 200);</string>
               </property>
               <property name="title">
                <string/>
               </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_7">
-               <property name="spacing">
-                <number>0</number>
-               </property>
+              <layout class="QGridLayout" name="gridLayout_58">
                <property name="leftMargin">
                 <number>0</number>
                </property>
@@ -895,79 +1264,10 @@ color: rgb(0, 253, 51);</string>
                <property name="bottomMargin">
                 <number>0</number>
                </property>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_2">
-                 <item>
-                  <widget class="QLabel" name="label_2">
-                   <property name="minimumSize">
-                    <size>
-                     <width>111</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>111</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>Times New Roman</family>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(0, 85, 255);</string>
-                   </property>
-                   <property name="text">
-                    <string>Tiempo Global:</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLineEdit" name="le_tiempo_global">
-                   <property name="minimumSize">
-                    <size>
-                     <width>100</width>
-                     <height>25</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>100</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>Times New Roman</family>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">background-color: rgb(220, 220, 220);</string>
-                   </property>
-                   <property name="frame">
-                    <bool>false</bool>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                   <property name="readOnly">
-                    <bool>true</bool>
-                   </property>
-                   <property name="placeholderText">
-                    <string>0</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <item row="0" column="0">
                 <widget class="QFrame" name="frame_6">
                  <property name="minimumSize">
                   <size>
@@ -981,24 +1281,14 @@ color: rgb(0, 253, 51);</string>
                  <property name="frameShadow">
                   <enum>QFrame::Raised</enum>
                  </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_10">
+                 <layout class="QHBoxLayout" name="horizontalLayout_7">
                   <item>
-                   <spacer name="horizontalSpacer_52">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
+                   <layout class="QHBoxLayout" name="horizontalLayout_2">
+                    <property name="spacing">
+                     <number>0</number>
                     </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>43</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_6">
                     <item>
-                     <widget class="QLabel" name="label_3">
+                     <widget class="QLabel" name="label_2">
                       <property name="minimumSize">
                        <size>
                         <width>111</width>
@@ -1008,7 +1298,7 @@ color: rgb(0, 253, 51);</string>
                       <property name="maximumSize">
                        <size>
                         <width>111</width>
-                        <height>16777215</height>
+                        <height>25</height>
                        </size>
                       </property>
                       <property name="font">
@@ -1018,10 +1308,10 @@ color: rgb(0, 253, 51);</string>
                        </font>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">color: rgb(0, 170, 0);</string>
+                       <string notr="true">color: rgb(0, 85, 255);</string>
                       </property>
                       <property name="text">
-                       <string>Memoria en uso:</string>
+                       <string>Tiempo Global:</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -1029,10 +1319,10 @@ color: rgb(0, 253, 51);</string>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="le_tiempo_global_2">
+                     <widget class="QLineEdit" name="le_tiempo_global">
                       <property name="minimumSize">
                        <size>
-                        <width>120</width>
+                        <width>100</width>
                         <height>25</height>
                        </size>
                       </property>
@@ -1061,21 +1351,21 @@ color: rgb(0, 253, 51);</string>
                        <bool>true</bool>
                       </property>
                       <property name="placeholderText">
-                       <string> 20 MB / 220 MB</string>
+                       <string>0</string>
                       </property>
                      </widget>
                     </item>
                    </layout>
                   </item>
                   <item>
-                   <spacer name="horizontalSpacer_2">
+                   <spacer name="horizontalSpacer_52">
                     <property name="orientation">
                      <enum>Qt::Horizontal</enum>
                     </property>
                     <property name="sizeHint" stdset="0">
                      <size>
-                      <width>200</width>
-                      <height>20</height>
+                      <width>71</width>
+                      <height>17</height>
                      </size>
                     </property>
                    </spacer>
@@ -1084,8 +1374,14 @@ color: rgb(0, 253, 51);</string>
                    <widget class="QLabel" name="lb_pausa">
                     <property name="minimumSize">
                      <size>
-                      <width>111</width>
+                      <width>60</width>
                       <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>90</width>
+                      <height>25</height>
                      </size>
                     </property>
                     <property name="font">
@@ -1106,14 +1402,274 @@ color: rgb(0, 253, 51);</string>
                    </widget>
                   </item>
                   <item>
-                   <spacer name="horizontalSpacer_7">
+                   <spacer name="horizontalSpacer_53">
                     <property name="orientation">
                      <enum>Qt::Horizontal</enum>
                     </property>
                     <property name="sizeHint" stdset="0">
                      <size>
-                      <width>260</width>
+                      <width>71</width>
+                      <height>17</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_8">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_51">
+                      <property name="minimumSize">
+                       <size>
+                        <width>80</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>80</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(0, 85, 255);</string>
+                      </property>
+                      <property name="text">
+                       <string>Marcos libres:</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="le_marcos_libres">
+                      <property name="minimumSize">
+                       <size>
+                        <width>30</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(220, 220, 220);</string>
+                      </property>
+                      <property name="frame">
+                       <bool>false</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="readOnly">
+                       <bool>true</bool>
+                      </property>
+                      <property name="placeholderText">
+                       <string>40/44</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_11">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>70</width>
                       <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_6">
+                    <item>
+                     <widget class="QLabel" name="label_3">
+                      <property name="minimumSize">
+                       <size>
+                        <width>100</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>100</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(0, 170, 0);</string>
+                      </property>
+                      <property name="text">
+                       <string>Memoria en uso:</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="le_memoria_uso">
+                      <property name="minimumSize">
+                       <size>
+                        <width>120</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>100</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(220, 220, 220);</string>
+                      </property>
+                      <property name="frame">
+                       <bool>false</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="readOnly">
+                       <bool>true</bool>
+                      </property>
+                      <property name="placeholderText">
+                       <string> 20 MB / 220 MB</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_12">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>71</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_3">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label">
+                      <property name="minimumSize">
+                       <size>
+                        <width>130</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>100</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(0, 85, 255);</string>
+                      </property>
+                      <property name="text">
+                       <string>Memoria disponible:</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="le_memoria_restante">
+                      <property name="minimumSize">
+                       <size>
+                        <width>120</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>25</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Consolas</family>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(220, 220, 220);</string>
+                      </property>
+                      <property name="frame">
+                       <bool>false</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="readOnly">
+                       <bool>true</bool>
+                      </property>
+                      <property name="placeholderText">
+                       <string>200 MB / 220 MB</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_10">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>71</width>
+                      <height>17</height>
                      </size>
                     </property>
                    </spacer>
@@ -1153,12 +1709,27 @@ color: rgb(0, 253, 51);</string>
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QGridLayout" name="gridLayout_9">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0">
            <widget class="QGroupBox" name="groupBox_6">
             <property name="minimumSize">
              <size>
               <width>100</width>
-              <height>140</height>
+              <height>160</height>
              </size>
             </property>
             <property name="maximumSize">
@@ -1174,16 +1745,17 @@ color: rgb(0, 253, 51);</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(190, 190, 190);</string>
+             <string notr="true">background-color: rgb(190, 190, 190);
+color: rgb(0, 0, 255);</string>
             </property>
             <property name="title">
-             <string>Memoria</string>
+             <string>Espacio de Memoria</string>
             </property>
             <layout class="QGridLayout" name="gridLayout_10">
              <item row="0" column="0">
               <widget class="QFrame" name="Marco_memoria">
                <property name="styleSheet">
-                <string notr="true">background-color: rgb(0, 0, 0);</string>
+                <string notr="true">background-color: rgb(220, 220, 220);</string>
                </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
@@ -1192,6 +1764,24 @@ color: rgb(0, 253, 51);</string>
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QGridLayout" name="gridLayout_11">
+                <property name="leftMargin">
+                 <number>5</number>
+                </property>
+                <property name="topMargin">
+                 <number>5</number>
+                </property>
+                <property name="rightMargin">
+                 <number>5</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>5</number>
+                </property>
+                <property name="horizontalSpacing">
+                 <number>4</number>
+                </property>
+                <property name="verticalSpacing">
+                 <number>5</number>
+                </property>
                 <item row="2" column="6">
                  <widget class="QFrame" name="marco7_3">
                   <property name="minimumSize">
@@ -1203,7 +1793,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -1231,13 +1821,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_25">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb25">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 28</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -1255,7 +1885,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -1283,13 +1913,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_15">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb15">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 18</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -1307,7 +1977,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -1336,7 +2006,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="1">
+                    <widget class="QLabel" name="label_47">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 3: SO</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
                     <widget class="QProgressBar" name="progressBar_44">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="styleSheet">
                       <string notr="true">QProgressBar {
 
@@ -1345,6 +2055,8 @@ color: rgb(0, 253, 51);</string>
  QProgressBar::chunk {
                 
 	background-color: rgb(0, 85, 255);
+	
+	background-color: rgb(85, 0, 0);
 }</string>
                      </property>
                      <property name="value">
@@ -1369,7 +2081,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -1397,13 +2109,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_16">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb16">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 19</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -1421,7 +2173,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -1450,7 +2202,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb6">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 9</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_6">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -1473,7 +2265,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -1502,7 +2294,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb37">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 40</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_37">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -1525,7 +2357,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -1553,13 +2385,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_26">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb26">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 29</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -1577,7 +2449,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -1606,7 +2478,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb8">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 11</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_8">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -1629,7 +2541,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -1657,13 +2569,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_18">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb18">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 21</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -1681,7 +2633,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -1710,7 +2662,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb38">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 41</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_38">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -1733,7 +2725,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -1761,13 +2753,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_32">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb32">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 35</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -1785,7 +2817,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -1813,13 +2845,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="1" column="1">
+                   <item row="2" column="1">
                     <widget class="QProgressBar" name="progressBar_35">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QLabel" name="lbl_pb35">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 38</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -1837,7 +2909,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -1866,7 +2938,53 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb1">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <property name="text">
+                      <string>Marco 4</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_1">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -1879,7 +2997,7 @@ color: rgb(0, 253, 51);</string>
                  </widget>
                 </item>
                 <item row="2" column="9">
-                 <widget class="QFrame" name="marco10_3">
+                 <widget class="QFrame" name="Marco">
                   <property name="minimumSize">
                    <size>
                     <width>100</width>
@@ -1889,7 +3007,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -1914,11 +3032,51 @@ color: rgb(0, 253, 51);</string>
                    <property name="bottomMargin">
                     <number>0</number>
                    </property>
-                   <property name="horizontalSpacing">
+                   <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb28">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 31</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_28">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -1941,7 +3099,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -1970,7 +3128,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb12">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 15</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_12">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -1993,7 +3191,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2022,7 +3220,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb19">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 22</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_19">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -2045,7 +3283,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2074,7 +3312,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb11">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 14</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_11">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -2097,7 +3375,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2125,13 +3403,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_23">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb23">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 26</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -2149,7 +3467,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2177,13 +3495,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_27">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb27">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 30</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -2201,7 +3559,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2230,7 +3588,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="1">
+                    <widget class="QLabel" name="lbl_pb21">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 24</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
                     <widget class="QProgressBar" name="progressBar_21">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -2253,7 +3651,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2281,13 +3679,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_30">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb30">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 33</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -2305,7 +3743,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2334,7 +3772,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb2">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 5</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_2">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -2357,7 +3835,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2386,7 +3864,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb39">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 42</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_39">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -2409,7 +3927,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2421,7 +3939,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_8">
+                  <layout class="QGridLayout" name="gridLayout_13">
                    <property name="leftMargin">
                     <number>0</number>
                    </property>
@@ -2434,8 +3952,23 @@ color: rgb(0, 253, 51);</string>
                    <property name="bottomMargin">
                     <number>0</number>
                    </property>
-                   <item>
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_43">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="styleSheet">
                       <string notr="true">QProgressBar {
 
@@ -2444,6 +3977,9 @@ color: rgb(0, 253, 51);</string>
  QProgressBar::chunk {
                 
 	background-color: rgb(0, 85, 255);
+	background-color: rgb(0, 0, 0);
+	background-color: rgb(65, 65, 65);
+	background-color: rgb(85, 0, 0);
 }</string>
                      </property>
                      <property name="value">
@@ -2451,6 +3987,34 @@ color: rgb(0, 253, 51);</string>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_48">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 2: SO</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignBottom|Qt::AlignHCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -2468,7 +4032,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2496,13 +4060,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_4">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb4">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 7</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -2520,7 +4124,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2549,7 +4153,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="1">
+                    <widget class="QLabel" name="label_49">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 1: SO</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
                     <widget class="QProgressBar" name="progressBar_42">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="styleSheet">
                       <string notr="true">QProgressBar {
 
@@ -2558,6 +4202,9 @@ color: rgb(0, 253, 51);</string>
  QProgressBar::chunk {
                 
 	background-color: rgb(0, 85, 255);
+	background-color: rgb(0, 0, 0);
+	background-color: rgb(65, 65, 65);
+	background-color: rgb(85, 0, 0);
 }</string>
                      </property>
                      <property name="value">
@@ -2582,7 +4229,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2611,7 +4258,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb14">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 17</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_14">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -2634,7 +4321,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2663,7 +4350,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="2">
+                    <widget class="QLabel" name="lbl_pb33">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 36</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="2">
                     <widget class="QProgressBar" name="progressBar_33">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -2686,7 +4413,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2711,11 +4438,51 @@ color: rgb(0, 253, 51);</string>
                    <property name="bottomMargin">
                     <number>0</number>
                    </property>
-                   <property name="spacing">
+                   <property name="verticalSpacing">
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb24">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 27</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_24">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -2738,7 +4505,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2766,13 +4533,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_10">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb10">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 13</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -2790,7 +4597,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2818,13 +4625,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="2">
+                   <item row="1" column="2">
                     <widget class="QProgressBar" name="progressBar_34">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="2">
+                    <widget class="QLabel" name="lbl_pb34">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 37</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -2842,7 +4689,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2870,13 +4717,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_3">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb3">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 6</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -2894,7 +4781,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2922,13 +4809,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_29">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb29">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 32</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -2946,7 +4873,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -2975,7 +4902,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb40">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 43</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_40">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -2998,7 +4965,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -3027,7 +4994,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="2">
+                    <widget class="QLabel" name="lbl_pb20">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 23</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="2">
                     <widget class="QProgressBar" name="progressBar_20">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -3050,7 +5057,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -3062,7 +5069,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_12">
+                  <layout class="QGridLayout" name="gridLayout_56">
                    <property name="leftMargin">
                     <number>0</number>
                    </property>
@@ -3075,8 +5082,23 @@ color: rgb(0, 253, 51);</string>
                    <property name="bottomMargin">
                     <number>0</number>
                    </property>
-                   <item>
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_41">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="styleSheet">
                       <string notr="true">QProgressBar {
 
@@ -3085,6 +5107,11 @@ color: rgb(0, 253, 51);</string>
  QProgressBar::chunk {
                 
 	background-color: rgb(0, 85, 255);
+	
+	background-color: rgb(0, 0, 0);
+	
+	background-color: rgb(65, 65, 65);
+	background-color: rgb(85, 0, 0);
 }</string>
                      </property>
                      <property name="value">
@@ -3092,6 +5119,34 @@ color: rgb(0, 253, 51);</string>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_50">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 0: SO</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignBottom|Qt::AlignHCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -3109,7 +5164,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -3138,7 +5193,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="1" column="0">
+                    <widget class="QLabel" name="lbl_pb36">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 39</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
                     <widget class="QProgressBar" name="progressBar_36">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -3161,7 +5256,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -3190,7 +5285,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb7">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 10</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_7">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -3213,7 +5348,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -3241,13 +5376,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_5">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb5">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 8</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -3265,7 +5440,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -3293,13 +5468,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_22">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb22">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 25</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -3317,7 +5532,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -3346,7 +5561,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb31">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 34</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_31">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
@@ -3369,7 +5624,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -3397,13 +5652,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_9">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb9">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 12</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -3421,7 +5716,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -3449,13 +5744,53 @@ color: rgb(0, 253, 51);</string>
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_17">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
                      <property name="textVisible">
                       <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb17">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 20</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -3473,7 +5808,7 @@ color: rgb(0, 253, 51);</string>
                   <property name="maximumSize">
                    <size>
                     <width>160</width>
-                    <height>30</height>
+                    <height>25</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -3502,7 +5837,47 @@ color: rgb(0, 253, 51);</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
+                    <widget class="QLabel" name="lbl_pb13">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>7</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Marco 16</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QProgressBar" name="progressBar_13">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>9</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>14</height>
+                      </size>
+                     </property>
                      <property name="value">
                       <number>0</number>
                      </property>
