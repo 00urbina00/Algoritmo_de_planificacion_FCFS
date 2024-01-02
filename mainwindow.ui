@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1372</width>
+    <width>1592</width>
     <height>979</height>
    </rect>
   </property>
@@ -32,6 +32,9 @@
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
         <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>3</number>
+         </property>
          <item>
           <widget class="QFrame" name="frame_2">
            <property name="styleSheet">
@@ -43,7 +46,7 @@
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
-           <layout class="QGridLayout" name="gridLayout_4">
+           <layout class="QGridLayout" name="gridLayout_4" rowstretch="0">
             <property name="leftMargin">
              <number>0</number>
             </property>
@@ -70,7 +73,7 @@
               <property name="title">
                <string/>
               </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <layout class="QHBoxLayout" name="horizontalLayout_12">
                <property name="spacing">
                 <number>0</number>
                </property>
@@ -106,35 +109,22 @@
                  <property name="frameShadow">
                   <enum>QFrame::Raised</enum>
                  </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_21">
+                 <layout class="QHBoxLayout" name="horizontalLayout_9">
                   <property name="spacing">
-                   <number>0</number>
+                   <number>3</number>
                   </property>
                   <property name="leftMargin">
-                   <number>0</number>
+                   <number>3</number>
                   </property>
                   <property name="topMargin">
                    <number>0</number>
                   </property>
                   <property name="rightMargin">
-                   <number>0</number>
+                   <number>3</number>
                   </property>
                   <property name="bottomMargin">
                    <number>0</number>
                   </property>
-                  <item>
-                   <spacer name="horizontalSpacer_3">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
                   <item>
                    <widget class="QGroupBox" name="groupBox_8">
                     <property name="minimumSize">
@@ -180,12 +170,134 @@
                      <property name="verticalSpacing">
                       <number>0</number>
                      </property>
+                     <item row="0" column="4">
+                      <layout class="QHBoxLayout" name="horizontalLayout_18">
+                       <item>
+                        <widget class="QLabel" name="label_10">
+                         <property name="minimumSize">
+                          <size>
+                           <width>111</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>220</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(0, 85, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Procesos iniciales: </string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QSpinBox" name="sb_num_procesos">
+                         <property name="minimumSize">
+                          <size>
+                           <width>40</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Consolas</family>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 255, 255);</string>
+                         </property>
+                         <property name="wrapping">
+                          <bool>false</bool>
+                         </property>
+                         <property name="frame">
+                          <bool>true</bool>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="readOnly">
+                          <bool>false</bool>
+                         </property>
+                         <property name="buttonSymbols">
+                          <enum>QAbstractSpinBox::UpDownArrows</enum>
+                         </property>
+                         <property name="minimum">
+                          <number>1</number>
+                         </property>
+                         <property name="value">
+                          <number>10</number>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="pb_agregar_procesos">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">
+QPushButton {
+   
+	background-color: rgb(220, 220, 220);
+	
+	color: rgb(0, 85, 255);
+
+}
+
+QPushButton:hover {
+    
+	background-color: rgb(255, 255, 255);
+}
+
+
+QPushButton:pressed {
+   
+	background-color: rgb(190, 190, 190);
+	
+	color: rgb(0, 170, 0);
+}</string>
+                         </property>
+                         <property name="text">
+                          <string>Agregar</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
                      <item row="0" column="2">
                       <widget class="QPushButton" name="pb_re_iniciar">
                        <property name="minimumSize">
                         <size>
-                         <width>70</width>
+                         <width>60</width>
                          <height>25</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>80</width>
+                         <height>16777215</height>
                         </size>
                        </property>
                        <property name="font">
@@ -215,6 +327,57 @@ QPushButton {
                        </property>
                        <property name="text">
                         <string>Reiniciar</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QPushButton" name="pb_iniciar">
+                       <property name="minimumSize">
+                        <size>
+                         <width>60</width>
+                         <height>25</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>80</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Times New Roman</family>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">
+QPushButton {
+   
+	background-color: rgb(220, 220, 220);
+	
+	color: rgb(0, 85, 255);
+
+}
+
+QPushButton:hover {
+    
+	background-color: rgb(255, 255, 255);
+}
+
+
+QPushButton:pressed {
+   
+	background-color: rgb(190, 190, 190);
+	
+	color: rgb(0, 170, 0);
+}</string>
+                       </property>
+                       <property name="text">
+                        <string>Iniciar</string>
+                       </property>
+                       <property name="checkable">
+                        <bool>false</bool>
                        </property>
                       </widget>
                      </item>
@@ -295,182 +458,8 @@ QPushButton {
                        </item>
                       </layout>
                      </item>
-                     <item row="0" column="1">
-                      <widget class="QPushButton" name="pb_iniciar">
-                       <property name="minimumSize">
-                        <size>
-                         <width>100</width>
-                         <height>25</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <family>Times New Roman</family>
-                         <pointsize>10</pointsize>
-                        </font>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">
-QPushButton {
-   
-	background-color: rgb(220, 220, 220);
-	
-	color: rgb(0, 85, 255);
-
-}
-
-QPushButton:hover {
-    
-	background-color: rgb(255, 255, 255);
-}
-
-
-QPushButton:pressed {
-   
-	background-color: rgb(190, 190, 190);
-	
-	color: rgb(0, 170, 0);
-}</string>
-                       </property>
-                       <property name="text">
-                        <string>Iniciar</string>
-                       </property>
-                       <property name="checkable">
-                        <bool>false</bool>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="4">
-                      <layout class="QHBoxLayout" name="horizontalLayout_18">
-                       <item>
-                        <widget class="QLabel" name="label_10">
-                         <property name="minimumSize">
-                          <size>
-                           <width>111</width>
-                           <height>0</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>220</width>
-                           <height>16777215</height>
-                          </size>
-                         </property>
-                         <property name="font">
-                          <font>
-                           <family>Times New Roman</family>
-                           <pointsize>10</pointsize>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">color: rgb(0, 85, 255);</string>
-                         </property>
-                         <property name="text">
-                          <string>Procesos iniciales: </string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QSpinBox" name="sb_num_procesos">
-                         <property name="minimumSize">
-                          <size>
-                           <width>40</width>
-                           <height>25</height>
-                          </size>
-                         </property>
-                         <property name="font">
-                          <font>
-                           <family>Consolas</family>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">background-color: rgb(255, 255, 255);</string>
-                         </property>
-                         <property name="wrapping">
-                          <bool>false</bool>
-                         </property>
-                         <property name="frame">
-                          <bool>true</bool>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                         <property name="readOnly">
-                          <bool>false</bool>
-                         </property>
-                         <property name="buttonSymbols">
-                          <enum>QAbstractSpinBox::UpDownArrows</enum>
-                         </property>
-                         <property name="minimum">
-                          <number>1</number>
-                         </property>
-                         <property name="value">
-                          <number>5</number>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="pb_agregar_procesos">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>25</height>
-                          </size>
-                         </property>
-                         <property name="font">
-                          <font>
-                           <family>Times New Roman</family>
-                           <pointsize>10</pointsize>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">
-QPushButton {
-   
-	background-color: rgb(220, 220, 220);
-	
-	color: rgb(0, 85, 255);
-
-}
-
-QPushButton:hover {
-    
-	background-color: rgb(255, 255, 255);
-}
-
-
-QPushButton:pressed {
-   
-	background-color: rgb(190, 190, 190);
-	
-	color: rgb(0, 170, 0);
-}</string>
-                         </property>
-                         <property name="text">
-                          <string>Agregar</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </item>
                     </layout>
                    </widget>
-                  </item>
-                  <item>
-                   <spacer name="horizontalSpacer_6">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
                   </item>
                   <item>
                    <widget class="QGroupBox" name="groupBox_7">
@@ -493,17 +482,27 @@ QPushButton:pressed {
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: rgb(0, 0, 255);</string>
+                     <string notr="true">color: rgb(0, 0, 255);
+color: rgb(0, 170, 0);</string>
                     </property>
                     <property name="title">
-                     <string>Próximo proceso</string>
+                     <string>Próximo proceso nuevo</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignCenter</set>
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_17">
+                     <property name="spacing">
+                      <number>5</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
                      <property name="topMargin">
                       <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
                      </property>
                      <item>
                       <layout class="QHBoxLayout" name="horizontalLayout_13">
@@ -514,7 +513,7 @@ QPushButton:pressed {
                         <widget class="QLabel" name="label_55">
                          <property name="minimumSize">
                           <size>
-                           <width>30</width>
+                           <width>28</width>
                            <height>0</height>
                           </size>
                          </property>
@@ -542,7 +541,7 @@ QPushButton:pressed {
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLineEdit" name="le_siguiente_id">
+                        <widget class="QLineEdit" name="le_siguiente_id_nuevo">
                          <property name="minimumSize">
                           <size>
                            <width>30</width>
@@ -551,7 +550,7 @@ QPushButton:pressed {
                          </property>
                          <property name="maximumSize">
                           <size>
-                           <width>50</width>
+                           <width>30</width>
                            <height>25</height>
                           </size>
                          </property>
@@ -589,7 +588,7 @@ QPushButton:pressed {
                         <widget class="QLabel" name="label_56">
                          <property name="minimumSize">
                           <size>
-                           <width>45</width>
+                           <width>50</width>
                            <height>0</height>
                           </size>
                          </property>
@@ -617,7 +616,7 @@ QPushButton:pressed {
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLineEdit" name="le_siguiente_tam">
+                        <widget class="QLineEdit" name="le_siguiente_tam_nuevo">
                          <property name="minimumSize">
                           <size>
                            <width>30</width>
@@ -626,7 +625,7 @@ QPushButton:pressed {
                          </property>
                          <property name="maximumSize">
                           <size>
-                           <width>50</width>
+                           <width>30</width>
                            <height>25</height>
                           </size>
                          </property>
@@ -664,7 +663,7 @@ QPushButton:pressed {
                         <widget class="QLabel" name="label_58">
                          <property name="minimumSize">
                           <size>
-                           <width>45</width>
+                           <width>50</width>
                            <height>0</height>
                           </size>
                          </property>
@@ -692,7 +691,7 @@ QPushButton:pressed {
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLineEdit" name="le_siguiente_pag">
+                        <widget class="QLineEdit" name="le_siguiente_pag_nuevo">
                          <property name="minimumSize">
                           <size>
                            <width>30</width>
@@ -701,7 +700,7 @@ QPushButton:pressed {
                          </property>
                          <property name="maximumSize">
                           <size>
-                           <width>50</width>
+                           <width>30</width>
                            <height>25</height>
                           </size>
                          </property>
@@ -734,24 +733,11 @@ QPushButton:pressed {
                    </widget>
                   </item>
                   <item>
-                   <spacer name="horizontalSpacer_2">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>5</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item>
-                   <widget class="QGroupBox" name="groupBox_10">
+                   <widget class="QGroupBox" name="groupBox_11">
                     <property name="minimumSize">
                      <size>
-                      <width>48</width>
-                      <height>0</height>
+                      <width>0</width>
+                      <height>48</height>
                      </size>
                     </property>
                     <property name="maximumSize">
@@ -767,38 +753,48 @@ QPushButton:pressed {
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: rgb(0, 0, 255);</string>
+                     <string notr="true">color: rgb(0, 0, 255);
+color: rgb(255, 0, 0);</string>
                     </property>
                     <property name="title">
-                     <string>Procesos fuera del sistema</string>
+                     <string>Próximo proceso suspendido</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignCenter</set>
                     </property>
-                    <layout class="QGridLayout" name="gridLayout_59">
+                    <layout class="QHBoxLayout" name="horizontalLayout_25">
+                     <property name="spacing">
+                      <number>5</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
                      <property name="topMargin">
                       <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
                      </property>
                      <property name="bottomMargin">
                       <number>9</number>
                      </property>
-                     <item row="0" column="1">
-                      <layout class="QHBoxLayout" name="horizontalLayout_20">
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_15">
                        <property name="spacing">
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_11">
+                        <widget class="QLabel" name="label_57">
                          <property name="minimumSize">
                           <size>
-                           <width>125</width>
+                           <width>28</width>
                            <height>0</height>
                           </size>
                          </property>
                          <property name="maximumSize">
                           <size>
-                           <width>125</width>
-                           <height>16777215</height>
+                           <width>35</width>
+                           <height>25</height>
                           </size>
                          </property>
                          <property name="font">
@@ -811,7 +807,7 @@ QPushButton:pressed {
                           <string notr="true">color: rgb(0, 85, 255);</string>
                          </property>
                          <property name="text">
-                          <string>Procesos terminados: </string>
+                          <string>ID:</string>
                          </property>
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>
@@ -819,18 +815,24 @@ QPushButton:pressed {
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLineEdit" name="le_procesos_terminados">
+                        <widget class="QLineEdit" name="le_siguiente_id_suspendido">
                          <property name="minimumSize">
                           <size>
-                           <width>25</width>
-                           <height>11</height>
+                           <width>30</width>
+                           <height>0</height>
                           </size>
                          </property>
                          <property name="maximumSize">
                           <size>
-                           <width>50</width>
+                           <width>30</width>
                            <height>25</height>
                           </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
                          </property>
                          <property name="styleSheet">
                           <string notr="true">background-color: rgb(220, 220, 220);</string>
@@ -851,23 +853,23 @@ QPushButton:pressed {
                        </item>
                       </layout>
                      </item>
-                     <item row="0" column="0">
-                      <layout class="QHBoxLayout" name="horizontalLayout_5">
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_22">
                        <property name="spacing">
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_9">
+                        <widget class="QLabel" name="label_59">
                          <property name="minimumSize">
                           <size>
-                           <width>111</width>
+                           <width>50</width>
                            <height>0</height>
                           </size>
                          </property>
                          <property name="maximumSize">
                           <size>
-                           <width>220</width>
-                           <height>16777215</height>
+                           <width>55</width>
+                           <height>25</height>
                           </size>
                          </property>
                          <property name="font">
@@ -880,7 +882,254 @@ QPushButton:pressed {
                           <string notr="true">color: rgb(0, 85, 255);</string>
                          </property>
                          <property name="text">
-                          <string>Procesos nuevos: </string>
+                          <string>Tamaño: </string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="le_siguiente_tam_suspendido">
+                         <property name="minimumSize">
+                          <size>
+                           <width>30</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>30</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(220, 220, 220);</string>
+                         </property>
+                         <property name="frame">
+                          <bool>false</bool>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                         <property name="placeholderText">
+                          <string>0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_23">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_60">
+                         <property name="minimumSize">
+                          <size>
+                           <width>50</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>55</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(0, 85, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Páginas: </string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="le_siguiente_pag_suspendido">
+                         <property name="minimumSize">
+                          <size>
+                           <width>30</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>30</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(220, 220, 220);</string>
+                         </property>
+                         <property name="frame">
+                          <bool>false</bool>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                         <property name="placeholderText">
+                          <string>0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_21">
+                       <item>
+                        <widget class="QLabel" name="label_4">
+                         <property name="maximumSize">
+                          <size>
+                           <width>50</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(255, 85, 0);</string>
+                         </property>
+                         <property name="text">
+                          <string>Prioridad: </string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QFrame" name="frame_proximo_suspendido">
+                         <property name="minimumSize">
+                          <size>
+                           <width>20</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>20</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(159, 159, 159);</string>
+                         </property>
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <property name="lineWidth">
+                          <number>0</number>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_10">
+                    <property name="minimumSize">
+                     <size>
+                      <width>48</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>600</width>
+                      <height>48</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Times New Roman</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(0, 0, 255);</string>
+                    </property>
+                    <property name="title">
+                     <string>Procesos del sistema</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_4">
+                     <property name="spacing">
+                      <number>12</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>9</number>
+                     </property>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_5">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_9">
+                         <property name="minimumSize">
+                          <size>
+                           <width>55</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>60</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(0, 85, 255);
+color: rgb(0, 170, 0);</string>
+                         </property>
+                         <property name="text">
+                          <string>Nuevos: </string>
                          </property>
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>
@@ -897,12 +1146,302 @@ QPushButton:pressed {
                          </property>
                          <property name="maximumSize">
                           <size>
+                           <width>30</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(220, 220, 220);
+color: rgb(0, 170, 0);</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="frame">
+                          <bool>false</bool>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                         <property name="placeholderText">
+                          <string>0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_11">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_14">
+                         <property name="minimumSize">
+                          <size>
+                           <width>45</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
                            <width>50</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(0, 85, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Listos: </string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="le_procesos_listos">
+                         <property name="minimumSize">
+                          <size>
+                           <width>25</width>
+                           <height>11</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>30</width>
                            <height>25</height>
                           </size>
                          </property>
                          <property name="styleSheet">
                           <string notr="true">background-color: rgb(220, 220, 220);</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="frame">
+                          <bool>false</bool>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                         <property name="placeholderText">
+                          <string>0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_24">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_15">
+                         <property name="minimumSize">
+                          <size>
+                           <width>75</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>80</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(0, 85, 255);
+color: rgb(255, 0, 0);</string>
+                         </property>
+                         <property name="text">
+                          <string>Bloqueados: </string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="le_procesos_bloqueados">
+                         <property name="minimumSize">
+                          <size>
+                           <width>25</width>
+                           <height>11</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>30</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(220, 220, 220);
+color: rgb(255, 0, 0);</string>
+                         </property>
+                         <property name="frame">
+                          <bool>false</bool>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                         <property name="placeholderText">
+                          <string>0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_10">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_13">
+                         <property name="minimumSize">
+                          <size>
+                           <width>80</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>60</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(0, 85, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Suspendidos: </string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="le_procesos_suspendidos">
+                         <property name="minimumSize">
+                          <size>
+                           <width>25</width>
+                           <height>11</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>30</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(220, 220, 220);</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="frame">
+                          <bool>false</bool>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                         <property name="placeholderText">
+                          <string>0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_20">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_11">
+                         <property name="minimumSize">
+                          <size>
+                           <width>75</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>80</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Times New Roman</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(0, 85, 255);
+color: rgb(255, 0, 0);</string>
+                         </property>
+                         <property name="text">
+                          <string>Terminados: </string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="le_procesos_terminados">
+                         <property name="minimumSize">
+                          <size>
+                           <width>25</width>
+                           <height>11</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>30</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(220, 220, 220);
+color: rgb(255, 0, 0);</string>
                          </property>
                          <property name="frame">
                           <bool>false</bool>
@@ -922,19 +1461,6 @@ QPushButton:pressed {
                      </item>
                     </layout>
                    </widget>
-                  </item>
-                  <item>
-                   <spacer name="horizontalSpacer">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
                   </item>
                  </layout>
                 </widget>
@@ -960,22 +1486,37 @@ QPushButton:pressed {
             <enum>QFrame::Raised</enum>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">
+            <property name="leftMargin">
+             <number>3</number>
+            </property>
+            <property name="topMargin">
+             <number>3</number>
+            </property>
+            <property name="rightMargin">
+             <number>3</number>
+            </property>
+            <property name="bottomMargin">
+             <number>3</number>
+            </property>
+            <property name="verticalSpacing">
+             <number>1</number>
+            </property>
             <item row="0" column="0">
              <layout class="QHBoxLayout" name="horizontalLayout">
               <property name="spacing">
-               <number>1</number>
+               <number>3</number>
               </property>
               <property name="leftMargin">
-               <number>6</number>
+               <number>0</number>
               </property>
               <property name="topMargin">
-               <number>6</number>
+               <number>0</number>
               </property>
               <property name="rightMargin">
-               <number>6</number>
+               <number>0</number>
               </property>
               <property name="bottomMargin">
-               <number>6</number>
+               <number>3</number>
               </property>
               <item>
                <widget class="QGroupBox" name="groupBox">
@@ -1003,6 +1544,9 @@ color: rgb(0, 85, 255);</string>
                 </property>
                 <property name="title">
                  <string>Listo</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_6">
                  <item row="0" column="0">
@@ -1075,6 +1619,9 @@ color: rgb(0, 170, 0);</string>
                 <property name="title">
                  <string>Ejecución</string>
                 </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
                 <layout class="QGridLayout" name="gridLayout_7">
                  <item row="0" column="0">
                   <widget class="QPlainTextEdit" name="pte_ejecucion">
@@ -1128,6 +1675,9 @@ color: rgb(255, 0, 0);</string>
                 <property name="title">
                  <string>Terminados</string>
                 </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
                 <layout class="QGridLayout" name="gridLayout_8">
                  <item row="0" column="0">
                   <widget class="QPlainTextEdit" name="pte_terminados">
@@ -1176,6 +1726,9 @@ color: rgb(0, 85, 255);</string>
               </property>
               <property name="title">
                <string>Información</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
               </property>
               <layout class="QGridLayout" name="gridLayout_12">
                <property name="topMargin">
@@ -1364,41 +1917,66 @@ color: rgb(0, 253, 51);</string>
                     </property>
                     <property name="sizeHint" stdset="0">
                      <size>
-                      <width>71</width>
+                      <width>20</width>
                       <height>17</height>
                      </size>
                     </property>
                    </spacer>
                   </item>
                   <item>
-                   <widget class="QLabel" name="lb_pausa">
-                    <property name="minimumSize">
-                     <size>
-                      <width>60</width>
-                      <height>0</height>
-                     </size>
+                   <widget class="QGroupBox" name="groupBox_12">
+                    <property name="title">
+                     <string/>
                     </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>90</width>
-                      <height>25</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Times New Roman</family>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">color: rgb(0, 170, 0);</string>
-                    </property>
-                    <property name="text">
-                     <string>Ejecución</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
+                    <layout class="QGridLayout" name="gridLayout_59">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="lb_pausa">
+                       <property name="minimumSize">
+                        <size>
+                         <width>300</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>400</width>
+                         <height>25</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Times New Roman</family>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(0, 170, 0);
+background-color: rgb(255, 255, 255);</string>
+                       </property>
+                       <property name="text">
+                        <string>Ejecución</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
                    </widget>
                   </item>
                   <item>
@@ -1408,7 +1986,7 @@ color: rgb(0, 253, 51);</string>
                     </property>
                     <property name="sizeHint" stdset="0">
                      <size>
-                      <width>71</width>
+                      <width>20</width>
                       <height>17</height>
                      </size>
                     </property>
@@ -5908,7 +6486,7 @@ color: rgb(0, 0, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1372</width>
+     <width>1592</width>
      <height>21</height>
     </rect>
    </property>

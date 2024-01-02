@@ -132,7 +132,8 @@ class Memoria:  # Tamanio memoria es 220
 
     def _agrega_a_cola(self, cola, proceso, asignar_memoria):
         if proceso is None:
-            raise ValueError("No se puede agregar un proceso Nulo.")
+            return False
+            # raise ValueError("No se puede agregar un proceso Nulo.")
         if not asignar_memoria:
             cola.append(proceso)
             return True
@@ -217,15 +218,18 @@ class Memoria:  # Tamanio memoria es 220
         for proceso in self._cola_de_listos:
             self._espacio_disponible += proceso.tamanio
             self._paginas_disponibles += ceil(proceso.tamanio / self._tamanio_marco)
+            proceso.release()
+            del proceso
         for proceso in self._cola_de_ejecucion:
             self._espacio_disponible += proceso.tamanio
             self._paginas_disponibles += ceil(proceso.tamanio / self._tamanio_marco)
+            proceso.release()
+            del proceso
         for proceso in self._cola_de_bloqueados:
             self._espacio_disponible += proceso.tamanio
             self._paginas_disponibles += ceil(proceso.tamanio / self._tamanio_marco)
-        self._cola_de_listos.clear()
-        self._cola_de_ejecucion.clear()
-        self._cola_de_bloqueados.clear()
+            proceso.release()
+            del proceso
         for i, marco in enumerate(self._espacio_de_memoria):
             if marco is not None:
                 marco.release()
@@ -283,6 +287,25 @@ class Memoria:  # Tamanio memoria es 220
                 self.saca_de_bloqueado()  # Sacar proceso de bloqueados (Sin liberar memoria)
                 proceso.set_estado("Listo")
                 self.agrega_a_listo(proceso)  # Mover proceso a listos (Sin liberar memoria)
+
+    def suspender_proceso(self):
+        if self.hay_bloqueados():
+            proceso = self.saca_de_bloqueado(True)  # Sacar proceso de bloqueados (Liberando memoria)
+            proceso.set_estado("Suspendido")
+            proceso.save_to_dict()
+            return proceso
+        else:
+            return None
+
+    def recupeara_proceso(self, proceso):
+        if self.hay_espacio(proceso.tamanio):
+            nombre_archivo = f'proceso_{proceso.id}.json'
+            salida = proceso.load_from_dict(nombre_archivo)
+            if proceso is not None and salida:
+                self.agrega_a_bloqueados(proceso, True)
+                return True
+        proceso.set_prioridad(True)
+        return False
 
     def busca_estado_proceso(self, id_proceso):
         for proceso in self._cola_de_listos:

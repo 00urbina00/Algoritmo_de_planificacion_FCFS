@@ -1,3 +1,6 @@
+import json
+import os
+
 TIEMPO_BLOQUEO = 8
 
 
@@ -15,6 +18,7 @@ class Proceso:
         self._indice_inicial = None
         self._indice_final = None
         self.estado = 'Nuevo'
+        self.prioridad = False
         # ----------------------------------------
         # Tiempos
         # ----------------------------------------
@@ -45,6 +49,11 @@ class Proceso:
         }
         # ----------------------------------------
 
+    def release(self):
+        nombre_archivo = f'proceso_{self._id}.json'
+        if os.path.exists(nombre_archivo):
+            os.remove(nombre_archivo)
+
     def get_estado(self):
         return self.estado
 
@@ -60,6 +69,9 @@ class Proceso:
 
     def set_bloqueado(self):
         self.timer_bloqueado = TIEMPO_BLOQUEO
+
+    def set_prioridad(self, valor):
+        self.prioridad = valor
 
     def tiempo_bloqueado(self):
         if self.timer_bloqueado > 0:
@@ -191,3 +203,84 @@ class Proceso:
 
     def incrementa_tiempo_servicio(self):
         self.tiempo_servicio += 1
+
+    def save_to_dict(self):
+        nombre_archivo = f'proceso_{self._id}.json'
+        datos = {
+            "_id": self._id,
+            "_tiempo_maximo_estimado": self._tiempo_maximo_estimado,
+            "_operacion_realizar": self._operacion_realizar,
+            "_operando_a": self._operando_a,
+            "_operando_b": self._operando_b,
+            "_tamanio": self._tamanio,
+            "_resultado": self._resultado,
+            "_indice_inicial": self._indice_inicial,
+            "_indice_final": self._indice_final,
+            "estado": self.estado,
+            "timer_bloqueado": self.timer_bloqueado,
+            "_tiempo_transcurrido": self._tiempo_transcurrido,
+            "_tiempo_restante": self._tiempo_restante,
+            "atendido": self.atendido,
+            "tiempo_llegada": self.tiempo_llegada,
+            "tiempo_finalizacion": self.tiempo_finalizacion,
+            "tiempo_retorno": self.tiempo_retorno,
+            "tiempo_respuesta": self.tiempo_respuesta,
+            "tiempo_espera": self.tiempo_espera,
+            "tiempo_servicio": self.tiempo_servicio,
+            "_terminado": self._terminado,
+            "_error": self._error,
+            "prioridad": self.prioridad
+        }
+        try:
+            with open(nombre_archivo, 'w') as archivo:
+                json.dump(datos, archivo, indent=2)
+            return True
+        except Exception as e:
+            print(f"Error al guardar: {e}")
+            return False
+
+    def load_from_dict(self, nombre_archivo):
+        # Carga los datos desde un diccionario a la instancia de la clase
+        try:
+            with open(nombre_archivo, 'r') as archivo:
+                data = json.load(archivo)
+        except Exception as e:
+            print(f"Error al cargar: {e}")
+            return False
+        self._id = data["_id"]
+        self._tiempo_maximo_estimado = data["_tiempo_maximo_estimado"]
+        self._operacion_realizar = data["_operacion_realizar"]
+        self._operando_a = data["_operando_a"]
+        self._operando_b = data["_operando_b"]
+        self._tamanio = data["_tamanio"]
+        self._resultado = data["_resultado"]
+        self._indice_inicial = data["_indice_inicial"]
+        self._indice_final = data["_indice_final"]
+        self.estado = data["estado"]
+        self.timer_bloqueado = data["timer_bloqueado"]
+        self._tiempo_transcurrido = data["_tiempo_transcurrido"]
+        self._tiempo_restante = data["_tiempo_restante"]
+        self.atendido = data["atendido"]
+        self.tiempo_llegada = data["tiempo_llegada"]
+        self.tiempo_finalizacion = data["tiempo_finalizacion"]
+        self.tiempo_retorno = data["tiempo_retorno"]
+        self.tiempo_respuesta = data["tiempo_respuesta"]
+        self.tiempo_espera = data["tiempo_espera"]
+        self.tiempo_servicio = data["tiempo_servicio"]
+        self._terminado = data["_terminado"]
+        self._error = data["_error"]
+        self.prioridad = data["prioridad"]
+        # Eliminar el archivo después de cargar la información
+        try:
+            os.remove(nombre_archivo)
+        except Exception as e:
+            print(f"Error al eliminar el archivo: {e}")
+        return True
+
+
+"""
+proceso = Proceso(operador='+', operando_a=1, operando_b=2, tiempo=3, numero_proceso=1)
+proceso.save_to_dict()
+proceso.load_from_dict()
+print(proceso.__dict__)
+"""

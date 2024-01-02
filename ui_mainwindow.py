@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1372, 979)
+        MainWindow.resize(1592, 979)
         MainWindow.setStyleSheet(u"background-color: rgb(200, 200, 200);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -31,6 +31,7 @@ class Ui_MainWindow(object):
         self.gridLayout_3 = QGridLayout(self.frame)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.verticalLayout = QVBoxLayout()
+        self.verticalLayout.setSpacing(3)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.frame_2 = QFrame(self.frame)
         self.frame_2.setObjectName(u"frame_2")
@@ -44,24 +45,20 @@ class Ui_MainWindow(object):
         self.groupBox_4 = QGroupBox(self.frame_2)
         self.groupBox_4.setObjectName(u"groupBox_4")
         self.groupBox_4.setMinimumSize(QSize(0, 50))
-        self.horizontalLayout_4 = QHBoxLayout(self.groupBox_4)
-        self.horizontalLayout_4.setSpacing(0)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_12 = QHBoxLayout(self.groupBox_4)
+        self.horizontalLayout_12.setSpacing(0)
+        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
         self.frame_5 = QFrame(self.groupBox_4)
         self.frame_5.setObjectName(u"frame_5")
         self.frame_5.setMinimumSize(QSize(900, 0))
         self.frame_5.setMaximumSize(QSize(16777215, 50))
         self.frame_5.setFrameShape(QFrame.StyledPanel)
         self.frame_5.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_21 = QHBoxLayout(self.frame_5)
-        self.horizontalLayout_21.setSpacing(0)
-        self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
-        self.horizontalLayout_21.setContentsMargins(0, 0, 0, 0)
-        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_21.addItem(self.horizontalSpacer_3)
-
+        self.horizontalLayout_9 = QHBoxLayout(self.frame_5)
+        self.horizontalLayout_9.setSpacing(3)
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.horizontalLayout_9.setContentsMargins(3, 0, 3, 0)
         self.groupBox_8 = QGroupBox(self.frame_5)
         self.groupBox_8.setObjectName(u"groupBox_8")
         self.groupBox_8.setMinimumSize(QSize(0, 48))
@@ -77,93 +74,6 @@ class Ui_MainWindow(object):
         self.gridLayout_57.setHorizontalSpacing(10)
         self.gridLayout_57.setVerticalSpacing(0)
         self.gridLayout_57.setContentsMargins(9, 0, -1, 3)
-        self.pb_re_iniciar = QPushButton(self.groupBox_8)
-        self.pb_re_iniciar.setObjectName(u"pb_re_iniciar")
-        self.pb_re_iniciar.setMinimumSize(QSize(70, 25))
-        font1 = QFont()
-        font1.setFamily(u"Times New Roman")
-        font1.setPointSize(9)
-        font1.setBold(False)
-        font1.setItalic(False)
-        font1.setUnderline(True)
-        font1.setWeight(50)
-        font1.setStrikeOut(False)
-        font1.setKerning(True)
-        self.pb_re_iniciar.setFont(font1)
-        self.pb_re_iniciar.setAcceptDrops(False)
-        self.pb_re_iniciar.setStyleSheet(u"\n"
-"QPushButton {\n"
-"   \n"
-"	background-color: rgb(220, 220, 220);\n"
-"	\n"
-"	color: rgb(255, 85, 0);\n"
-"}\n"
-"")
-
-        self.gridLayout_57.addWidget(self.pb_re_iniciar, 0, 2, 1, 1)
-
-        self.horizontalLayout_19 = QHBoxLayout()
-        self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
-        self.label_12 = QLabel(self.groupBox_8)
-        self.label_12.setObjectName(u"label_12")
-        self.label_12.setMinimumSize(QSize(70, 0))
-        self.label_12.setMaximumSize(QSize(80, 16777215))
-        self.label_12.setFont(font)
-        self.label_12.setStyleSheet(u"color: rgb(0, 85, 255);")
-        self.label_12.setAlignment(Qt.AlignCenter)
-
-        self.horizontalLayout_19.addWidget(self.label_12)
-
-        self.sb_quantum = QSpinBox(self.groupBox_8)
-        self.sb_quantum.setObjectName(u"sb_quantum")
-        self.sb_quantum.setMinimumSize(QSize(40, 25))
-        font2 = QFont()
-        font2.setFamily(u"Consolas")
-        self.sb_quantum.setFont(font2)
-        self.sb_quantum.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        self.sb_quantum.setWrapping(False)
-        self.sb_quantum.setFrame(True)
-        self.sb_quantum.setAlignment(Qt.AlignCenter)
-        self.sb_quantum.setReadOnly(False)
-        self.sb_quantum.setButtonSymbols(QAbstractSpinBox.UpDownArrows)
-        self.sb_quantum.setMinimum(3)
-        self.sb_quantum.setMaximum(15)
-        self.sb_quantum.setValue(5)
-
-        self.horizontalLayout_19.addWidget(self.sb_quantum)
-
-
-        self.gridLayout_57.addLayout(self.horizontalLayout_19, 0, 3, 1, 1)
-
-        self.pb_iniciar = QPushButton(self.groupBox_8)
-        self.pb_iniciar.setObjectName(u"pb_iniciar")
-        self.pb_iniciar.setMinimumSize(QSize(100, 25))
-        self.pb_iniciar.setFont(font)
-        self.pb_iniciar.setStyleSheet(u"\n"
-"QPushButton {\n"
-"   \n"
-"	background-color: rgb(220, 220, 220);\n"
-"	\n"
-"	color: rgb(0, 85, 255);\n"
-"\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    \n"
-"	background-color: rgb(255, 255, 255);\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton:pressed {\n"
-"   \n"
-"	background-color: rgb(190, 190, 190);\n"
-"	\n"
-"	color: rgb(0, 170, 0);\n"
-"}")
-        self.pb_iniciar.setCheckable(False)
-
-        self.gridLayout_57.addWidget(self.pb_iniciar, 0, 1, 1, 1)
-
         self.horizontalLayout_18 = QHBoxLayout()
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
         self.label_10 = QLabel(self.groupBox_8)
@@ -179,7 +89,9 @@ class Ui_MainWindow(object):
         self.sb_num_procesos = QSpinBox(self.groupBox_8)
         self.sb_num_procesos.setObjectName(u"sb_num_procesos")
         self.sb_num_procesos.setMinimumSize(QSize(40, 25))
-        self.sb_num_procesos.setFont(font2)
+        font1 = QFont()
+        font1.setFamily(u"Consolas")
+        self.sb_num_procesos.setFont(font1)
         self.sb_num_procesos.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.sb_num_procesos.setWrapping(False)
         self.sb_num_procesos.setFrame(True)
@@ -187,7 +99,7 @@ class Ui_MainWindow(object):
         self.sb_num_procesos.setReadOnly(False)
         self.sb_num_procesos.setButtonSymbols(QAbstractSpinBox.UpDownArrows)
         self.sb_num_procesos.setMinimum(1)
-        self.sb_num_procesos.setValue(5)
+        self.sb_num_procesos.setValue(10)
 
         self.horizontalLayout_18.addWidget(self.sb_num_procesos)
 
@@ -222,29 +134,114 @@ class Ui_MainWindow(object):
 
         self.gridLayout_57.addLayout(self.horizontalLayout_18, 0, 4, 1, 1)
 
+        self.pb_re_iniciar = QPushButton(self.groupBox_8)
+        self.pb_re_iniciar.setObjectName(u"pb_re_iniciar")
+        self.pb_re_iniciar.setMinimumSize(QSize(60, 25))
+        self.pb_re_iniciar.setMaximumSize(QSize(80, 16777215))
+        font2 = QFont()
+        font2.setFamily(u"Times New Roman")
+        font2.setPointSize(9)
+        font2.setBold(False)
+        font2.setItalic(False)
+        font2.setUnderline(True)
+        font2.setWeight(50)
+        font2.setStrikeOut(False)
+        font2.setKerning(True)
+        self.pb_re_iniciar.setFont(font2)
+        self.pb_re_iniciar.setAcceptDrops(False)
+        self.pb_re_iniciar.setStyleSheet(u"\n"
+"QPushButton {\n"
+"   \n"
+"	background-color: rgb(220, 220, 220);\n"
+"	\n"
+"	color: rgb(255, 85, 0);\n"
+"}\n"
+"")
 
-        self.horizontalLayout_21.addWidget(self.groupBox_8)
+        self.gridLayout_57.addWidget(self.pb_re_iniciar, 0, 2, 1, 1)
 
-        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.pb_iniciar = QPushButton(self.groupBox_8)
+        self.pb_iniciar.setObjectName(u"pb_iniciar")
+        self.pb_iniciar.setMinimumSize(QSize(60, 25))
+        self.pb_iniciar.setMaximumSize(QSize(80, 16777215))
+        self.pb_iniciar.setFont(font)
+        self.pb_iniciar.setStyleSheet(u"\n"
+"QPushButton {\n"
+"   \n"
+"	background-color: rgb(220, 220, 220);\n"
+"	\n"
+"	color: rgb(0, 85, 255);\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    \n"
+"	background-color: rgb(255, 255, 255);\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:pressed {\n"
+"   \n"
+"	background-color: rgb(190, 190, 190);\n"
+"	\n"
+"	color: rgb(0, 170, 0);\n"
+"}")
+        self.pb_iniciar.setCheckable(False)
 
-        self.horizontalLayout_21.addItem(self.horizontalSpacer_6)
+        self.gridLayout_57.addWidget(self.pb_iniciar, 0, 1, 1, 1)
+
+        self.horizontalLayout_19 = QHBoxLayout()
+        self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
+        self.label_12 = QLabel(self.groupBox_8)
+        self.label_12.setObjectName(u"label_12")
+        self.label_12.setMinimumSize(QSize(70, 0))
+        self.label_12.setMaximumSize(QSize(80, 16777215))
+        self.label_12.setFont(font)
+        self.label_12.setStyleSheet(u"color: rgb(0, 85, 255);")
+        self.label_12.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_19.addWidget(self.label_12)
+
+        self.sb_quantum = QSpinBox(self.groupBox_8)
+        self.sb_quantum.setObjectName(u"sb_quantum")
+        self.sb_quantum.setMinimumSize(QSize(40, 25))
+        self.sb_quantum.setFont(font1)
+        self.sb_quantum.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.sb_quantum.setWrapping(False)
+        self.sb_quantum.setFrame(True)
+        self.sb_quantum.setAlignment(Qt.AlignCenter)
+        self.sb_quantum.setReadOnly(False)
+        self.sb_quantum.setButtonSymbols(QAbstractSpinBox.UpDownArrows)
+        self.sb_quantum.setMinimum(3)
+        self.sb_quantum.setMaximum(15)
+        self.sb_quantum.setValue(5)
+
+        self.horizontalLayout_19.addWidget(self.sb_quantum)
+
+
+        self.gridLayout_57.addLayout(self.horizontalLayout_19, 0, 3, 1, 1)
+
+
+        self.horizontalLayout_9.addWidget(self.groupBox_8)
 
         self.groupBox_7 = QGroupBox(self.frame_5)
         self.groupBox_7.setObjectName(u"groupBox_7")
         self.groupBox_7.setMinimumSize(QSize(0, 48))
         self.groupBox_7.setMaximumSize(QSize(16777215, 48))
         self.groupBox_7.setFont(font)
-        self.groupBox_7.setStyleSheet(u"color: rgb(0, 0, 255);")
+        self.groupBox_7.setStyleSheet(u"color: rgb(0, 0, 255);\n"
+"color: rgb(0, 170, 0);")
         self.groupBox_7.setAlignment(Qt.AlignCenter)
         self.horizontalLayout_17 = QHBoxLayout(self.groupBox_7)
+        self.horizontalLayout_17.setSpacing(5)
         self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
-        self.horizontalLayout_17.setContentsMargins(-1, 0, -1, -1)
+        self.horizontalLayout_17.setContentsMargins(5, 0, 5, -1)
         self.horizontalLayout_13 = QHBoxLayout()
         self.horizontalLayout_13.setSpacing(0)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
         self.label_55 = QLabel(self.groupBox_7)
         self.label_55.setObjectName(u"label_55")
-        self.label_55.setMinimumSize(QSize(30, 0))
+        self.label_55.setMinimumSize(QSize(28, 0))
         self.label_55.setMaximumSize(QSize(35, 25))
         self.label_55.setFont(font)
         self.label_55.setStyleSheet(u"color: rgb(0, 85, 255);")
@@ -252,17 +249,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_13.addWidget(self.label_55)
 
-        self.le_siguiente_id = QLineEdit(self.groupBox_7)
-        self.le_siguiente_id.setObjectName(u"le_siguiente_id")
-        self.le_siguiente_id.setMinimumSize(QSize(30, 0))
-        self.le_siguiente_id.setMaximumSize(QSize(50, 25))
-        self.le_siguiente_id.setFont(font)
-        self.le_siguiente_id.setStyleSheet(u"background-color: rgb(220, 220, 220);")
-        self.le_siguiente_id.setFrame(False)
-        self.le_siguiente_id.setAlignment(Qt.AlignCenter)
-        self.le_siguiente_id.setReadOnly(True)
+        self.le_siguiente_id_nuevo = QLineEdit(self.groupBox_7)
+        self.le_siguiente_id_nuevo.setObjectName(u"le_siguiente_id_nuevo")
+        self.le_siguiente_id_nuevo.setMinimumSize(QSize(30, 0))
+        self.le_siguiente_id_nuevo.setMaximumSize(QSize(30, 25))
+        self.le_siguiente_id_nuevo.setFont(font)
+        self.le_siguiente_id_nuevo.setStyleSheet(u"background-color: rgb(220, 220, 220);")
+        self.le_siguiente_id_nuevo.setFrame(False)
+        self.le_siguiente_id_nuevo.setAlignment(Qt.AlignCenter)
+        self.le_siguiente_id_nuevo.setReadOnly(True)
 
-        self.horizontalLayout_13.addWidget(self.le_siguiente_id)
+        self.horizontalLayout_13.addWidget(self.le_siguiente_id_nuevo)
 
 
         self.horizontalLayout_17.addLayout(self.horizontalLayout_13)
@@ -272,7 +269,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
         self.label_56 = QLabel(self.groupBox_7)
         self.label_56.setObjectName(u"label_56")
-        self.label_56.setMinimumSize(QSize(45, 0))
+        self.label_56.setMinimumSize(QSize(50, 0))
         self.label_56.setMaximumSize(QSize(55, 25))
         self.label_56.setFont(font)
         self.label_56.setStyleSheet(u"color: rgb(0, 85, 255);")
@@ -280,17 +277,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_14.addWidget(self.label_56)
 
-        self.le_siguiente_tam = QLineEdit(self.groupBox_7)
-        self.le_siguiente_tam.setObjectName(u"le_siguiente_tam")
-        self.le_siguiente_tam.setMinimumSize(QSize(30, 0))
-        self.le_siguiente_tam.setMaximumSize(QSize(50, 25))
-        self.le_siguiente_tam.setFont(font)
-        self.le_siguiente_tam.setStyleSheet(u"background-color: rgb(220, 220, 220);")
-        self.le_siguiente_tam.setFrame(False)
-        self.le_siguiente_tam.setAlignment(Qt.AlignCenter)
-        self.le_siguiente_tam.setReadOnly(True)
+        self.le_siguiente_tam_nuevo = QLineEdit(self.groupBox_7)
+        self.le_siguiente_tam_nuevo.setObjectName(u"le_siguiente_tam_nuevo")
+        self.le_siguiente_tam_nuevo.setMinimumSize(QSize(30, 0))
+        self.le_siguiente_tam_nuevo.setMaximumSize(QSize(30, 25))
+        self.le_siguiente_tam_nuevo.setFont(font)
+        self.le_siguiente_tam_nuevo.setStyleSheet(u"background-color: rgb(220, 220, 220);")
+        self.le_siguiente_tam_nuevo.setFrame(False)
+        self.le_siguiente_tam_nuevo.setAlignment(Qt.AlignCenter)
+        self.le_siguiente_tam_nuevo.setReadOnly(True)
 
-        self.horizontalLayout_14.addWidget(self.le_siguiente_tam)
+        self.horizontalLayout_14.addWidget(self.le_siguiente_tam_nuevo)
 
 
         self.horizontalLayout_17.addLayout(self.horizontalLayout_14)
@@ -300,7 +297,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
         self.label_58 = QLabel(self.groupBox_7)
         self.label_58.setObjectName(u"label_58")
-        self.label_58.setMinimumSize(QSize(45, 0))
+        self.label_58.setMinimumSize(QSize(50, 0))
         self.label_58.setMaximumSize(QSize(55, 25))
         self.label_58.setFont(font)
         self.label_58.setStyleSheet(u"color: rgb(0, 85, 255);")
@@ -308,74 +305,167 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_16.addWidget(self.label_58)
 
-        self.le_siguiente_pag = QLineEdit(self.groupBox_7)
-        self.le_siguiente_pag.setObjectName(u"le_siguiente_pag")
-        self.le_siguiente_pag.setMinimumSize(QSize(30, 0))
-        self.le_siguiente_pag.setMaximumSize(QSize(50, 25))
-        self.le_siguiente_pag.setFont(font)
-        self.le_siguiente_pag.setStyleSheet(u"background-color: rgb(220, 220, 220);")
-        self.le_siguiente_pag.setFrame(False)
-        self.le_siguiente_pag.setAlignment(Qt.AlignCenter)
-        self.le_siguiente_pag.setReadOnly(True)
+        self.le_siguiente_pag_nuevo = QLineEdit(self.groupBox_7)
+        self.le_siguiente_pag_nuevo.setObjectName(u"le_siguiente_pag_nuevo")
+        self.le_siguiente_pag_nuevo.setMinimumSize(QSize(30, 0))
+        self.le_siguiente_pag_nuevo.setMaximumSize(QSize(30, 25))
+        self.le_siguiente_pag_nuevo.setFont(font)
+        self.le_siguiente_pag_nuevo.setStyleSheet(u"background-color: rgb(220, 220, 220);")
+        self.le_siguiente_pag_nuevo.setFrame(False)
+        self.le_siguiente_pag_nuevo.setAlignment(Qt.AlignCenter)
+        self.le_siguiente_pag_nuevo.setReadOnly(True)
 
-        self.horizontalLayout_16.addWidget(self.le_siguiente_pag)
+        self.horizontalLayout_16.addWidget(self.le_siguiente_pag_nuevo)
 
 
         self.horizontalLayout_17.addLayout(self.horizontalLayout_16)
 
 
-        self.horizontalLayout_21.addWidget(self.groupBox_7)
+        self.horizontalLayout_9.addWidget(self.groupBox_7)
 
-        self.horizontalSpacer_2 = QSpacerItem(5, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.groupBox_11 = QGroupBox(self.frame_5)
+        self.groupBox_11.setObjectName(u"groupBox_11")
+        self.groupBox_11.setMinimumSize(QSize(0, 48))
+        self.groupBox_11.setMaximumSize(QSize(16777215, 48))
+        self.groupBox_11.setFont(font)
+        self.groupBox_11.setStyleSheet(u"color: rgb(0, 0, 255);\n"
+"color: rgb(255, 0, 0);")
+        self.groupBox_11.setAlignment(Qt.AlignCenter)
+        self.horizontalLayout_25 = QHBoxLayout(self.groupBox_11)
+        self.horizontalLayout_25.setSpacing(5)
+        self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
+        self.horizontalLayout_25.setContentsMargins(5, 0, 5, 9)
+        self.horizontalLayout_15 = QHBoxLayout()
+        self.horizontalLayout_15.setSpacing(0)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.label_57 = QLabel(self.groupBox_11)
+        self.label_57.setObjectName(u"label_57")
+        self.label_57.setMinimumSize(QSize(28, 0))
+        self.label_57.setMaximumSize(QSize(35, 25))
+        self.label_57.setFont(font)
+        self.label_57.setStyleSheet(u"color: rgb(0, 85, 255);")
+        self.label_57.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_21.addItem(self.horizontalSpacer_2)
+        self.horizontalLayout_15.addWidget(self.label_57)
+
+        self.le_siguiente_id_suspendido = QLineEdit(self.groupBox_11)
+        self.le_siguiente_id_suspendido.setObjectName(u"le_siguiente_id_suspendido")
+        self.le_siguiente_id_suspendido.setMinimumSize(QSize(30, 0))
+        self.le_siguiente_id_suspendido.setMaximumSize(QSize(30, 25))
+        self.le_siguiente_id_suspendido.setFont(font)
+        self.le_siguiente_id_suspendido.setStyleSheet(u"background-color: rgb(220, 220, 220);")
+        self.le_siguiente_id_suspendido.setFrame(False)
+        self.le_siguiente_id_suspendido.setAlignment(Qt.AlignCenter)
+        self.le_siguiente_id_suspendido.setReadOnly(True)
+
+        self.horizontalLayout_15.addWidget(self.le_siguiente_id_suspendido)
+
+
+        self.horizontalLayout_25.addLayout(self.horizontalLayout_15)
+
+        self.horizontalLayout_22 = QHBoxLayout()
+        self.horizontalLayout_22.setSpacing(0)
+        self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
+        self.label_59 = QLabel(self.groupBox_11)
+        self.label_59.setObjectName(u"label_59")
+        self.label_59.setMinimumSize(QSize(50, 0))
+        self.label_59.setMaximumSize(QSize(55, 25))
+        self.label_59.setFont(font)
+        self.label_59.setStyleSheet(u"color: rgb(0, 85, 255);")
+        self.label_59.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_22.addWidget(self.label_59)
+
+        self.le_siguiente_tam_suspendido = QLineEdit(self.groupBox_11)
+        self.le_siguiente_tam_suspendido.setObjectName(u"le_siguiente_tam_suspendido")
+        self.le_siguiente_tam_suspendido.setMinimumSize(QSize(30, 0))
+        self.le_siguiente_tam_suspendido.setMaximumSize(QSize(30, 25))
+        self.le_siguiente_tam_suspendido.setFont(font)
+        self.le_siguiente_tam_suspendido.setStyleSheet(u"background-color: rgb(220, 220, 220);")
+        self.le_siguiente_tam_suspendido.setFrame(False)
+        self.le_siguiente_tam_suspendido.setAlignment(Qt.AlignCenter)
+        self.le_siguiente_tam_suspendido.setReadOnly(True)
+
+        self.horizontalLayout_22.addWidget(self.le_siguiente_tam_suspendido)
+
+
+        self.horizontalLayout_25.addLayout(self.horizontalLayout_22)
+
+        self.horizontalLayout_23 = QHBoxLayout()
+        self.horizontalLayout_23.setSpacing(0)
+        self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
+        self.label_60 = QLabel(self.groupBox_11)
+        self.label_60.setObjectName(u"label_60")
+        self.label_60.setMinimumSize(QSize(50, 0))
+        self.label_60.setMaximumSize(QSize(55, 25))
+        self.label_60.setFont(font)
+        self.label_60.setStyleSheet(u"color: rgb(0, 85, 255);")
+        self.label_60.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_23.addWidget(self.label_60)
+
+        self.le_siguiente_pag_suspendido = QLineEdit(self.groupBox_11)
+        self.le_siguiente_pag_suspendido.setObjectName(u"le_siguiente_pag_suspendido")
+        self.le_siguiente_pag_suspendido.setMinimumSize(QSize(30, 0))
+        self.le_siguiente_pag_suspendido.setMaximumSize(QSize(30, 25))
+        self.le_siguiente_pag_suspendido.setFont(font)
+        self.le_siguiente_pag_suspendido.setStyleSheet(u"background-color: rgb(220, 220, 220);")
+        self.le_siguiente_pag_suspendido.setFrame(False)
+        self.le_siguiente_pag_suspendido.setAlignment(Qt.AlignCenter)
+        self.le_siguiente_pag_suspendido.setReadOnly(True)
+
+        self.horizontalLayout_23.addWidget(self.le_siguiente_pag_suspendido)
+
+
+        self.horizontalLayout_25.addLayout(self.horizontalLayout_23)
+
+        self.horizontalLayout_21 = QHBoxLayout()
+        self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
+        self.label_4 = QLabel(self.groupBox_11)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setMaximumSize(QSize(50, 16777215))
+        self.label_4.setStyleSheet(u"color: rgb(255, 85, 0);")
+
+        self.horizontalLayout_21.addWidget(self.label_4)
+
+        self.frame_proximo_suspendido = QFrame(self.groupBox_11)
+        self.frame_proximo_suspendido.setObjectName(u"frame_proximo_suspendido")
+        self.frame_proximo_suspendido.setMinimumSize(QSize(20, 0))
+        self.frame_proximo_suspendido.setMaximumSize(QSize(20, 25))
+        self.frame_proximo_suspendido.setStyleSheet(u"background-color: rgb(159, 159, 159);")
+        self.frame_proximo_suspendido.setFrameShape(QFrame.StyledPanel)
+        self.frame_proximo_suspendido.setFrameShadow(QFrame.Raised)
+        self.frame_proximo_suspendido.setLineWidth(0)
+
+        self.horizontalLayout_21.addWidget(self.frame_proximo_suspendido)
+
+
+        self.horizontalLayout_25.addLayout(self.horizontalLayout_21)
+
+
+        self.horizontalLayout_9.addWidget(self.groupBox_11)
 
         self.groupBox_10 = QGroupBox(self.frame_5)
         self.groupBox_10.setObjectName(u"groupBox_10")
         self.groupBox_10.setMinimumSize(QSize(48, 0))
-        self.groupBox_10.setMaximumSize(QSize(16777215, 48))
+        self.groupBox_10.setMaximumSize(QSize(600, 48))
         self.groupBox_10.setFont(font)
         self.groupBox_10.setStyleSheet(u"color: rgb(0, 0, 255);")
         self.groupBox_10.setAlignment(Qt.AlignCenter)
-        self.gridLayout_59 = QGridLayout(self.groupBox_10)
-        self.gridLayout_59.setObjectName(u"gridLayout_59")
-        self.gridLayout_59.setContentsMargins(-1, 0, -1, 9)
-        self.horizontalLayout_20 = QHBoxLayout()
-        self.horizontalLayout_20.setSpacing(0)
-        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
-        self.label_11 = QLabel(self.groupBox_10)
-        self.label_11.setObjectName(u"label_11")
-        self.label_11.setMinimumSize(QSize(125, 0))
-        self.label_11.setMaximumSize(QSize(125, 16777215))
-        self.label_11.setFont(font)
-        self.label_11.setStyleSheet(u"color: rgb(0, 85, 255);")
-        self.label_11.setAlignment(Qt.AlignCenter)
-
-        self.horizontalLayout_20.addWidget(self.label_11)
-
-        self.le_procesos_terminados = QLineEdit(self.groupBox_10)
-        self.le_procesos_terminados.setObjectName(u"le_procesos_terminados")
-        self.le_procesos_terminados.setMinimumSize(QSize(25, 11))
-        self.le_procesos_terminados.setMaximumSize(QSize(50, 25))
-        self.le_procesos_terminados.setStyleSheet(u"background-color: rgb(220, 220, 220);")
-        self.le_procesos_terminados.setFrame(False)
-        self.le_procesos_terminados.setAlignment(Qt.AlignCenter)
-        self.le_procesos_terminados.setReadOnly(True)
-
-        self.horizontalLayout_20.addWidget(self.le_procesos_terminados)
-
-
-        self.gridLayout_59.addLayout(self.horizontalLayout_20, 0, 1, 1, 1)
-
+        self.horizontalLayout_4 = QHBoxLayout(self.groupBox_10)
+        self.horizontalLayout_4.setSpacing(12)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalLayout_4.setContentsMargins(5, 0, 5, 9)
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setSpacing(0)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.label_9 = QLabel(self.groupBox_10)
         self.label_9.setObjectName(u"label_9")
-        self.label_9.setMinimumSize(QSize(111, 0))
-        self.label_9.setMaximumSize(QSize(220, 16777215))
+        self.label_9.setMinimumSize(QSize(55, 0))
+        self.label_9.setMaximumSize(QSize(60, 16777215))
         self.label_9.setFont(font)
-        self.label_9.setStyleSheet(u"color: rgb(0, 85, 255);")
+        self.label_9.setStyleSheet(u"color: rgb(0, 85, 255);\n"
+"color: rgb(0, 170, 0);")
         self.label_9.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_5.addWidget(self.label_9)
@@ -383,8 +473,9 @@ class Ui_MainWindow(object):
         self.le_procesos_nuevos = QLineEdit(self.groupBox_10)
         self.le_procesos_nuevos.setObjectName(u"le_procesos_nuevos")
         self.le_procesos_nuevos.setMinimumSize(QSize(25, 11))
-        self.le_procesos_nuevos.setMaximumSize(QSize(50, 25))
-        self.le_procesos_nuevos.setStyleSheet(u"background-color: rgb(220, 220, 220);")
+        self.le_procesos_nuevos.setMaximumSize(QSize(30, 25))
+        self.le_procesos_nuevos.setStyleSheet(u"background-color: rgb(220, 220, 220);\n"
+"color: rgb(0, 170, 0);")
         self.le_procesos_nuevos.setFrame(False)
         self.le_procesos_nuevos.setAlignment(Qt.AlignCenter)
         self.le_procesos_nuevos.setReadOnly(True)
@@ -392,17 +483,125 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.addWidget(self.le_procesos_nuevos)
 
 
-        self.gridLayout_59.addLayout(self.horizontalLayout_5, 0, 0, 1, 1)
+        self.horizontalLayout_4.addLayout(self.horizontalLayout_5)
+
+        self.horizontalLayout_11 = QHBoxLayout()
+        self.horizontalLayout_11.setSpacing(0)
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.label_14 = QLabel(self.groupBox_10)
+        self.label_14.setObjectName(u"label_14")
+        self.label_14.setMinimumSize(QSize(45, 0))
+        self.label_14.setMaximumSize(QSize(50, 16777215))
+        self.label_14.setFont(font)
+        self.label_14.setStyleSheet(u"color: rgb(0, 85, 255);")
+        self.label_14.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_11.addWidget(self.label_14)
+
+        self.le_procesos_listos = QLineEdit(self.groupBox_10)
+        self.le_procesos_listos.setObjectName(u"le_procesos_listos")
+        self.le_procesos_listos.setMinimumSize(QSize(25, 11))
+        self.le_procesos_listos.setMaximumSize(QSize(30, 25))
+        self.le_procesos_listos.setStyleSheet(u"background-color: rgb(220, 220, 220);")
+        self.le_procesos_listos.setFrame(False)
+        self.le_procesos_listos.setAlignment(Qt.AlignCenter)
+        self.le_procesos_listos.setReadOnly(True)
+
+        self.horizontalLayout_11.addWidget(self.le_procesos_listos)
 
 
-        self.horizontalLayout_21.addWidget(self.groupBox_10)
+        self.horizontalLayout_4.addLayout(self.horizontalLayout_11)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalLayout_24 = QHBoxLayout()
+        self.horizontalLayout_24.setSpacing(0)
+        self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
+        self.label_15 = QLabel(self.groupBox_10)
+        self.label_15.setObjectName(u"label_15")
+        self.label_15.setMinimumSize(QSize(75, 0))
+        self.label_15.setMaximumSize(QSize(80, 16777215))
+        self.label_15.setFont(font)
+        self.label_15.setStyleSheet(u"color: rgb(0, 85, 255);\n"
+"color: rgb(255, 0, 0);")
+        self.label_15.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_21.addItem(self.horizontalSpacer)
+        self.horizontalLayout_24.addWidget(self.label_15)
+
+        self.le_procesos_bloqueados = QLineEdit(self.groupBox_10)
+        self.le_procesos_bloqueados.setObjectName(u"le_procesos_bloqueados")
+        self.le_procesos_bloqueados.setMinimumSize(QSize(25, 11))
+        self.le_procesos_bloqueados.setMaximumSize(QSize(30, 25))
+        self.le_procesos_bloqueados.setStyleSheet(u"background-color: rgb(220, 220, 220);\n"
+"color: rgb(255, 0, 0);")
+        self.le_procesos_bloqueados.setFrame(False)
+        self.le_procesos_bloqueados.setAlignment(Qt.AlignCenter)
+        self.le_procesos_bloqueados.setReadOnly(True)
+
+        self.horizontalLayout_24.addWidget(self.le_procesos_bloqueados)
 
 
-        self.horizontalLayout_4.addWidget(self.frame_5)
+        self.horizontalLayout_4.addLayout(self.horizontalLayout_24)
+
+        self.horizontalLayout_10 = QHBoxLayout()
+        self.horizontalLayout_10.setSpacing(0)
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.label_13 = QLabel(self.groupBox_10)
+        self.label_13.setObjectName(u"label_13")
+        self.label_13.setMinimumSize(QSize(80, 0))
+        self.label_13.setMaximumSize(QSize(60, 16777215))
+        self.label_13.setFont(font)
+        self.label_13.setStyleSheet(u"color: rgb(0, 85, 255);")
+        self.label_13.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_10.addWidget(self.label_13)
+
+        self.le_procesos_suspendidos = QLineEdit(self.groupBox_10)
+        self.le_procesos_suspendidos.setObjectName(u"le_procesos_suspendidos")
+        self.le_procesos_suspendidos.setMinimumSize(QSize(25, 11))
+        self.le_procesos_suspendidos.setMaximumSize(QSize(30, 25))
+        self.le_procesos_suspendidos.setStyleSheet(u"background-color: rgb(220, 220, 220);")
+        self.le_procesos_suspendidos.setFrame(False)
+        self.le_procesos_suspendidos.setAlignment(Qt.AlignCenter)
+        self.le_procesos_suspendidos.setReadOnly(True)
+
+        self.horizontalLayout_10.addWidget(self.le_procesos_suspendidos)
+
+
+        self.horizontalLayout_4.addLayout(self.horizontalLayout_10)
+
+        self.horizontalLayout_20 = QHBoxLayout()
+        self.horizontalLayout_20.setSpacing(0)
+        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
+        self.label_11 = QLabel(self.groupBox_10)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setMinimumSize(QSize(75, 0))
+        self.label_11.setMaximumSize(QSize(80, 16777215))
+        self.label_11.setFont(font)
+        self.label_11.setStyleSheet(u"color: rgb(0, 85, 255);\n"
+"color: rgb(255, 0, 0);")
+        self.label_11.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_20.addWidget(self.label_11)
+
+        self.le_procesos_terminados = QLineEdit(self.groupBox_10)
+        self.le_procesos_terminados.setObjectName(u"le_procesos_terminados")
+        self.le_procesos_terminados.setMinimumSize(QSize(25, 11))
+        self.le_procesos_terminados.setMaximumSize(QSize(30, 25))
+        self.le_procesos_terminados.setStyleSheet(u"background-color: rgb(220, 220, 220);\n"
+"color: rgb(255, 0, 0);")
+        self.le_procesos_terminados.setFrame(False)
+        self.le_procesos_terminados.setAlignment(Qt.AlignCenter)
+        self.le_procesos_terminados.setReadOnly(True)
+
+        self.horizontalLayout_20.addWidget(self.le_procesos_terminados)
+
+
+        self.horizontalLayout_4.addLayout(self.horizontalLayout_20)
+
+
+        self.horizontalLayout_9.addWidget(self.groupBox_10)
+
+
+        self.horizontalLayout_12.addWidget(self.frame_5)
 
 
         self.gridLayout_4.addWidget(self.groupBox_4, 0, 0, 1, 1)
@@ -417,10 +616,12 @@ class Ui_MainWindow(object):
         self.frame_4.setFrameShadow(QFrame.Raised)
         self.gridLayout_2 = QGridLayout(self.frame_4)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout_2.setVerticalSpacing(1)
+        self.gridLayout_2.setContentsMargins(3, 3, 3, 3)
         self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setSpacing(1)
+        self.horizontalLayout.setSpacing(3)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(6, 6, 6, 6)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 3)
         self.groupBox = QGroupBox(self.frame_4)
         self.groupBox.setObjectName(u"groupBox")
         self.groupBox.setMinimumSize(QSize(0, 350))
@@ -428,6 +629,7 @@ class Ui_MainWindow(object):
         self.groupBox.setFont(font)
         self.groupBox.setStyleSheet(u"background-color: rgb(200, 200, 200);\n"
 "color: rgb(0, 85, 255);")
+        self.groupBox.setAlignment(Qt.AlignCenter)
         self.gridLayout_6 = QGridLayout(self.groupBox)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
         self.pte_listos = QPlainTextEdit(self.groupBox)
@@ -457,6 +659,7 @@ class Ui_MainWindow(object):
         self.groupBox_2.setFont(font)
         self.groupBox_2.setStyleSheet(u"background-color: rgb(200, 200, 200);\n"
 "color: rgb(0, 170, 0);")
+        self.groupBox_2.setAlignment(Qt.AlignCenter)
         self.gridLayout_7 = QGridLayout(self.groupBox_2)
         self.gridLayout_7.setObjectName(u"gridLayout_7")
         self.pte_ejecucion = QPlainTextEdit(self.groupBox_2)
@@ -480,6 +683,7 @@ class Ui_MainWindow(object):
         self.groupBox_3.setFont(font)
         self.groupBox_3.setStyleSheet(u"background-color: rgb(200, 200, 200);\n"
 "color: rgb(255, 0, 0);")
+        self.groupBox_3.setAlignment(Qt.AlignCenter)
         self.gridLayout_8 = QGridLayout(self.groupBox_3)
         self.gridLayout_8.setObjectName(u"gridLayout_8")
         self.pte_terminados = QPlainTextEdit(self.groupBox_3)
@@ -505,6 +709,7 @@ class Ui_MainWindow(object):
         self.groupBox_9.setFont(font)
         self.groupBox_9.setStyleSheet(u"background-color: rgb(200, 200, 200);\n"
 "color: rgb(0, 85, 255);")
+        self.groupBox_9.setAlignment(Qt.AlignCenter)
         self.gridLayout_12 = QGridLayout(self.groupBox_9)
         self.gridLayout_12.setObjectName(u"gridLayout_12")
         self.gridLayout_12.setContentsMargins(-1, 0, -1, -1)
@@ -578,21 +783,31 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_7.addLayout(self.horizontalLayout_2)
 
-        self.horizontalSpacer_52 = QSpacerItem(71, 17, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_52 = QSpacerItem(20, 17, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_7.addItem(self.horizontalSpacer_52)
 
-        self.lb_pausa = QLabel(self.frame_6)
+        self.groupBox_12 = QGroupBox(self.frame_6)
+        self.groupBox_12.setObjectName(u"groupBox_12")
+        self.gridLayout_59 = QGridLayout(self.groupBox_12)
+        self.gridLayout_59.setSpacing(0)
+        self.gridLayout_59.setObjectName(u"gridLayout_59")
+        self.gridLayout_59.setContentsMargins(0, 0, 0, 0)
+        self.lb_pausa = QLabel(self.groupBox_12)
         self.lb_pausa.setObjectName(u"lb_pausa")
-        self.lb_pausa.setMinimumSize(QSize(60, 0))
-        self.lb_pausa.setMaximumSize(QSize(90, 25))
+        self.lb_pausa.setMinimumSize(QSize(300, 0))
+        self.lb_pausa.setMaximumSize(QSize(400, 25))
         self.lb_pausa.setFont(font)
-        self.lb_pausa.setStyleSheet(u"color: rgb(0, 170, 0);")
+        self.lb_pausa.setStyleSheet(u"color: rgb(0, 170, 0);\n"
+"background-color: rgb(255, 255, 255);")
         self.lb_pausa.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_7.addWidget(self.lb_pausa)
+        self.gridLayout_59.addWidget(self.lb_pausa, 0, 0, 1, 1)
 
-        self.horizontalSpacer_53 = QSpacerItem(71, 17, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_7.addWidget(self.groupBox_12)
+
+        self.horizontalSpacer_53 = QSpacerItem(20, 17, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_7.addItem(self.horizontalSpacer_53)
 
@@ -676,7 +891,7 @@ class Ui_MainWindow(object):
         self.le_memoria_restante.setObjectName(u"le_memoria_restante")
         self.le_memoria_restante.setMinimumSize(QSize(120, 0))
         self.le_memoria_restante.setMaximumSize(QSize(25, 16777215))
-        self.le_memoria_restante.setFont(font2)
+        self.le_memoria_restante.setFont(font1)
         self.le_memoria_restante.setStyleSheet(u"background-color: rgb(220, 220, 220);")
         self.le_memoria_restante.setFrame(False)
         self.le_memoria_restante.setAlignment(Qt.AlignCenter)
@@ -2206,7 +2421,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1372, 21))
+        self.menubar.setGeometry(QRect(0, 0, 1592, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -2221,23 +2436,40 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Simulador de procesos", None))
         self.groupBox_4.setTitle("")
         self.groupBox_8.setTitle(QCoreApplication.translate("MainWindow", u"Inicio", None))
-        self.pb_re_iniciar.setText(QCoreApplication.translate("MainWindow", u"Reiniciar", None))
-        self.label_12.setText(QCoreApplication.translate("MainWindow", u"Quantum: ", None))
-        self.pb_iniciar.setText(QCoreApplication.translate("MainWindow", u"Iniciar", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Procesos iniciales: ", None))
         self.pb_agregar_procesos.setText(QCoreApplication.translate("MainWindow", u"Agregar", None))
-        self.groupBox_7.setTitle(QCoreApplication.translate("MainWindow", u"Pr\u00f3ximo proceso", None))
+        self.pb_re_iniciar.setText(QCoreApplication.translate("MainWindow", u"Reiniciar", None))
+        self.pb_iniciar.setText(QCoreApplication.translate("MainWindow", u"Iniciar", None))
+        self.label_12.setText(QCoreApplication.translate("MainWindow", u"Quantum: ", None))
+        self.groupBox_7.setTitle(QCoreApplication.translate("MainWindow", u"Pr\u00f3ximo proceso nuevo", None))
         self.label_55.setText(QCoreApplication.translate("MainWindow", u"ID:", None))
-        self.le_siguiente_id.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.le_siguiente_id_nuevo.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
         self.label_56.setText(QCoreApplication.translate("MainWindow", u"Tama\u00f1o: ", None))
-        self.le_siguiente_tam.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.le_siguiente_tam_nuevo.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
         self.label_58.setText(QCoreApplication.translate("MainWindow", u"P\u00e1ginas: ", None))
-        self.le_siguiente_pag.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
-        self.groupBox_10.setTitle(QCoreApplication.translate("MainWindow", u"Procesos fuera del sistema", None))
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Procesos terminados: ", None))
-        self.le_procesos_terminados.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Procesos nuevos: ", None))
+        self.le_siguiente_pag_nuevo.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.groupBox_11.setTitle(QCoreApplication.translate("MainWindow", u"Pr\u00f3ximo proceso suspendido", None))
+        self.label_57.setText(QCoreApplication.translate("MainWindow", u"ID:", None))
+        self.le_siguiente_id_suspendido.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.label_59.setText(QCoreApplication.translate("MainWindow", u"Tama\u00f1o: ", None))
+        self.le_siguiente_tam_suspendido.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.label_60.setText(QCoreApplication.translate("MainWindow", u"P\u00e1ginas: ", None))
+        self.le_siguiente_pag_suspendido.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Prioridad: ", None))
+        self.groupBox_10.setTitle(QCoreApplication.translate("MainWindow", u"Procesos del sistema", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Nuevos: ", None))
+        self.le_procesos_nuevos.setText("")
         self.le_procesos_nuevos.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.label_14.setText(QCoreApplication.translate("MainWindow", u"Listos: ", None))
+        self.le_procesos_listos.setText("")
+        self.le_procesos_listos.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.label_15.setText(QCoreApplication.translate("MainWindow", u"Bloqueados: ", None))
+        self.le_procesos_bloqueados.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.label_13.setText(QCoreApplication.translate("MainWindow", u"Suspendidos: ", None))
+        self.le_procesos_suspendidos.setText("")
+        self.le_procesos_suspendidos.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Terminados: ", None))
+        self.le_procesos_terminados.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Listo", None))
         self.pte_listos.setPlainText("")
         self.pte_listos.setPlaceholderText("")
@@ -2249,6 +2481,7 @@ class Ui_MainWindow(object):
         self.groupBox_5.setTitle("")
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Tiempo Global:", None))
         self.le_tiempo_global.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.groupBox_12.setTitle("")
         self.lb_pausa.setText(QCoreApplication.translate("MainWindow", u"Ejecuci\u00f3n", None))
         self.label_51.setText(QCoreApplication.translate("MainWindow", u"Marcos libres:", None))
         self.le_marcos_libres.setPlaceholderText(QCoreApplication.translate("MainWindow", u"40/44", None))

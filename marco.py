@@ -16,9 +16,6 @@ class Marco:
     def set_id(self, id_process):
         self._id = id_process
 
-    def get_id(self):
-        return self._id
-
     def set_estado(self, estado):
         self._estado_proceso = estado
 
